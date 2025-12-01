@@ -19,6 +19,220 @@
         'event_label': storeName
       });
     }
+
+    // Language management
+    let currentLanguage = 'en';
+    const translations = {
+      en: {
+        title: "Personality Compass",
+        subtitle: "Your Guide to Self-Discovery",
+        aboutTitle: "About the App",
+        aboutText: "Personality Compass is your personal guide in the world of self-discovery. The app combines several proven psychological models for deep personality analysis and personal growth. Everything works offline - your data stays completely private on your device.",
+        modelsTitle: "Psychological Models",
+        featuresTitle: "Key Features",
+        privacyTitle: "Privacy & Security",
+        downloadTitle: "Start Your Journey",
+        downloadSubtitle: "Download Personality Compass today and begin your self-discovery adventure",
+        noticeTitle: "Important Notice",
+        noticeText: "Personality Compass is for personal development and self-reflection purposes only. It is not a medical diagnostic tool and does not replace professional psychological counseling. Results should be considered as guidance for personal exploration.",
+        quote: "Know yourself - and you will know the entire universe",
+        tests: "Psychological Tests",
+        languages: "Languages",
+        offline: "Offline",
+        reports: "PDF Reports",
+        mindpath16: "MindPath 16",
+        mindpath16desc: "16 personality types analysis",
+        mindpath5d: "MindPath 5D",
+        mindpath5ddesc: "5-dimensional character assessment", 
+        enneagram: "Enneagram",
+        enneagramdesc: "9 personality types with dynamics",
+        diary: "Personal Diary",
+        diarydesc: "Track your growth journey",
+        feature1title: "Complete Privacy",
+        feature1desc: "100% offline operation. Your data never leaves your device.",
+        feature2title: "Deep Testing",
+        feature2desc: "Full versions (80+ questions) and quick versions (20 questions) available",
+        feature3title: "Professional Reports",
+        feature3desc: "Generate detailed PDF reports with color diagrams and insights",
+        feature4title: "Multilingual",
+        feature4desc: "Available in English, Russian, and Estonian with full localization",
+        feature5title: "Modern Design",
+        feature5desc: "Beautiful, intuitive interface optimized for all devices",
+        feature6title: "Fast Performance",
+        feature6desc: "Smooth operation even on older devices",
+        privacy1: "No Internet Required",
+        privacy1desc: "Works completely offline",
+        privacy2: "No Data Collection",
+        privacy2desc: "We don't collect any personal information",
+        privacy3: "Local Storage",
+        privacy3desc: "All results saved only on your device",
+        privacy4: "No Registration",
+        privacy4desc: "Start using immediately after installation"
+      },
+      ru: {
+        title: "Личностный Компас", 
+        subtitle: "Ваш Гид в Мир Самопознания",
+        aboutTitle: "О приложении",
+        aboutText: "Личностный Компас - это ваш персональный гид в мире самопознания. Приложение объединяет несколько проверенных психологических моделей для глубокого анализа личности и личностного роста. Всё работает оффлайн - ваши данные остаются полностью приватными на вашем устройстве.",
+        modelsTitle: "Психологические Модели",
+        featuresTitle: "Ключевые Возможности", 
+        privacyTitle: "Конфиденциальность и Безопасность",
+        downloadTitle: "Начните Ваше Путешествие",
+        downloadSubtitle: "Скачайте Личностный Компас сегодня и начните ваше приключение в самопознании",
+        noticeTitle: "Важная Информация",
+        noticeText: "Личностный Компас предназначен только для личного развития и саморефлексии. Это не медицинский диагностический инструмент и не замена профессиональной психологической помощи. Результаты следует рассматривать как руководство для личного исследования.",
+        quote: "Познай себя - и ты познаешь всю вселенную",
+        tests: "Психологических Тестов",
+        languages: "Языка",
+        offline: "Оффлайн", 
+        reports: "PDF Отчетов",
+        mindpath16: "MindPath 16",
+        mindpath16desc: "Анализ 16 типов личности",
+        mindpath5d: "MindPath 5D",
+        mindpath5ddesc: "5-мерная оценка характера",
+        enneagram: "Эннеаграмма",
+        enneagramdesc: "9 типов личности с динамикой",
+        diary: "Личный Дневник", 
+        diarydesc: "Отслеживайте ваш путь роста",
+        feature1title: "Полная Конфиденциальность",
+        feature1desc: "100% оффлайн работа. Ваши данные никогда не покидают ваше устройство.",
+        feature2title: "Глубокое Тестирование",
+        feature2desc: "Полные версии (80+ вопросов) и быстрые версии (20 вопросов) доступны",
+        feature3title: "Профессиональные Отчеты",
+        feature3desc: "Генерация детальных PDF отчетов с цветными диаграммами и инсайтами",
+        feature4title: "Мультиязычность",
+        feature4desc: "Доступно на английском, русском и эстонском с полной локализацией",
+        feature5title: "Современный Дизайн",
+        feature5desc: "Красивый, интуитивный интерфейс оптимизирован для всех устройств",
+        feature6title: "Быстрая Работа",
+        feature6desc: "Плавная работа даже на старых устройствах",
+        privacy1: "Интернет Не Требуется",
+        privacy1desc: "Работает полностью оффлайн",
+        privacy2: "Сбор Данных Отсутствует",
+        privacy2desc: "Мы не собираем никакую личную информацию",
+        privacy3: "Локальное Хранение",
+        privacy3desc: "Все результаты сохраняются только на вашем устройстве",
+        privacy4: "Регистрация Не Нужна",
+        privacy4desc: "Начинайте использовать сразу после установки"
+      },
+      et: {
+        title: "Isiksuse Kompass",
+        subtitle: "Sinu Teejuht Enesetundmisse", 
+        aboutTitle: "Rakendusest",
+        aboutText: "Isiksuse Kompass on sinu isiklik teejuht enesetundmise maailmas. Rakendus ühendab mitmeid tõestatud psühholoogilisi mudeleid sügava isikuõpuse analüüsi ja isikliku kasvu jaoks. Kõik töötab võrguühenduseta - sinu andmed jäävad täielikult privaatseteks sinu seadmes.",
+        modelsTitle: "Psühholoogilised Mudelid",
+        featuresTitle: "Peamised Võimalused",
+        privacyTitle: "Privaatsus ja Turvalisus",
+        downloadTitle: "Alusta Oma Teekonda",
+        downloadSubtitle: "Lae Isiksuse Kompass alla juba täna ja alusta oma enesetundmise seiklust",
+        noticeTitle: "Oluline Teave",
+        noticeText: "Isiksuse Kompass on mõeldud ainult isikliku arengu ja eneserefleksiooni eesmärkidel. See ei ole meditsiiniline diagnostikavahend ega asenda professionaalset psühholoogilist nõustamist. Tulemusi tuleks käsitleda kui juhiseid isiklikuks uurimiseks.",
+        quote: "Tunne ennast - ja sa tunned kogu universumit",
+        tests: "Psühholoogilist Testi",
+        languages: "Keelt",
+        offline: "Võrguühenduseta",
+        reports: "PDF Aruannet",
+        mindpath16: "MindPath 16",
+        mindpath16desc: "16 isiksusetüübi analüüs",
+        mindpath5d: "MindPath 5D", 
+        mindpath5ddesc: "5-mõõtmeline iseloomuhindamine",
+        enneagram: "Enneagramm",
+        enneagramdesc: "9 isiksusetüüpi arengudünaamikaga",
+        diary: "Isiklik Päevik",
+        diarydesc: "Jälgi oma kasvuteekonda",
+        feature1title: "Täielik Privaatsus",
+        feature1desc: "100% võrguühenduseta töö. Sinu andmed ei lahota kunagi sinu seadet.",
+        feature2title: "Sügav Testimine",
+        feature2desc: "Täielikud versioonid (80+ küsimust) ja kiirversioonid (20 küsimust) saadaval",
+        feature3title: "Professionaalsed Aruanded",
+        feature3desc: "Loo üksikasjalikke PDF-aruanneid värviliste diagrammide ja tõekspidamistega",
+        feature4title: "Mitmekeelsus",
+        feature4desc: "Saadaval inglise, vene ja eesti keeles täieliku lokaliseerimisega",
+        feature5title: "Kaasaegne Disain",
+        feature5desc: "Ilus, intuitiivne liides optimeeritud kõikidele seadmetele",
+        feature6title: "Kiire Töö",
+        feature6desc: "Sujuv töö isegi vanematel seadmetel",
+        privacy1: "Internetti Pole Vaja",
+        privacy1desc: "Töötab täielikult võrguühenduseta",
+        privacy2: "Andmete Kogumist Pole",
+        privacy2desc: "Me ei kogu ühtegi isiklikku teavet",
+        privacy3: "Kohalik Salvestus",
+        privacy3desc: "Kõik tulemused salvestatakse ainult sinu seadmesse",
+        privacy4: "Registreerimist Pole Vaja",
+        privacy4desc: "Hakkake kohe pärast installimist kasutama"
+      }
+    };
+
+    function changeLanguage(lang) {
+      currentLanguage = lang;
+      updateContent();
+      // Update active button
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.querySelector(`.lang-btn[onclick="changeLanguage('${lang}')"]`).classList.add('active');
+    }
+
+    function updateContent() {
+      const t = translations[currentLanguage];
+      document.querySelector('.app-title').textContent = t.title;
+      document.querySelector('.app-subtitle').textContent = t.subtitle;
+      document.querySelector('[data-translate="aboutTitle"]').textContent = t.aboutTitle;
+      document.querySelector('[data-translate="aboutText"]').textContent = t.aboutText;
+      document.querySelector('[data-translate="modelsTitle"]').textContent = t.modelsTitle;
+      document.querySelector('[data-translate="featuresTitle"]').textContent = t.featuresTitle;
+      document.querySelector('[data-translate="privacyTitle"]').textContent = t.privacyTitle;
+      document.querySelector('[data-translate="downloadTitle"]').textContent = t.downloadTitle;
+      document.querySelector('[data-translate="downloadSubtitle"]').textContent = t.downloadSubtitle;
+      document.querySelector('[data-translate="noticeTitle"]').textContent = t.noticeTitle;
+      document.querySelector('[data-translate="noticeText"]').textContent = t.noticeText;
+      document.querySelector('[data-translate="quote"]').textContent = t.quote;
+      
+      // Stats
+      document.querySelector('[data-translate="tests"]').textContent = t.tests;
+      document.querySelector('[data-translate="languages"]').textContent = t.languages;
+      document.querySelector('[data-translate="offline"]').textContent = t.offline;
+      document.querySelector('[data-translate="reports"]').textContent = t.reports;
+      
+      // Models
+      document.querySelector('[data-translate="mindpath16"]').textContent = t.mindpath16;
+      document.querySelector('[data-translate="mindpath16desc"]').textContent = t.mindpath16desc;
+      document.querySelector('[data-translate="mindpath5d"]').textContent = t.mindpath5d;
+      document.querySelector('[data-translate="mindpath5ddesc"]').textContent = t.mindpath5ddesc;
+      document.querySelector('[data-translate="enneagram"]').textContent = t.enneagram;
+      document.querySelector('[data-translate="enneagramdesc"]').textContent = t.enneagramdesc;
+      document.querySelector('[data-translate="diary"]').textContent = t.diary;
+      document.querySelector('[data-translate="diarydesc"]').textContent = t.diarydesc;
+      
+      // Features
+      document.querySelector('[data-translate="feature1title"]').textContent = t.feature1title;
+      document.querySelector('[data-translate="feature1desc"]').textContent = t.feature1desc;
+      document.querySelector('[data-translate="feature2title"]').textContent = t.feature2title;
+      document.querySelector('[data-translate="feature2desc"]').textContent = t.feature2desc;
+      document.querySelector('[data-translate="feature3title"]').textContent = t.feature3title;
+      document.querySelector('[data-translate="feature3desc"]').textContent = t.feature3desc;
+      document.querySelector('[data-translate="feature4title"]').textContent = t.feature4title;
+      document.querySelector('[data-translate="feature4desc"]').textContent = t.feature4desc;
+      document.querySelector('[data-translate="feature5title"]').textContent = t.feature5title;
+      document.querySelector('[data-translate="feature5desc"]').textContent = t.feature5desc;
+      document.querySelector('[data-translate="feature6title"]').textContent = t.feature6title;
+      document.querySelector('[data-translate="feature6desc"]').textContent = t.feature6desc;
+      
+      // Privacy
+      document.querySelector('[data-translate="privacy1"]').textContent = t.privacy1;
+      document.querySelector('[data-translate="privacy1desc"]').textContent = t.privacy1desc;
+      document.querySelector('[data-translate="privacy2"]').textContent = t.privacy2;
+      document.querySelector('[data-translate="privacy2desc"]').textContent = t.privacy2desc;
+      document.querySelector('[data-translate="privacy3"]').textContent = t.privacy3;
+      document.querySelector('[data-translate="privacy3desc"]').textContent = t.privacy3desc;
+      document.querySelector('[data-translate="privacy4"]').textContent = t.privacy4;
+      document.querySelector('[data-translate="privacy4desc"]').textContent = t.privacy4desc;
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+      updateContent();
+    });
   </script>
   
   <style>
@@ -46,6 +260,47 @@
       padding: 40px 20px;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
+      position: relative;
+    }
+    
+    .header::before {
+      content: "🧭";
+      font-size: 60px;
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      opacity: 0.3;
+    }
+    
+    .language-switcher {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      display: flex;
+      gap: 8px;
+    }
+    
+    .lang-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      border: 2px solid rgba(255,255,255,0.3);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+    
+    .lang-btn:hover {
+      background: rgba(255,255,255,0.3);
+      transform: translateY(-2px);
+    }
+    
+    .lang-btn.active {
+      background: rgba(255,255,255,0.4);
+      border-color: rgba(255,255,255,0.6);
     }
     
     .app-title {
@@ -131,76 +386,6 @@
       font-size: 18px;
     }
     
-    .download-section {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 40px 30px;
-      text-align: center;
-    }
-    
-    .download-title {
-      font-size: 28px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-    
-    .download-subtitle {
-      font-size: 18px;
-      opacity: 0.9;
-      margin-bottom: 30px;
-    }
-    
-    .stores-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    
-    .store-card {
-      background: rgba(255,255,255,0.1);
-      border-radius: 16px;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.2);
-      gap: 15px;
-    }
-    
-    .store-card:hover {
-      background: rgba(255,255,255,0.2);
-      transform: translateY(-3px);
-    }
-    
-    .store-logo {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-    }
-    
-    .store-logo img {
-      height: 50px;
-      width: auto;
-      max-width: 140px;
-    }
-    
-    .qr-code {
-      flex-shrink: 0;
-    }
-    
-    .qr-code img {
-      height: 75px;
-      width: 75px;
-      border: 2px solid rgba(255,255,255,0.3);
-      border-radius: 12px;
-      padding: 5px;
-      background: white;
-    }
-    
     .psychological-models {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -231,6 +416,76 @@
       font-weight: bold;
       color: #667eea;
       margin-bottom: 5px;
+    }
+    
+    .download-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 40px 30px;
+      text-align: center;
+    }
+    
+    .download-title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .download-subtitle {
+      font-size: 18px;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+    
+    .stores-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .store-card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      gap: 20px;
+    }
+    
+    .store-card:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-3px);
+    }
+    
+    .store-logo {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .store-logo img {
+      height: 45px;
+      width: auto;
+      max-width: 140px;
+    }
+    
+    .qr-code {
+      flex-shrink: 0;
+    }
+    
+    .qr-code img {
+      height: 75px;
+      width: 75px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 12px;
+      padding: 5px;
+      background: white;
     }
     
     .privacy-features {
@@ -276,6 +531,33 @@
       display: block;
     }
     
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+    
+    .stat-card {
+      background: #f8f9ff;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      border: 2px solid #667eea;
+    }
+    
+    .stat-number {
+      font-size: 32px;
+      font-weight: bold;
+      color: #667eea;
+      margin-bottom: 5px;
+    }
+    
+    .stat-label {
+      font-size: 14px;
+      color: #666;
+    }
+    
     .quote {
       font-style: italic;
       text-align: center;
@@ -302,11 +584,18 @@
         height: 70px;
         width: 70px;
       }
-      .screenshots-grid { grid-template-columns: repeat(2, 1fr); }
+      .header::before {
+        font-size: 40px;
+        top: 10px;
+        right: 20px;
+      }
+      .language-switcher {
+        top: 15px;
+        left: 20px;
+      }
     }
     
     @media (max-width: 480px) {
-      .screenshots-grid { grid-template-columns: 1fr; }
       .store-card {
         flex-direction: column;
         text-align: center;
@@ -314,12 +603,25 @@
       .store-logo img {
         height: 35px;
       }
+      .language-switcher {
+        position: relative;
+        top: 0;
+        left: 0;
+        justify-content: center;
+        margin-bottom: 15px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
+      <div class="language-switcher">
+        <button class="lang-btn active" onclick="changeLanguage('en')">EN</button>
+        <button class="lang-btn" onclick="changeLanguage('ru')">RU</button>
+        <button class="lang-btn" onclick="changeLanguage('et')">ET</button>
+      </div>
+      
       <div class="app-title">🧭 Personality Compass</div>
       <div class="app-subtitle">Your Guide to Self-Discovery</div>
       <div class="tags">
@@ -332,29 +634,25 @@
     </div>
 
     <div class="content-section">
-      <div class="section-title">About the App</div>
-      <p><strong>Personality Compass</strong> is your personal guide in the world of self-discovery. The app combines several proven psychological models for deep personality analysis and personal growth. Everything works offline - your data stays completely private on your device.</p>
+      <div class="section-title" data-translate="aboutTitle">About the App</div>
+      <p data-translate="aboutText"><strong>Personality Compass</strong> is your personal guide in the world of self-discovery. The app combines several proven psychological models for deep personality analysis and personal growth. Everything works offline - your data stays completely private on your device.</p>
 
-      <div class="psychological-models">
-        <div class="model-card">
-          <div class="model-icon">🧠</div>
-          <div class="model-title">MindPath 16</div>
-          <div>16 personality types analysis</div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">4</div>
+          <div class="stat-label" data-translate="tests">Psychological Tests</div>
         </div>
-        <div class="model-card">
-          <div class="model-icon">📊</div>
-          <div class="model-title">MindPath 5D</div>
-          <div>5-dimensional character assessment</div>
+        <div class="stat-card">
+          <div class="stat-number">3</div>
+          <div class="stat-label" data-translate="languages">Languages</div>
         </div>
-        <div class="model-card">
-          <div class="model-icon">🎯</div>
-          <div class="model-title">Enneagram</div>
-          <div>9 personality types with dynamics</div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label" data-translate="offline">Offline</div>
         </div>
-        <div class="model-card">
-          <div class="model-icon">📔</div>
-          <div class="model-title">Personal Diary</div>
-          <div>Track your growth journey</div>
+        <div class="stat-card">
+          <div class="stat-number">3</div>
+          <div class="stat-label" data-translate="reports">PDF Reports</div>
         </div>
       </div>
     </div>
@@ -383,82 +681,96 @@
         <div class="screenshot-item">
           <img src="images/06.png" alt="Personality Compass - Personal Diary">
         </div>
-        <div class="screenshot-item">
-          <img src="images/07.png" alt="Personality Compass - Progress Tracking">
+      </div>
+    </div>
+
+    <div class="content-section">
+      <div class="section-title" data-translate="modelsTitle">Psychological Models</div>
+      <div class="psychological-models">
+        <div class="model-card">
+          <div class="model-icon">🧠</div>
+          <div class="model-title" data-translate="mindpath16">MindPath 16</div>
+          <div data-translate="mindpath16desc">16 personality types analysis</div>
         </div>
-        <div class="screenshot-item">
-          <img src="images/08.png" alt="Personality Compass - Settings">
+        <div class="model-card">
+          <div class="model-icon">📊</div>
+          <div class="model-title" data-translate="mindpath5d">MindPath 5D</div>
+          <div data-translate="mindpath5ddesc">5-dimensional character assessment</div>
         </div>
-        <div class="screenshot-item">
-          <img src="images/09.png" alt="Personality Compass - Multilingual Support">
+        <div class="model-card">
+          <div class="model-icon">🎯</div>
+          <div class="model-title" data-translate="enneagram">Enneagram</div>
+          <div data-translate="enneagramdesc">9 personality types with dynamics</div>
         </div>
-        <div class="screenshot-item">
-          <img src="images/10.png" alt="Personality Compass - Dark Mode">
+        <div class="model-card">
+          <div class="model-icon">📔</div>
+          <div class="model-title" data-translate="diary">Personal Diary</div>
+          <div data-translate="diarydesc">Track your growth journey</div>
         </div>
       </div>
     </div>
 
     <div class="content-section">
-      <div class="section-title">Key Features</div>
+      <div class="section-title" data-translate="featuresTitle">Key Features</div>
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon">🔒</div>
-          <div class="feature-title">Complete Privacy</div>
-          <div>100% offline operation. Your data never leaves your device.</div>
+          <div class="feature-title" data-translate="feature1title">Complete Privacy</div>
+          <div data-translate="feature1desc">100% offline operation. Your data never leaves your device.</div>
         </div>
         <div class="feature-card">
           <div class="feature-icon">📝</div>
-          <div class="feature-title">Deep Testing</div>
-          <div>Full versions (80+ questions) and quick versions (20 questions) available</div>
+          <div class="feature-title" data-translate="feature2title">Deep Testing</div>
+          <div data-translate="feature2desc">Full versions (80+ questions) and quick versions (20 questions) available</div>
         </div>
         <div class="feature-card">
           <div class="feature-icon">📄</div>
-          <div class="feature-title">Professional Reports</div>
-          <div>Generate detailed PDF reports with color diagrams and insights</div>
+          <div class="feature-title" data-translate="feature3title">Professional Reports</div>
+          <div data-translate="feature3desc">Generate detailed PDF reports with color diagrams and insights</div>
         </div>
         <div class="feature-card">
           <div class="feature-icon">🌐</div>
-          <div class="feature-title">Multilingual</div>
-          <div>Available in English, Russian, and Estonian with full localization</div>
+          <div class="feature-title" data-translate="feature4title">Multilingual</div>
+          <div data-translate="feature4desc">Available in English, Russian, and Estonian with full localization</div>
         </div>
         <div class="feature-card">
           <div class="feature-icon">📱</div>
-          <div class="feature-title">Modern Design</div>
-          <div>Beautiful, intuitive interface optimized for all devices</div>
+          <div class="feature-title" data-translate="feature5title">Modern Design</div>
+          <div data-translate="feature5desc">Beautiful, intuitive interface optimized for all devices</div>
         </div>
         <div class="feature-card">
           <div class="feature-icon">⚡</div>
-          <div class="feature-title">Fast Performance</div>
-          <div>Smooth operation even on older devices</div>
+          <div class="feature-title" data-translate="feature6title">Fast Performance</div>
+          <div data-translate="feature6desc">Smooth operation even on older devices</div>
         </div>
       </div>
     </div>
 
     <div class="content-section">
-      <div class="section-title">Privacy & Security</div>
+      <div class="section-title" data-translate="privacyTitle">Privacy & Security</div>
       <div class="privacy-features">
         <div class="privacy-item">
-          <strong>No Internet Required</strong><br>
-          Works completely offline
+          <strong data-translate="privacy1">No Internet Required</strong><br>
+          <span data-translate="privacy1desc">Works completely offline</span>
         </div>
         <div class="privacy-item">
-          <strong>No Data Collection</strong><br>
-          We don't collect any personal information
+          <strong data-translate="privacy2">No Data Collection</strong><br>
+          <span data-translate="privacy2desc">We don't collect any personal information</span>
         </div>
         <div class="privacy-item">
-          <strong>Local Storage</strong><br>
-          All results saved only on your device
+          <strong data-translate="privacy3">Local Storage</strong><br>
+          <span data-translate="privacy3desc">All results saved only on your device</span>
         </div>
         <div class="privacy-item">
-          <strong>No Registration</strong><br>
-          Start using immediately after installation
+          <strong data-translate="privacy4">No Registration</strong><br>
+          <span data-translate="privacy4desc">Start using immediately after installation</span>
         </div>
       </div>
     </div>
 
     <div class="download-section">
-      <div class="download-title">Start Your Journey</div>
-      <div class="download-subtitle">Download Personality Compass today and begin your self-discovery adventure</div>
+      <div class="download-title" data-translate="downloadTitle">Start Your Journey</div>
+      <div class="download-subtitle" data-translate="downloadSubtitle">Download Personality Compass today and begin your self-discovery adventure</div>
       
       <div class="stores-grid">
         <!-- App Store -->
@@ -520,25 +832,13 @@
     </div>
 
     <div class="content-section">
-      <div class="section-title">Important Notice</div>
-      <p><strong>Personality Compass is for personal development and self-reflection purposes only.</strong> It is not a medical diagnostic tool and does not replace professional psychological counseling. Results should be considered as guidance for personal exploration.</p>
+      <div class="section-title" data-translate="noticeTitle">Important Notice</div>
+      <p data-translate="noticeText"><strong>Personality Compass is for personal development and self-reflection purposes only.</strong> It is not a medical diagnostic tool and does not replace professional psychological counseling. Results should be considered as guidance for personal exploration.</p>
       
-      <div class="quote">
+      <div class="quote" data-translate="quote">
         "Know yourself - and you will know the entire universe"
       </div>
     </div>
   </div>
-
-  <script>
-    // Add smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
 </body>
 </html>
