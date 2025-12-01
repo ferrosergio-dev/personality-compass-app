@@ -179,20 +179,23 @@
       display: flex;
       align-items: center;
       gap: 15px;
+      flex: 1;
     }
     
     .store-logo img {
       height: 40px;
-      border-radius: 8px;
+      width: auto;
     }
     
     .store-name {
       font-weight: bold;
       font-size: 18px;
+      min-width: 120px;
     }
     
     .qr-code img {
       height: 80px;
+      width: 80px;
       border: 2px solid rgba(255,255,255,0.3);
       border-radius: 12px;
       padding: 5px;
@@ -246,6 +249,34 @@
       border-left: 4px solid #2196f3;
     }
     
+    .screenshots-section {
+      text-align: center;
+    }
+    
+    .screenshots-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+    
+    .screenshot-item {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+    
+    .screenshot-item:hover {
+      transform: translateY(-5px);
+    }
+    
+    .screenshot-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
     .quote {
       font-style: italic;
       text-align: center;
@@ -261,8 +292,21 @@
       .app-title { font-size: 28px; }
       .app-subtitle { font-size: 18px; }
       .stores-grid { grid-template-columns: 1fr; }
-      .store-card { flex-direction: column; gap: 15px; }
-      .store-info { justify-content: center; }
+      .store-card { 
+        flex-direction: column; 
+        gap: 15px; 
+        text-align: center;
+      }
+      .store-info { 
+        justify-content: center; 
+        flex-direction: column;
+      }
+      .store-name { min-width: auto; }
+      .screenshots-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    
+    @media (max-width: 480px) {
+      .screenshots-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -304,6 +348,45 @@
           <div class="model-icon">📔</div>
           <div class="model-title">Personal Diary</div>
           <div>Track your growth journey</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Новая секция со скриншотами -->
+    <div class="content-section screenshots-section">
+      <div class="section-title">App Screenshots</div>
+      <p>Explore the beautiful and intuitive interface of Personality Compass</p>
+      
+      <div class="screenshots-grid">
+        <div class="screenshot-item">
+          <img src="images/01.png" alt="Personality Compass - Main Screen">
+        </div>
+        <div class="screenshot-item">
+          <img src="images/02.png" alt="Personality Compass - Test Selection">
+        </div>
+        <div class="screenshot-item">
+          <img src="images/03.png" alt="Personality Compass - MindPath 16 Test">
+        </div>
+        <div class="screenshot-item">
+          <img src="images/04.png" alt="Personality Compass - Enneagram Results">
+        </div>
+        <div class="screenshot-item">
+          <img src="images/05.png" alt="Personality Compass - PDF Reports">
+        </div>
+        <div class="screenshot-item">
+          <img src="images/06.png" alt="Personality Compass - Personal Diary">
+        </div>
+        <div class="screenshot-item">
+          <img src="images/07.png" alt="Personality Compass - Progress Tracking">
+        </div>
+        <div class="screenshot-item">
+          <img src="images/08.png" alt="Personality Compass - Settings">
+        </div>
+        <div class="screenshot-item">
+          <img src="images/09.png" alt="Personality Compass - Multilingual Support">
+        </div>
+        <div class="screenshot-item">
+          <img src="images/10.png" alt="Personality Compass - Dark Mode">
         </div>
       </div>
     </div>
@@ -371,30 +454,26 @@
       <div class="download-subtitle">Download Personality Compass today and begin your self-discovery adventure</div>
       
       <div class="stores-grid">
-
         <!-- App Store -->
-    <div class="store-item">
-  <div class="store-logo">
-    <span class="store-name">App Store</span>
-    <a href="https://apps.apple.com/ee/app/elektriku-treener/id6754495338" 
-       target="_blank"
-       onclick="trackStoreClick('App Store')">
-      <img src="images/appstore-badge.svg" alt="Download on App Store">
-    </a>
-  </div>
-  <div class="qr-code">
-    <a href="https://apps.apple.com/ee/app/elektriku-treener/id6754495338" 
-       target="_blank"
-       onclick="trackStoreClick('App Store QR')">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fapps.apple.com%2Fee%2Fapp%2Felektriku-treener%2Fid6754495338&size=80x80" alt="QR App Store">
-    </a>
-  </div>
-</div>        
+        <div class="store-card">
+          <div class="store-info">
+            <div class="store-logo">
+              <img src="images/appstore-badge.svg" alt="Download on App Store">
+            </div>
+            <div class="store-name">App Store</div>
+          </div>
+          <div class="qr-code">
+            <a href="https://apps.apple.com/ee/app/personality-compass/idXXXXXXXXXX" target="_blank" onclick="trackStoreClick('App Store QR')">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fapps.apple.com%2Fee%2Fapp%2Fpersonality-compass%2FidXXXXXXXXXX&size=80x80&margin=0" alt="QR App Store">
+            </a>
+          </div>
+        </div>
+
         <!-- Google Play -->
         <div class="store-card">
           <div class="store-info">
             <div class="store-logo">
-              <img src="images/googleplay-badge.svg" alt="Get it on Google Play>
+              <img src="images/googleplay-badge.svg" alt="Get it on Google Play">
             </div>
             <div class="store-name">Google Play</div>
           </div>
@@ -409,13 +488,13 @@
         <div class="store-card">
           <div class="store-info">
             <div class="store-logo">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Huawei_AppGallery.svg" alt="Huawei AppGallery">
+              <img src="images/appgallery-badge.svg" alt="Available on AppGallery">
             </div>
             <div class="store-name">Huawei AppGallery</div>
           </div>
           <div class="qr-code">
             <a href="https://appgallery.huawei.com/app/XXXXXXXXXX" target="_blank" onclick="trackStoreClick('Huawei AppGallery QR')">
-              <img src="images/appgallery-badge.svg" alt="Available on AppGallery">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fappgallery.huawei.com%2Fapp%2FXXXXXXXXXX&size=80x80&margin=0" alt="QR AppGallery">
             </a>
           </div>
         </div>
@@ -424,13 +503,13 @@
         <div class="store-card">
           <div class="store-info">
             <div class="store-logo">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/RuStore_logo.svg" alt="RuStore">
+              <img src="images/rustore-badge.svg" alt="Available on RuStore">
             </div>
             <div class="store-name">RuStore</div>
           </div>
           <div class="qr-code">
             <a href="https://www.rustore.ru/catalog/app/ee.personality.compass.personality_compass" target="_blank" onclick="trackStoreClick('RuStore QR')">
-              <img src="images/rustore-badge.svg" alt="Available on RuStore">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fwww.rustore.ru%2Fcatalog%2Fapp%2Fee.personality.compass.personality_compass&size=80x80&margin=0" alt="QR RuStore">
             </a>
           </div>
         </div>
