@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support Developer - Personality Compass</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XCK6M7C5DG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XCK6M7C5DG');
+
+    function trackDonationClick(type) {
+      gtag('event', 'donation_click', {
+        'event_category': 'support',
+        'event_label': type
+      });
+    }
+
+    // Language management
+    let currentLanguage = 'en';
+    const translations = {
+      en: {
+        title: "Support Developer",
+        subtitle: "Your contribution helps improve the app",
+        thankYouTitle: "Thank You!",
+        thankYouText: "Thank you for using 'Personality Compass'! Your support helps improve the app and add new features.",
+        cryptoSection: "Cryptocurrency Donations",
+        cryptoSubtitle: "Fast and available worldwide",
+        whyCrypto: "Why cryptocurrency?",
+        recommended: "Recommended",
+        fastTransactions: "Fast transfers",
+        fastTransactionsDesc: "Minutes instead of days",
+        lowFees: "Low fees",
+        lowFeesDesc: "Especially USDT on TRC20",
+        globalAccess: "Borderless and unrestricted",
+        globalAccessDesc: "Available from anywhere in the world",
+        bankDetails: "Bank Details",
+        quickActions: "Quick Actions",
+        copyIban: "Copy IBAN",
+        openBankApp: "Open banking app",
+        nameCopied: "Name copied to clipboard",
+        referenceCopied: "Payment reference copied",
+        ibanCopied: "IBAN copied!",
+        addressCopied: "Address copied",
+        copy: "Copy",
+        network: "Network",
+        address: "Address",
+        copyAddress: "Copy address",
+        howToSendCrypto: "How to send cryptocurrency",
+        important: "Important",
+        cryptoNetworkWarning: "Make sure to use the correct network when sending. USDT on TRC20 is recommended for low fees.",
+        cryptoInstructions: "Simple instructions for sending cryptocurrency:",
+        step1Copy: "Copy the address",
+        step1Desc: "Click the copy icon next to the desired address",
+        step2Open: "Open your crypto wallet",
+        step2Desc: "Binance, Trust Wallet, MetaMask or another",
+        step3Paste: "Paste the address and amount",
+        step3Desc: "Make sure you select the correct network",
+        step4Confirm: "Confirm the transfer",
+        step4Desc: "Check the details and confirm sending",
+        nameLabel: "Recipient name",
+        ibanLabel: "IBAN:",
+        referenceLabel: "Payment reference",
+        referenceText: "Personality Compass app donation",
+        bankAppInstructions: "Open your banking app and use the details above for transfer. Don't forget to specify the payment reference.",
+        rememberToCopy: "Don't forget to copy",
+        close: "Close",
+        backToMain: "Back to Main Page",
+        privacyNote: "All information is provided for voluntary donations. We do not store any payment data.",
+        qrInstructions: "Scan QR code with your banking app"
+      },
+      ru: {
+        title: "Поддержать разработчика",
+        subtitle: "Ваш вклад помогает улучшать приложение",
+        thankYouTitle: "Спасибо!",
+        thankYouText: "Спасибо, что используете 'Личностный Компас'! Ваша поддержка помогает улучшать приложение и добавлять новые функции.",
+        cryptoSection: "Криптовалюта",
+        cryptoSubtitle: "Быстро и доступно по всему миру",
+        whyCrypto: "Почему криптовалюта?",
+        recommended: "Рекомендуется",
+        fastTransactions: "Быстрые переводы",
+        fastTransactionsDesc: "Минуты вместо дней",
+        lowFees: "Низкие комиссии",
+        lowFeesDesc: "Особенно USDT на TRC20",
+        globalAccess: "Без границ и ограничений",
+        globalAccessDesc: "Доступно из любой точки мира",
+        bankDetails: "Банковские реквизиты",
+        quickActions: "Быстрые действия",
+        copyIban: "Скопировать IBAN",
+        openBankApp: "Открыть банковское приложение",
+        nameCopied: "Имя скопировано в буфер",
+        referenceCopied: "Назначение скопировано в буфер",
+        ibanCopied: "IBAN скопирован!",
+        addressCopied: "Адрес скопирован",
+        copy: "Копировать",
+        network: "Сеть",
+        address: "Адрес",
+        copyAddress: "Скопировать адрес",
+        howToSendCrypto: "Как отправить криптовалюту",
+        important: "Важно",
+        cryptoNetworkWarning: "Убедитесь, что используете правильную сеть при отправке. USDT на TRC20 рекомендуется для низких комиссий.",
+        cryptoInstructions: "Простая инструкция для отправки криптовалюты:",
+        step1Copy: "Скопируйте адрес",
+        step1Desc: "Нажмите на иконку копирования рядом с нужным адресом",
+        step2Open: "Откройте ваш крипто-кошелек",
+        step2Desc: "Binance, Trust Wallet, MetaMask или другой",
+        step3Paste: "Вставьте адрес и сумму",
+        step3Desc: "Убедитесь, что выбрали правильную сеть",
+        step4Confirm: "Подтвердите перевод",
+        step4Desc: "Проверьте детали и подтвердите отправку",
+        nameLabel: "Имя получателя",
+        ibanLabel: "IBAN:",
+        referenceLabel: "Назначение",
+        referenceText: "Personality Compass app donation",
+        bankAppInstructions: "Откройте ваше банковское приложение и используйте реквизиты выше для перевода. Не забудьте указать назначение платежа.",
+        rememberToCopy: "Не забудьте скопировать",
+        close: "Закрыть",
+        backToMain: "На главную страницу",
+        privacyNote: "Вся информация предоставлена для добровольных пожертвований. Мы не храним никаких платежных данных.",
+        qrInstructions: "Отсканируйте QR-код банковским приложением"
+      },
+      et: {
+        title: "Toeta arendajat",
+        subtitle: "Sinu annetus aitab rakendust paremaks teha",
+        thankYouTitle: "Aitäh!",
+        thankYouText: "Täname, et kasutad 'Isiksuse Kompassi'! Sinu toetus aitab rakendust täiustada ja uusi funktsioone lisada.",
+        cryptoSection: "Krüptoraha",
+        cryptoSubtitle: "Kiire ja kättesaadav üle kogu maailma",
+        whyCrypto: "Miks krüptoraha?",
+        recommended: "Soovitatav",
+        fastTransactions: "Kiired ülekanded",
+        fastTransactionsDesc: "Minutid päevade asemel",
+        lowFees: "Madalad tasud",
+        lowFeesDesc: "Eriti USDT TRC20 võrgustikus",
+        globalAccess: "Piirideta ja piiramatult",
+        globalAccessDesc: "Kättesaadav igast maailma otsast",
+        bankDetails: "Pangaandmed",
+        quickActions: "Kiirtegevused",
+        copyIban: "Kopeeri IBAN",
+        openBankApp: "Ava pangarakendus",
+        nameCopied: "Nimi kopeeritud",
+        referenceCopied: "Makseviide kopeeritud",
+        ibanCopied: "IBAN kopeeritud!",
+        addressCopied: "Aadress kopeeritud",
+        copy: "Kopeeri",
+        network: "Võrk",
+        address: "Aadress",
+        copyAddress: "Kopeeri aadress",
+        howToSendCrypto: "Kuidas saata krüptoraha",
+        important: "Oluline",
+        cryptoNetworkWarning: "Veendu, et kasutad õiget võrku saatmisel. USDT TRC20 võrgus on soovitatav madalate tasude tõttu.",
+        cryptoInstructions: "Lihtne juhend krüptoraha saatmiseks:",
+        step1Copy: "Kopeeri aadress",
+        step1Desc: "Klõpsa kopeerimisikoonil soovitud aadressi kõrval",
+        step2Open: "Ava oma krüptorahakott",
+        step2Desc: "Binance, Trust Wallet, MetaMask või muu",
+        step3Paste: "Kleebi aadress ja summa",
+        step3Desc: "Veendu, et valisid õige võrgu",
+        step4Confirm: "Kinnita ülekanne",
+        step4Desc: "Kontrolli üksikasjad ja kinnita saatmine",
+        nameLabel: "Saaja nimi",
+        ibanLabel: "IBAN:",
+        referenceLabel: "Makseviide",
+        referenceText: "Personality Compass app donation",
+        bankAppInstructions: "Ava oma pangarakendus ja kasuta ülaltoodud andmeid ülekande tegemiseks. Ära unusta määrata makseviidet.",
+        rememberToCopy: "Ära unusta kopeerida",
+        close: "Sulge",
+        backToMain: "Tagasi pealehele",
+        privacyNote: "Kogu teave on esitatud vabatahtlike annetuste jaoks. Me ei säilita ühtegi makseandmeid.",
+        qrInstructions: "Skänneeri QR-kood oma pangarakendusega"
+      }
+    };
+
+    function changeLanguage(lang) {
+      currentLanguage = lang;
+      updateContent();
+      // Update active button
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.querySelector(`.lang-btn[onclick="changeLanguage('${lang}')"]`).classList.add('active');
+    }
+
+    function updateContent() {
+      const t = translations[currentLanguage];
+      
+      // Update all elements with data-translate attribute
+      document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (t[key]) {
+          element.textContent = t[key];
+        }
+      });
+      
+      // Update title
+      document.title = t.title + " - Personality Compass";
+    }
+
+    // Clipboard functions
+    async function copyToClipboard(text, messageKey) {
+      try {
+        await navigator.clipboard.writeText(text);
+        showToast(translations[currentLanguage][messageKey] || 'Copied!');
+      } catch (err) {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        showToast(translations[currentLanguage][messageKey] || 'Copied!');
+      }
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    // Show crypto instructions
+    function showCryptoInstructions() {
+      const t = translations[currentLanguage];
+      const instructions = `
+        <div class="instructions-modal">
+          <h3>${t.howToSendCrypto}</h3>
+          <p>${t.cryptoInstructions}</p>
+          
+          <div class="instruction-step">
+            <div class="step-number">1</div>
+            <div>
+              <strong>${t.step1Copy}</strong>
+              <p>${t.step1Desc}</p>
+            </div>
+          </div>
+          
+          <div class="instruction-step">
+            <div class="step-number">2</div>
+            <div>
+              <strong>${t.step2Open}</strong>
+              <p>${t.step2Desc}</p>
+            </div>
+          </div>
+          
+          <div class="instruction-step">
+            <div class="step-number">3</div>
+            <div>
+              <strong>${t.step3Paste}</strong>
+              <p>${t.step3Desc}</p>
+            </div>
+          </div>
+          
+          <div class="instruction-step">
+            <div class="step-number">4</div>
+            <div>
+              <strong>${t.step4Confirm}</strong>
+              <p>${t.step4Desc}</p>
+            </div>
+          </div>
+          
+          <div class="warning-box">
+            <strong>⚠️ ${t.important}</strong>
+            <p>${t.cryptoNetworkWarning}</p>
+          </div>
+        </div>
+      `;
+      
+      document.getElementById('modal-content').innerHTML = instructions;
+      document.getElementById('modal-title').textContent = t.howToSendCrypto;
+      document.getElementById('modal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+      updateContent();
+      
+      // Close modal when clicking outside
+      document.getElementById('modal').addEventListener('click', function(e) {
+        if (e.target === this) {
+          closeModal();
+        }
+      });
+    });
+  </script>
+  
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: #333;
+      min-height: 100vh;
+    }
+    
+    .container {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      margin: 20px 0;
+    }
+    
+    .header {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      position: relative;
+    }
+    
+    .header::before {
+      content: "❤️";
+      font-size: 60px;
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      opacity: 0.3;
+    }
+    
+    .language-switcher {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      display: flex;
+      gap: 8px;
+    }
+    
+    .lang-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      border: 2px solid rgba(255,255,255,0.3);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+    
+    .lang-btn:hover {
+      background: rgba(255,255,255,0.3);
+      transform: translateY(-2px);
+    }
+    
+    .lang-btn.active {
+      background: rgba(255,255,255,0.4);
+      border-color: rgba(255,255,255,0.6);
+    }
+    
+    .app-title {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .app-subtitle {
+      font-size: 20px;
+      opacity: 0.9;
+      margin-bottom: 20px;
+    }
+    
+    .content-section {
+      padding: 30px;
+    }
+    
+    .section-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #667eea;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .section-title::before {
+      content: "•";
+      color: #764ba2;
+      font-size: 30px;
+    }
+    
+    .thank-you-card {
+      background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+      color: white;
+      padding: 25px;
+      border-radius: 16px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    
+    .thank-you-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+    
+    .crypto-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
+    }
+    
+    .crypto-card {
+      background: #f8f9ff;
+      border-radius: 12px;
+      padding: 20px;
+      border: 2px solid #f0f0f0;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .crypto-card.recommended {
+      border-color: #4CAF50;
+      background: linear-gradient(135deg, #f1f8e9 0%, #e8f5e9 100%);
+    }
+    
+    .recommended-badge {
+      position: absolute;
+      top: -10px;
+      right: 20px;
+      background: #4CAF50;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    
+    .crypto-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    
+    .crypto-icon {
+      font-size: 24px;
+    }
+    
+    .crypto-name {
+      font-weight: bold;
+      font-size: 18px;
+      color: #333;
+    }
+    
+    .crypto-network {
+      color: #666;
+      font-size: 14px;
+    }
+    
+    .address-box {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 15px 0;
+      font-family: 'Monospace', monospace;
+      word-break: break-all;
+      position: relative;
+    }
+    
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #667eea;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .copy-btn:hover {
+      background: #764ba2;
+    }
+    
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+    
+    .benefit-card {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      border-left: 4px solid #667eea;
+    }
+    
+    .benefit-icon {
+      font-size: 20px;
+      color: #667eea;
+      margin-bottom: 10px;
+    }
+    
+    .bank-details-card {
+      background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);
+      color: white;
+      padding: 25px;
+      border-radius: 16px;
+      margin: 20px 0;
+    }
+    
+    .detail-item {
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      border-radius: 10px;
+      margin: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .detail-label {
+      font-weight: bold;
+    }
+    
+    .detail-value {
+      font-family: 'Monospace', monospace;
+      font-size: 14px;
+    }
+    
+    .actions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+    
+    .action-btn {
+      background: white;
+      border: 2px solid #667eea;
+      color: #667eea;
+      padding: 15px;
+      border-radius: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-align: center;
+    }
+    
+    .action-btn:hover {
+      background: #667eea;
+      color: white;
+      transform: translateY(-3px);
+    }
+    
+    .action-btn.primary {
+      background: #667eea;
+      color: white;
+    }
+    
+    .action-btn.primary:hover {
+      background: #764ba2;
+    }
+    
+    .qr-section {
+      text-align: center;
+      margin: 30px 0;
+    }
+    
+    .qr-code {
+      display: inline-block;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin: 15px;
+    }
+    
+    .qr-code img {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    
+    .privacy-note {
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+    
+    .back-btn {
+      display: block;
+      width: 200px;
+      margin: 30px auto;
+      text-align: center;
+      background: #f8f9ff;
+      color: #667eea;
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      border: 2px solid #667eea;
+    }
+    
+    .back-btn:hover {
+      background: #667eea;
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    /* Toast notification */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #4CAF50;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      z-index: 1000;
+      transition: transform 0.3s ease;
+    }
+    
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+    
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1001;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .modal-content {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 500px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .modal-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #667eea;
+    }
+    
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #666;
+    }
+    
+    .instruction-step {
+      display: flex;
+      gap: 15px;
+      margin: 15px 0;
+      padding: 15px;
+      background: #f8f9ff;
+      border-radius: 10px;
+    }
+    
+    .step-number {
+      background: #667eea;
+      color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    
+    .warning-box {
+      background: #ffebee;
+      border: 2px solid #f44336;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px 0;
+      color: #d32f2f;
+    }
+    
+    @media (max-width: 768px) {
+      .app-title { font-size: 28px; }
+      .app-subtitle { font-size: 18px; }
+      .crypto-grid { grid-template-columns: 1fr; }
+      .actions-grid { grid-template-columns: 1fr; }
+      .header::before {
+        font-size: 40px;
+        top: 10px;
+        right: 20px;
+      }
+      .language-switcher {
+        top: 15px;
+        left: 20px;
+      }
+      .qr-code img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .language-switcher {
+        position: relative;
+        top: 0;
+        left: 0;
+        justify-content: center;
+        margin-bottom: 15px;
+      }
+      .address-box {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="language-switcher">
+        <button class="lang-btn active" onclick="changeLanguage('en')">EN</button>
+        <button class="lang-btn" onclick="changeLanguage('ru')">RU</button>
+        <button class="lang-btn" onclick="changeLanguage('et')">ET</button>
+      </div>
+      
+      <div class="app-title" data-translate="title">Support Developer</div>
+      <div class="app-subtitle" data-translate="subtitle">Your contribution helps improve the app</div>
+    </div>
+
+    <div class="content-section">
+      <!-- Thank You Section -->
+      <div class="thank-you-card">
+        <div class="thank-you-icon">❤️</div>
+        <h2 data-translate="thankYouTitle">Thank You!</h2>
+        <p data-translate="thankYouText">Thank you for using 'Personality Compass'! Your support helps improve the app and add new features.</p>
+      </div>
+
+      <!-- Cryptocurrency Section -->
+      <div class="section-title">
+        <span data-translate="cryptoSection">Cryptocurrency Donations</span>
+      </div>
+      <p style="color: #666; margin-bottom: 20px;" data-translate="cryptoSubtitle">Fast and available worldwide</p>
+
+      <!-- Crypto Cards -->
+      <div class="crypto-grid">
+        <!-- USDT TRC20 (Recommended) -->
+        <div class="crypto-card recommended">
+          <div class="recommended-badge" data-translate="recommended">Recommended</div>
+          <div class="crypto-header">
+            <div class="crypto-icon">💎</div>
+            <div>
+              <div class="crypto-name">USDT</div>
+              <div class="crypto-network">TRON (TRC20)</div>
+            </div>
+          </div>
+          
+          <div class="address-box">
+            <strong data-translate="address">Address:</strong><br>
+            THVCwpeeMhxoFq2MyazteavGcBqi6Qufoc
+            <button class="copy-btn" onclick="copyToClipboard('THVCwpeeMhxoFq2MyazteavGcBqi6Qufoc', 'addressCopied')">
+              📋 <span data-translate="copy">Copy</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Bitcoin -->
+        <div class="crypto-card">
+          <div class="crypto-header">
+            <div class="crypto-icon">₿</div>
+            <div>
+              <div class="crypto-name">Bitcoin (BTC)</div>
+              <div class="crypto-network">Bitcoin Network</div>
+            </div>
+          </div>
+          
+          <div class="address-box">
+            <strong data-translate="address">Address:</strong><br>
+            158NGiz2LaRnV7weKZFTuLMVkuPiEr6GEt
+            <button class="copy-btn" onclick="copyToClipboard('158NGiz2LaRnV7weKZFTuLMVkuPiEr6GEt', 'addressCopied')">
+              📋 <span data-translate="copy">Copy</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Why Crypto Benefits -->
+      <div style="margin: 30px 0;">
+        <h3 style="color: #667eea; margin-bottom: 15px;" data-translate="whyCrypto">Why cryptocurrency?</h3>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">⚡</div>
+            <strong data-translate="fastTransactions">Fast transfers</strong>
+            <p data-translate="fastTransactionsDesc">Minutes instead of days</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">💰</div>
+            <strong data-translate="lowFees">Low fees</strong>
+            <p data-translate="lowFeesDesc">Especially USDT on TRC20</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🌍</div>
+            <strong data-translate="globalAccess">Borderless and unrestricted</strong>
+            <p data-translate="globalAccessDesc">Available from anywhere in the world</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bank Details Section -->
+      <div class="section-title">
+        <span data-translate="bankDetails">Bank Details</span>
+      </div>
+
+      <div class="bank-details-card">
+        <!-- Recipient Name -->
+        <div class="detail-item">
+          <div class="detail-label" data-translate="nameLabel">Recipient name:</div>
+          <div class="detail-value">Ilja Serõšev</div>
+          <button class="copy-btn" style="position: static;" onclick="copyToClipboard('Ilja Serõšev', 'nameCopied')">
+            📋
+          </button>
+        </div>
+
+        <!-- IBAN -->
+        <div class="detail-item">
+          <div class="detail-label" data-translate="ibanLabel">IBAN:</div>
+          <div class="detail-value">EE457700771003417343</div>
+          <button class="copy-btn" style="position: static;" onclick="copyToClipback('EE457700771003417343', 'ibanCopied')">
+            📋
+          </button>
+        </div>
+
+        <!-- Payment Reference -->
+        <div class="detail-item">
+          <div class="detail-label" data-translate="referenceLabel">Payment reference:</div>
+          <div class="detail-value" data-translate="referenceText">Personality Compass app donation</div>
+          <button class="copy-btn" style="position: static;" onclick="copyToClipback('Personality Compass app donation', 'referenceCopied')">
+            📋
+          </button>
+        </div>
+      </div>
+
+      <!-- QR Code for Bank Transfer -->
+      <div class="qr-section">
+        <p data-translate="qrInstructions">Scan QR code with your banking app</p>
+        <div class="qr-code">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?data=bank://payment?iban=EE457700771003417343&recipient=Ilja%20Ser%C3%B5%C5%A1ev&amount=&message=Personality%20Compass%20app%20donation&size=200x200&margin=0" alt="Bank Transfer QR Code">
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="section-title">
+        <span data-translate="quickActions">Quick Actions</span>
+      </div>
+
+      <div class="actions-grid">
+        <button class="action-btn primary" onclick="showCryptoInstructions(); trackDonationClick('crypto_instructions')">
+          🪙 <span data-translate="howToSendCrypto">How to send cryptocurrency</span>
+        </button>
+        
+        <button class="action-btn" onclick="copyToClipback('EE457700771003417343', 'ibanCopied'); trackDonationClick('copy_iban')">
+          📋 <span data-translate="copyIban">Copy IBAN</span>
+        </button>
+        
+        <button class="action-btn" onclick="copyToClipback('EE457700771003417343', 'ibanCopied'); alert(translations[currentLanguage].bankAppInstructions); trackDonationClick('open_bank_app')">
+          📱 <span data-translate="openBankApp">Open banking app</span>
+        </button>
+      </div>
+
+      <!-- Privacy Note -->
+      <div class="privacy-note" data-translate="privacyNote">
+        All information is provided for voluntary donations. We do not store any payment data.
+      </div>
+
+      <!-- Back to Main Page -->
+      <a href="index.html" class="back-btn" onclick="trackDonationClick('back_to_main')">
+        ← <span data-translate="backToMain">Back to Main Page</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast"></div>
+
+  <!-- Modal for Instructions -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-title" class="modal-title"></h3>
+        <button class="close-btn" onclick="closeModal()">×</button>
+      </div>
+      <div id="modal-content"></div>
+      <div style="text-align: right; margin-top: 20px;">
+        <button class="action-btn" onclick="closeModal()" data-translate="close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Fix the copyToClipboard typo
+    window.copyToClipback = window.copyToClipboard;
+  </script>
+</body>
+</html>
