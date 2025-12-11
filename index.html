@@ -71,7 +71,14 @@
         supportTitle: "Support the Developer",
         supportSubtitle: "Help improve Personality Compass and support future development",
         supportButton: "❤️ Support Developer",
-        supportFooter: "Your contribution makes a difference"
+        supportFooter: "Your contribution makes a difference",
+        aboutDevTitle: "About Developer",
+        aboutDevText: "Personality Compass is developed by a passionate developer dedicated to creating privacy-focused applications for personal growth and self-discovery.",
+        portfolioButton: "👨‍💻 View Portfolio",
+        portfolioLink: "https://ferrosergio-dev.github.io/my-portfolio/",
+        getInTouch: "Get In Touch",
+        contactText: "For questions, feedback or support, please contact us",
+        contactEmail: "support@personalitycompass.app"
       },
       ru: {
         title: "Личностный Компас", 
@@ -121,7 +128,14 @@
         supportTitle: "Поддержать разработчика",
         supportSubtitle: "Помогите улучшить Личностный Компас и поддержите будущее развитие",
         supportButton: "❤️ Поддержать разработчика",
-        supportFooter: "Ваш вклад имеет значение"
+        supportFooter: "Ваш вклад имеет значение",
+        aboutDevTitle: "О разработчике",
+        aboutDevText: "Личностный Компас разработан страстным разработчиком, посвятившим себя созданию приложений с фокусом на приватность для личностного роста и самопознания.",
+        portfolioButton: "👨‍💻 Портфолио",
+        portfolioLink: "https://ferrosergio-dev.github.io/my-portfolio/",
+        getInTouch: "Связаться",
+        contactText: "По вопросам, отзывам или поддержке, пожалуйста, свяжитесь с нами",
+        contactEmail: "support@personalitycompass.app"
       },
       et: {
         title: "Isiksuse Kompass",
@@ -171,7 +185,14 @@
         supportTitle: "Toeta arendajat",
         supportSubtitle: "Aita parandada Isiksuse Kompassi ja toeta tulevikusuundumusi",
         supportButton: "❤️ Toeta arendajat",
-        supportFooter: "Sinu panus on oluline"
+        supportFooter: "Sinu panus on oluline",
+        aboutDevTitle: "Arendajast",
+        aboutDevText: "Isiksuse Kompassi on loonud kirglik arendaja, kes on pühendunud privaatsusele keskenduvate rakenduste loomisele isikliku kasvu ja enesetundmise jaoks.",
+        portfolioButton: "👨‍💻 Vaata portfooliot",
+        portfolioLink: "https://ferrosergio-dev.github.io/my-portfolio/",
+        getInTouch: "Võta ühendust",
+        contactText: "Küsimuste, tagasiside või toe korral võtke meiega ühendust",
+        contactEmail: "support@personalitycompass.app"
       }
     };
 
@@ -189,60 +210,26 @@
       const t = translations[currentLanguage];
       document.querySelector('.app-title').textContent = t.title;
       document.querySelector('.app-subtitle').textContent = t.subtitle;
-      document.querySelector('[data-translate="aboutTitle"]').textContent = t.aboutTitle;
-      document.querySelector('[data-translate="aboutText"]').textContent = t.aboutText;
-      document.querySelector('[data-translate="modelsTitle"]').textContent = t.modelsTitle;
-      document.querySelector('[data-translate="featuresTitle"]').textContent = t.featuresTitle;
-      document.querySelector('[data-translate="privacyTitle"]').textContent = t.privacyTitle;
-      document.querySelector('[data-translate="downloadTitle"]').textContent = t.downloadTitle;
-      document.querySelector('[data-translate="downloadSubtitle"]').textContent = t.downloadSubtitle;
-      document.querySelector('[data-translate="noticeTitle"]').textContent = t.noticeTitle;
-      document.querySelector('[data-translate="noticeText"]').textContent = t.noticeText;
-      document.querySelector('[data-translate="quote"]').textContent = t.quote;
-      document.querySelector('[data-translate="supportTitle"]').textContent = t.supportTitle;
-      document.querySelector('[data-translate="supportSubtitle"]').textContent = t.supportSubtitle;
-      document.querySelector('[data-translate="supportButton"]').textContent = t.supportButton;
-      document.querySelector('[data-translate="supportFooter"]').textContent = t.supportFooter;
+      document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (t[key]) {
+          element.textContent = t[key];
+        }
+      });
       
-      // Stats
-      document.querySelector('[data-translate="tests"]').textContent = t.tests;
-      document.querySelector('[data-translate="languages"]').textContent = t.languages;
-      document.querySelector('[data-translate="offline"]').textContent = t.offline;
-      document.querySelector('[data-translate="reports"]').textContent = t.reports;
+      // Update portfolio link
+      const portfolioBtn = document.querySelector('.portfolio-btn');
+      if (portfolioBtn) {
+        portfolioBtn.href = t.portfolioLink;
+        portfolioBtn.querySelector('span').textContent = t.portfolioButton;
+      }
       
-      // Models
-      document.querySelector('[data-translate="mindpath16"]').textContent = t.mindpath16;
-      document.querySelector('[data-translate="mindpath16desc"]').textContent = t.mindpath16desc;
-      document.querySelector('[data-translate="mindpath5d"]').textContent = t.mindpath5d;
-      document.querySelector('[data-translate="mindpath5ddesc"]').textContent = t.mindpath5ddesc;
-      document.querySelector('[data-translate="enneagram"]').textContent = t.enneagram;
-      document.querySelector('[data-translate="enneagramdesc"]').textContent = t.enneagramdesc;
-      document.querySelector('[data-translate="diary"]').textContent = t.diary;
-      document.querySelector('[data-translate="diarydesc"]').textContent = t.diarydesc;
-      
-      // Features
-      document.querySelector('[data-translate="feature1title"]').textContent = t.feature1title;
-      document.querySelector('[data-translate="feature1desc"]').textContent = t.feature1desc;
-      document.querySelector('[data-translate="feature2title"]').textContent = t.feature2title;
-      document.querySelector('[data-translate="feature2desc"]').textContent = t.feature2desc;
-      document.querySelector('[data-translate="feature3title"]').textContent = t.feature3title;
-      document.querySelector('[data-translate="feature3desc"]').textContent = t.feature3desc;
-      document.querySelector('[data-translate="feature4title"]').textContent = t.feature4title;
-      document.querySelector('[data-translate="feature4desc"]').textContent = t.feature4desc;
-      document.querySelector('[data-translate="feature5title"]').textContent = t.feature5title;
-      document.querySelector('[data-translate="feature5desc"]').textContent = t.feature5desc;
-      document.querySelector('[data-translate="feature6title"]').textContent = t.feature6title;
-      document.querySelector('[data-translate="feature6desc"]').textContent = t.feature6desc;
-      
-      // Privacy
-      document.querySelector('[data-translate="privacy1"]').textContent = t.privacy1;
-      document.querySelector('[data-translate="privacy1desc"]').textContent = t.privacy1desc;
-      document.querySelector('[data-translate="privacy2"]').textContent = t.privacy2;
-      document.querySelector('[data-translate="privacy2desc"]').textContent = t.privacy2desc;
-      document.querySelector('[data-translate="privacy3"]').textContent = t.privacy3;
-      document.querySelector('[data-translate="privacy3desc"]').textContent = t.privacy3desc;
-      document.querySelector('[data-translate="privacy4"]').textContent = t.privacy4;
-      document.querySelector('[data-translate="privacy4desc"]').textContent = t.privacy4desc;
+      // Update contact email
+      const contactEmail = document.querySelector('.contact-email');
+      if (contactEmail) {
+        contactEmail.textContent = t.contactEmail;
+        contactEmail.href = `mailto:${t.contactEmail}`;
+      }
     }
 
     // Initialize
@@ -547,6 +534,38 @@
       display: block;
     }
     
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 30px auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    }
+    
+    .video-container iframe {
+      width: 100%;
+      height: 340px;
+      border: none;
+      border-radius: 16px;
+    }
+    
+    .video-placeholder {
+      width: 100%;
+      height: 340px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      padding: 20px;
+    }
+    
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -585,6 +604,53 @@
       font-size: 18px;
     }
     
+    .about-dev-section {
+      background: linear-gradient(135deg, #f8f9ff 0%, #e8eaff 100%);
+      padding: 40px 30px;
+      text-align: center;
+      margin: 0 30px 30px;
+      border-radius: 16px;
+      border: 2px solid #667eea;
+    }
+    
+    .portfolio-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 15px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    }
+    
+    .portfolio-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    }
+    
+    .contact-section {
+      text-align: center;
+      padding: 40px 20px;
+      background: #f5f7ff;
+      border-radius: 16px;
+      margin: 30px;
+    }
+    
+    .contact-email {
+      color: #667eea;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    
+    .contact-email:hover {
+      text-decoration: underline;
+    }
+    
     @media (max-width: 768px) {
       .app-title { font-size: 28px; }
       .app-subtitle { font-size: 18px; }
@@ -609,6 +675,15 @@
         top: 15px;
         left: 20px;
       }
+      .video-container iframe,
+      .video-placeholder {
+        height: 250px;
+      }
+      .about-dev-section,
+      .contact-section {
+        margin: 0 20px 20px;
+        padding: 30px 20px;
+      }
     }
     
     @media (max-width: 480px) {
@@ -625,6 +700,10 @@
         left: 0;
         justify-content: center;
         margin-bottom: 15px;
+      }
+      .video-container iframe,
+      .video-placeholder {
+        height: 200px;
       }
     }
   </style>
@@ -649,7 +728,7 @@
       </div>
     </div>
 
-        <div class="content-section">
+    <div class="content-section">
       <div class="section-title" data-translate="aboutTitle">About the App</div>
       <p data-translate="aboutText"><strong>Personality Compass</strong> is your personal guide in the world of self-discovery. The app combines several proven psychological models for deep personality analysis and personal growth. Everything works offline - your data stays completely private on your device.</p>
 
@@ -673,19 +752,25 @@
       </div>
     </div>
 
-    <!-- Support Developer Button Section -->
-    <div class="support-section" style="text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #f8f9ff 0%, #e8eaff 100%); margin: 0 30px 30px; border-radius: 16px; border: 2px solid #667eea;">
-  <h3 style="color: #667eea; margin-bottom: 15px; font-size: 24px;" data-translate="supportTitle">❤️ Support the Developer</h3>
-  <p style="color: #666; margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto;" data-translate="supportSubtitle">
-    Help improve Personality Compass and support future development
-  </p>
-  <a href="support.html" class="support-btn" onclick="gtag('event', 'support_click', {'event_category': 'navigation'})" 
-     style="display: inline-block; background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%); color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: bold; font-size: 16px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);"
-     data-translate="supportButton">
-    ❤️ Support Developer
-  </a>
-  <p style="margin-top: 10px; color: #666; font-size: 14px;" data-translate="supportFooter">Your contribution makes a difference</p>
-</div>
+    <!-- Video Section -->
+    <div class="content-section" style="text-align: center;">
+      <div class="section-title">App Preview</div>
+      <p>Watch a quick preview of Personality Compass in action</p>
+      
+      <div class="video-container">
+        <!-- YouTube embed with privacy-enhanced mode -->
+        <iframe 
+          src="https://www.youtube-nocookie.com/embed/1m7s4MCaExk?controls=1&modestbranding=1&rel=0&showinfo=0" 
+          title="Personality Compass App Preview"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      
+      <p style="margin-top: 15px; color: #666; font-size: 14px;">
+        The app provides offline personality analysis with complete privacy protection
+      </p>
+    </div>
 
     <!-- Секция со скриншотами -->
     <div class="content-section screenshots-section">
@@ -871,6 +956,41 @@
         "Know yourself - and you will know the entire universe"
       </div>
     </div>
+
+    <!-- About Developer Section -->
+    <div class="about-dev-section">
+      <h3 style="color: #667eea; margin-bottom: 15px; font-size: 24px;" data-translate="aboutDevTitle">About Developer</h3>
+      <p style="color: #666; margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto;" data-translate="aboutDevText">
+        Personality Compass is developed by a passionate developer dedicated to creating privacy-focused applications for personal growth and self-discovery.
+      </p>
+      <a href="https://ferrosergio-dev.github.io/my-portfolio/" class="portfolio-btn" target="_blank" onclick="gtag('event', 'portfolio_click', {'event_category': 'navigation'})">
+        <span data-translate="portfolioButton">👨‍💻 View Portfolio</span>
+      </a>
+    </div>
+
+    <!-- Support Developer Section -->
+    <div class="support-section" style="text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #f8f9ff 0%, #e8eaff 100%); margin: 0 30px 30px; border-radius: 16px; border: 2px solid #667eea;">
+      <h3 style="color: #667eea; margin-bottom: 15px; font-size: 24px;" data-translate="supportTitle">❤️ Support the Developer</h3>
+      <p style="color: #666; margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto;" data-translate="supportSubtitle">
+        Help improve Personality Compass and support future development
+      </p>
+      <a href="support.html" class="support-btn" onclick="gtag('event', 'support_click', {'event_category': 'navigation'})" 
+         style="display: inline-block; background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%); color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: bold; font-size: 16px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);"
+         data-translate="supportButton">
+        ❤️ Support Developer
+      </a>
+      <p style="margin-top: 10px; color: #666; font-size: 14px;" data-translate="supportFooter">Your contribution makes a difference</p>
+    </div>
+
+    <!-- Get In Touch Section -->
+    <div class="contact-section">
+      <h3 style="color: #667eea; margin-bottom: 15px; font-size: 24px;" data-translate="getInTouch">Get In Touch</h3>
+      <p style="color: #666; margin-bottom: 20px;" data-translate="contactText">
+        For questions, feedback or support, please contact us
+      </p>
+      <a href="mailto:support@personalitycompass.app" class="contact-email" data-translate="contactEmail">support@personalitycompass.app</a>
+    </div>
+
   </div>
 </body>
 </html>
