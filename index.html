@@ -3,7 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personality Compass - Self-Discovery App</title>
+  <title>Personality Compass App - Official Mobile Application | MindPath, Enneagram Tests</title>
+
+  <!-- Мультиязычные мета-теги -->
+  <!-- Английский (по умолчанию) -->
+  <meta name="description" content="Personality Compass App - Official mobile application for personality analysis. Discover your true self with MindPath 16, 5D, Enneagram tests. 100% offline, no data collection, privacy-focused.">
+  <meta name="keywords" content="personality compass app, personality test, MindPath 16, Enneagram, offline psychology app, self-discovery, personality analysis, personal growth">
+  <link rel="canonical" href="https://ferrosergio-dev.github.io/personality-compass-app/" hreflang="en">
+  <link rel="alternate" hreflang="ru" href="https://ferrosergio-dev.github.io/personality-compass-app/">
+  <link rel="alternate" hreflang="et" href="https://ferrosergio-dev.github.io/personality-compass-app/">
+  <link rel="alternate" hreflang="x-default" href="https://ferrosergio-dev.github.io/personality-compass-app/">
+
+  <!-- Open Graph для соцсетей (универсальные) -->
+  <meta property="og:title" content="Personality Compass App - Official Self-Discovery Tool">
+  <meta property="og:description" content="Discover your personality type with our privacy-focused mobile app. Available on AppStore, Huawei AppGallery, RuStore.">
+  <meta property="og:url" content="https://ferrosergio-dev.github.io/personality-compass-app/">
+  <meta property="og:image" content="https://ferrosergio-dev.github.io/personality-compass-app/images/01.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ru_RU">
+  <meta property="og:locale:alternate" content="et_EE">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Personality Compass App">
+  <meta name="twitter:description" content="Your personal guide to self-discovery. Offline personality analysis with complete privacy.">
+  <meta name="twitter:image" content="https://ferrosergio-dev.github.io/personality-compass-app/images/01.png">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XCK6M7C5DG"></script>
@@ -196,18 +221,81 @@
       }
     };
 
+    // Мета-теги для разных языков
+    const metaTranslations = {
+      en: {
+        description: "Personality Compass App - Official mobile application for personality analysis. Discover your true self with MindPath 16, 5D, Enneagram tests. 100% offline, no data collection, privacy-focused.",
+        keywords: "personality compass app, personality test, MindPath 16, Enneagram, offline psychology app, self-discovery, personality analysis, personal growth",
+        ogTitle: "Personality Compass App - Official Self-Discovery Tool",
+        ogDescription: "Discover your personality type with our privacy-focused mobile app. Available on AppStore, Huawei AppGallery, RuStore.",
+        twitterTitle: "Personality Compass App",
+        twitterDescription: "Your personal guide to self-discovery. Offline personality analysis with complete privacy."
+      },
+      ru: {
+        description: "Приложение Personality Compass - официальное мобильное приложение для анализа личности. Узнайте свое истинное я с помощью тестов MindPath 16, 5D, Эннеаграмма. 100% оффлайн, нет сбора данных, конфиденциальность.",
+        keywords: "приложение личностный компас, тест личности, MindPath 16, Эннеаграмма, оффлайн психология приложение, самопознание, анализ личности, личностный рост",
+        ogTitle: "Приложение Personality Compass - Официальный Инструмент Самопознания",
+        ogDescription: "Узнайте свой тип личности с нашим приватным мобильным приложением. Доступно в AppStore, Huawei AppGallery, RuStore.",
+        twitterTitle: "Приложение Personality Compass",
+        twitterDescription: "Ваш персональный гид в самопознании. Оффлайн анализ личности с полной конфиденциальностью."
+      },
+      et: {
+        description: "Personality Compass rakendus - ametlik mobiilirakendus isiksuse analüüsiks. Avasta oma tõeline mina MindPath 16, 5D, Enneagrammi testidega. 100% võrguühenduseta, andmete kogumist pole, privaatsus.",
+        keywords: "isiksuse kompassi rakendus, isiksuse test, MindPath 16, Enneagramm, võrguühenduseta psühholoogia rakendus, enesetundmine, isiksuse analüüs, isiklik kasv",
+        ogTitle: "Personality Compass Rakendus - Ametlik Enesetundmise Tööriist",
+        ogDescription: "Tutvu oma isiksuse tüübiga meie privaatsusele keskendunud mobiilirakendusega. Saadaval AppStore'is, Huawei AppGallery's, RuStore'is.",
+        twitterTitle: "Personality Compass Rakendus",
+        twitterDescription: "Sinu isiklik teejuht enesetundmisse. Võrguühenduseta isiksuse analüüs täieliku privaatsusega."
+      }
+    };
+
+    function updateMetaTags(lang) {
+      const t = metaTranslations[lang];
+      if (!t) return;
+      
+      // Обновляем meta-теги
+      const descMeta = document.querySelector('meta[name="description"]');
+      const keywordsMeta = document.querySelector('meta[name="keywords"]');
+      const ogTitleMeta = document.querySelector('meta[property="og:title"]');
+      const ogDescMeta = document.querySelector('meta[property="og:description"]');
+      const twitterTitleMeta = document.querySelector('meta[name="twitter:title"]');
+      const twitterDescMeta = document.querySelector('meta[name="twitter:description"]');
+      
+      if (descMeta) descMeta.content = t.description;
+      if (keywordsMeta) keywordsMeta.content = t.keywords;
+      if (ogTitleMeta) ogTitleMeta.content = t.ogTitle;
+      if (ogDescMeta) ogDescMeta.content = t.ogDescription;
+      if (twitterTitleMeta) twitterTitleMeta.content = t.twitterTitle;
+      if (twitterDescMeta) twitterDescMeta.content = t.twitterDescription;
+    }
+
     function changeLanguage(lang) {
       currentLanguage = lang;
+      
+      // Обновление мета-тегов
+      updateMetaTags(lang);
       updateContent();
+      
       // Update active button
       document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.remove('active');
       });
       document.querySelector(`.lang-btn[onclick="changeLanguage('${lang}')"]`).classList.add('active');
+      
+      // Сохраняем выбор языка в URL без перезагрузки
+      const url = new URL(window.location);
+      if (lang === 'en') {
+        url.searchParams.delete('lang');
+      } else {
+        url.searchParams.set('lang', lang);
+      }
+      window.history.replaceState({}, '', url);
     }
 
     function updateContent() {
       const t = translations[currentLanguage];
+      if (!t) return;
+      
       document.querySelector('.app-title').textContent = t.title;
       document.querySelector('.app-subtitle').textContent = t.subtitle;
       document.querySelectorAll('[data-translate]').forEach(element => {
@@ -225,16 +313,27 @@
       }
       
       // Update contact email
-      const contactEmail = document.querySelector('.contact-email');
-      if (contactEmail) {
-        contactEmail.textContent = t.contactEmail;
-        contactEmail.href = `mailto:${t.contactEmail}`;
+      const contactBtn = document.querySelector('.contact-btn');
+      if (contactBtn) {
+        contactBtn.href = `mailto:${t.contactEmail}`;
       }
     }
 
     // Initialize
     document.addEventListener('DOMContentLoaded', function() {
-      updateContent();
+      // Определяем язык по умолчанию из URL или браузера
+      const urlParams = new URLSearchParams(window.location.search);
+      const langParam = urlParams.get('lang');
+      const browserLang = navigator.language.substring(0, 2);
+      
+      let defaultLang = 'en';
+      if (langParam && ['en', 'ru', 'et'].includes(langParam)) {
+        defaultLang = langParam;
+      } else if (['ru', 'et'].includes(browserLang)) {
+        defaultLang = browserLang;
+      }
+      
+      changeLanguage(defaultLang);
     });
   </script>
   
@@ -902,7 +1001,7 @@
           </div>
         </div>
 
-        <!-- Google Play -->
+                <!-- Google Play -->
         <!--
         <div class="store-card">
           <div class="store-logo">
@@ -975,8 +1074,7 @@
         Help improve Personality Compass and support future development
       </p>
       <a href="support.html" class="support-btn" onclick="gtag('event', 'support_click', {'event_category': 'navigation'})" 
-         style="display: inline-block; background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%); color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: bold; font-size: 16px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);"
-         data-translate="supportButton">
+         style="display: inline-block; background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%); color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: bold; font-size: 16px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);">
         ❤️ Support Developer
       </a>
       <p style="margin-top: 10px; color: #666; font-size: 14px;" data-translate="supportFooter">Your contribution makes a difference</p>
@@ -995,7 +1093,6 @@
         📧 Contact Us
       </a>
     </div>
-
   </div>
 </body>
 </html>
