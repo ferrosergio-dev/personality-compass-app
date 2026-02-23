@@ -339,6 +339,21 @@
             color: white;
         }
         
+        /* НОВЫЕ СТИЛИ для карточек обратной связи */
+        .feedback-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .feedback-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.15);
+            border-color: #667eea !important;
+        }
+        
+        .feedback-card a:hover {
+            text-decoration: underline;
+        }
+        
         .footer {
             text-align: center;
             padding: 20px;
@@ -614,45 +629,45 @@ flutter test
             
             <h2>📬 Share Your Feedback</h2>
 
-<p>I'd love to hear from you! Whether you have questions about the development, suggestions for new features, or just want to share your experience with the app, here's how you can reach me:</p>
+            <p>I'd love to hear from you! Whether you have questions about the development, suggestions for new features, or just want to share your experience with the app, here's how you can reach me:</p>
 
-<div class="feedback-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0;">
-    
-    <!-- Email -->
-    <div class="feedback-card" style="background: #f8f9ff; padding: 25px; border-radius: 12px; text-align: center; border: 2px solid #e0e0e0; transition: transform 0.3s ease;">
-        <div style="font-size: 48px; margin-bottom: 15px;">📧</div>
-        <h3 style="color: #667eea; margin-bottom: 10px;">Email</h3>
-        <p style="margin-bottom: 15px;">For questions, feedback, or support</p>
-        <a href="mailto:info@personality-compass.app" style="color: #667eea; font-weight: bold; text-decoration: none; word-break: break-all;">info@personality-compass.app</a>
-    </div>
-    
-    <!-- GitHub -->
-    <div class="feedback-card" style="background: #f8f9ff; padding: 25px; border-radius: 12px; text-align: center; border: 2px solid #e0e0e0; transition: transform 0.3s ease;">
-        <div style="font-size: 48px; margin-bottom: 15px;">🐙</div>
-        <h3 style="color: #667eea; margin-bottom: 10px;">GitHub</h3>
-        <p style="margin-bottom: 15px;">Follow development, report issues</p>
-        <a href="https://github.com/ferrosergio-dev/personality-compass-app" target="_blank" style="color: #667eea; font-weight: bold; text-decoration: none;">ferrosergio-dev</a>
-    </div>
-    
-    <!-- Product Hunt (опционально) -->
-    <div class="feedback-card" style="background: #f8f9ff; padding: 25px; border-radius: 12px; text-align: center; border: 2px solid #e0e0e0; transition: transform 0.3s ease;">
-        <div style="font-size: 48px; margin-bottom: 15px;">🚀</div>
-        <h3 style="color: #667eea; margin-bottom: 10px;">Product Hunt</h3>
-        <p style="margin-bottom: 15px;">Leave a review or upvote</p>
-        <a href="https://www.producthunt.com/products/personality-compass" target="_blank" style="color: #667eea; font-weight: bold; text-decoration: none;">Personality Compass</a>
-    </div>
-    
-</div>
+            <div class="feedback-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0;">
+                
+                <!-- Email -->
+                <div class="feedback-card" style="background: #f8f9ff; padding: 25px; border-radius: 12px; text-align: center; border: 2px solid #e0e0e0;">
+                    <div style="font-size: 48px; margin-bottom: 15px;">📧</div>
+                    <h3 style="color: #667eea; margin-bottom: 10px;">Email</h3>
+                    <p style="margin-bottom: 15px;">For questions, feedback, or support</p>
+                    <a href="mailto:info@personality-compass.app" style="color: #667eea; font-weight: bold; text-decoration: none; word-break: break-all;">info@personality-compass.app</a>
+                </div>
+                
+                <!-- GitHub (исправленная ссылка) -->
+                <div class="feedback-card" style="background: #f8f9ff; padding: 25px; border-radius: 12px; text-align: center; border: 2px solid #e0e0e0;">
+                    <div style="font-size: 48px; margin-bottom: 15px;">🐙</div>
+                    <h3 style="color: #667eea; margin-bottom: 10px;">GitHub</h3>
+                    <p style="margin-bottom: 15px;">Follow my work, contact me</p>
+                    <a href="https://github.com/ferrosergio-dev" target="_blank" style="color: #667eea; font-weight: bold; text-decoration: none;">github.com/ferrosergio-dev</a>
+                </div>
+                
+                <!-- Product Hunt -->
+                <div class="feedback-card" style="background: #f8f9ff; padding: 25px; border-radius: 12px; text-align: center; border: 2px solid #e0e0e0;">
+                    <div style="font-size: 48px; margin-bottom: 15px;">🚀</div>
+                    <h3 style="color: #667eea; margin-bottom: 10px;">Product Hunt</h3>
+                    <p style="margin-bottom: 15px;">Leave a review or upvote</p>
+                    <a href="https://www.producthunt.com/products/personality-compass" target="_blank" style="color: #667eea; font-weight: bold; text-decoration: none;">Personality Compass</a>
+                </div>
+                
+            </div>
 
-<div class="note-box" style="background: #fff8e1; border-left: 4px solid #ffc107; padding: 20px; border-radius: 12px; margin: 30px 0;">
-    <p style="margin: 0;"><strong>💬 Questions for the community:</strong></p>
-    <ul style="margin-top: 10px;">
-        <li>Have you built offline-first apps? What were your biggest challenges?</li>
-        <li>Would you use a tool like this for team-building, coaching, or personal growth?</li>
-        <li>How important is privacy to you when using personality tests?</li>
-    </ul>
-    <p style="margin-top: 15px; font-style: italic;">Share your thoughts via email or GitHub — I read and respond to every message!</p>
-</div>
+            <div class="note-box" style="background: #fff8e1; border-left: 4px solid #ffc107; padding: 20px; border-radius: 12px; margin: 30px 0;">
+                <p style="margin: 0;"><strong>💬 Questions for the community:</strong></p>
+                <ul style="margin-top: 10px;">
+                    <li>Have you built offline-first apps? What were your biggest challenges?</li>
+                    <li>Would you use a tool like this for team-building, coaching, or personal growth?</li>
+                    <li>How important is privacy to you when using personality tests?</li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic;">Share your thoughts via email or GitHub — I read and respond to every message!</p>
+            </div>
             
             <h2>🔗 Download Personality Compass</h2>
             
