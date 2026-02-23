@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Personality Compass | Self-Discovery Articles</title>
+    <meta name="description" content="Read articles about personality types, Enneagram, MindPath 16, and self-discovery tips from Personality Compass.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://personality-compass.app/blog/en/">
+    
+    <!-- Hreflang for all languages -->
+    <link rel="alternate" hreflang="en" href="https://personality-compass.app/blog/en/" />
+    <link rel="alternate" hreflang="ru" href="https://personality-compass.app/blog/ru/" />
+    <link rel="alternate" hreflang="et" href="https://personality-compass.app/blog/et/" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Personality Compass Blog">
+    <meta property="og:description" content="Articles about personality types, self-discovery, and personal growth">
+    <meta property="og:url" content="https://personality-compass.app/blog/en/">
+    <meta property="og:image" content="https://personality-compass.app/images/blog-header.jpg">
+    <meta property="og:type" content="website">
+    
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::before {
+            content: "📚";
+            font-size: 60px;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            opacity: 0.3;
+        }
+        
+        .language-links {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            display: flex;
+            gap: 8px;
+            z-index: 20;
+        }
+        
+        .lang-link {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            text-decoration: none;
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .lang-link:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        
+        .lang-link.active {
+            background: white;
+            color: #667eea;
+            border-color: white;
+        }
+        
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0 30px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 15px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-3px);
+            border-color: rgba(255,255,255,0.6);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .nav-link.active {
+            background: white;
+            color: #667eea;
+            border-color: white;
+        }
+        
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .blog-posts {
+            display: grid;
+            gap: 30px;
+        }
+        
+        .post-card {
+            background: #f8f9ff;
+            border-radius: 16px;
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid #667eea;
+        }
+        
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.15);
+        }
+        
+        .post-meta {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .post-category {
+            background: #e3f2fd;
+            color: #2196f3;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .post-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .post-title a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .post-title a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+        
+        .post-excerpt {
+            color: #444;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .read-more {
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 0;
+            position: relative;
+        }
+        
+        .read-more::after {
+            content: '→';
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+        
+        .read-more:hover::after {
+            transform: translateX(5px);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 20px;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f5f7ff;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 28px; }
+            .header p { font-size: 16px; }
+            .content { padding: 30px 20px; }
+            .post-card { padding: 20px; }
+            .post-title { font-size: 20px; }
+            .language-links {
+                position: relative;
+                top: 0;
+                left: 0;
+                justify-content: center;
+                margin-bottom: 15px;
+            }
+            .nav-menu {
+                gap: 10px;
+                margin: 15px 0 25px;
+            }
+            .nav-link {
+                padding: 6px 15px;
+                font-size: 13px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-menu {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+            .nav-link {
+                width: 80%;
+                text-align: center;
+            }
+            .post-meta {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="language-links">
+                <a href="/blog/en/" class="lang-link active">EN</a>
+                <a href="/blog/ru/" class="lang-link">RU</a>
+                <a href="/blog/et/" class="lang-link">ET</a>
+            </div>
+            
+            <div class="nav-menu">
+                <a href="/en/" class="nav-link">Home</a>
+                <a href="/blog/en/" class="nav-link active">Blog</a>
+                <a href="/en/policy.html" class="nav-link">Privacy</a>
+                <a href="/en/#download" class="nav-link">Download</a>
+            </div>
+            
+            <h1>🧭 Personality Compass Blog</h1>
+            <p>Articles about personality types, self-discovery, and personal growth</p>
+        </div>
+        
+        <div class="content">
+            <div class="blog-posts">
+                <!-- Статья 1: MindPath 16 Guide -->
+                <article class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">Personality Types</span>
+                        <span>December 13, 2025</span>
+                        <span>8 min read</span>
+                    </div>
+                    <h2 class="post-title">
+                        <a href="mindpath16-guide.html">Complete Guide to MindPath 16 Personality Types</a>
+                    </h2>
+                    <div class="post-excerpt">
+                        Discover the 16 personality types of MindPath 16, understand their characteristics, strengths, and growth paths. Learn how this unique system helps you understand yourself and others better.
+                    </div>
+                    <a href="mindpath16-guide.html" class="read-more">Read Article</a>
+                </article>
+                
+                <!-- Статья 2: Enneagram Guide -->
+                <article class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">Enneagram</span>
+                        <span>December 10, 2025</span>
+                        <span>10 min read</span>
+                    </div>
+                    <h2 class="post-title">
+                        <a href="enneagram-types.html">Enneagram Explained: 9 Personality Types with Dynamics</a>
+                    </h2>
+                    <div class="post-excerpt">
+                        Deep dive into the Enneagram system. Learn about each of the 9 types, their core motivations, fears, and how they interact under stress and growth. Includes practical tips for personal development.
+                    </div>
+                    <a href="enneagram-types.html" class="read-more">Read Article</a>
+                </article>
+                
+                <!-- Статья 3: Test Tips -->
+                <article class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">Tips & Advice</span>
+                        <span>December 5, 2025</span>
+                        <span>6 min read</span>
+                    </div>
+                    <h2 class="post-title">
+                        <a href="personality-test-tips.html">How to Get Accurate Results from Personality Tests</a>
+                    </h2>
+                    <div class="post-excerpt">
+                        Tips and strategies to ensure your personality test results are accurate and meaningful. Learn about common pitfalls, how to avoid them, and how to interpret your results for maximum benefit.
+                    </div>
+                    <a href="personality-test-tips.html" class="read-more">Read Article</a>
+                </article>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="/en/" class="back-link">← Back to Main Page</a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Personality Compass. All rights reserved.</p>
+            <p>Contact: <a href="mailto:info@personality-compass.app">info@personality-compass.app</a></p>
+        </div>
+    </div>
+</body>
+</html>
