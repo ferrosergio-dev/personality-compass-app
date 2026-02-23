@@ -63,8 +63,6 @@
     </script>
     
     <style>
-        /* ВАШ СТИЛЬ ИЗ ПРЕДЫДУЩЕГО КОДА */
-        /* Скопируйте весь стиль из вашего index.html сюда */
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -78,9 +76,50 @@
         .container { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); margin: 20px 0; }
         .header { text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; position: relative; }
         .header::before { content: "🧭"; font-size: 60px; position: absolute; top: 20px; right: 30px; opacity: 0.3; }
-        .language-links { position: absolute; top: 20px; left: 30px; display: flex; gap: 8px; }
+        .language-links { position: absolute; top: 20px; left: 30px; display: flex; gap: 8px; z-index: 20; }
         .lang-link { background: rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; text-decoration: none; border: 2px solid rgba(255,255,255,0.3); transition: all 0.3s ease; }
         .lang-link:hover { background: rgba(255,255,255,0.3); transform: translateY(-2px); }
+        
+        /* Новое навигационное меню */
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0 30px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 10;
+        }
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 15px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+        .nav-link:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-3px);
+            border-color: rgba(255,255,255,0.6);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .nav-link.active {
+            background: white;
+            color: #667eea;
+            border-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .nav-link.active:hover {
+            background: white;
+            color: #764ba2;
+        }
+        
         .app-title { font-size: 36px; font-weight: bold; margin-bottom: 10px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
         .app-subtitle { font-size: 20px; opacity: 0.9; margin-bottom: 20px; }
         .tags { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
@@ -122,10 +161,13 @@
         .stat-number { font-size: 32px; font-weight: bold; color: #667eea; margin-bottom: 5px; }
         .stat-label { font-size: 14px; color: #666; }
         .quote { font-style: italic; text-align: center; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 16px; margin: 30px 0; font-size: 18px; }
-        .nav-links { text-align: center; margin: 20px 0; }
-        .nav-links a { color: #667eea; text-decoration: none; margin: 0 15px; font-weight: 500; }
-        .nav-links a:hover { text-decoration: underline; }
+        
+        /* Скрываем старую навигацию */
+        .nav-links { display: none; }
+        
         .footer { text-align: center; padding: 20px; background: #f5f7ff; color: #666; }
+        
+        /* Медиа-запросы для мобильных */
         @media (max-width: 768px) {
             .app-title { font-size: 28px; }
             .app-subtitle { font-size: 18px; }
@@ -135,6 +177,35 @@
             .qr-code img { height: 70px; width: 70px; }
             .header::before { font-size: 40px; top: 10px; right: 20px; }
             .video-container iframe { height: 250px; }
+            .nav-menu {
+                gap: 10px;
+                margin: 15px 0 25px;
+            }
+            .nav-link {
+                padding: 6px 15px;
+                font-size: 13px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .language-links {
+                position: relative;
+                top: 0;
+                left: 0;
+                justify-content: center;
+                margin-bottom: 15px;
+            }
+            .nav-menu {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+                width: 100%;
+            }
+            .nav-link {
+                width: 80%;
+                text-align: center;
+                padding: 10px;
+            }
         }
     </style>
 </head>
@@ -145,6 +216,14 @@
                 <a href="/en/" class="lang-link">EN</a>
                 <a href="/ru/" class="lang-link">RU</a>
                 <a href="/et/" class="lang-link">ET</a>
+            </div>
+            
+            <!-- НОВОЕ: Красивое навигационное меню -->
+            <div class="nav-menu">
+                <a href="/en/" class="nav-link active">Home</a>
+                <a href="/blog/en/" class="nav-link">Blog</a>
+                <a href="/en/policy.html" class="nav-link">Privacy</a>
+                <a href="#download" class="nav-link">Download</a>
             </div>
             
             <h1 class="app-title">🧭 Personality Compass</h1>
@@ -161,12 +240,8 @@
             <div class="section-title">About the App</div>
             <p><strong>Personality Compass</strong> is your personal guide in the world of self-discovery. The app combines several proven psychological models for deep personality analysis and personal growth. Everything works offline - your data stays completely private on your device.</p>
 
-            <div class="nav-links">
-                <a href="policy.html">Privacy Policy</a>
-                <a href="/blog/en/">Blog</a>
-                <a href="#download">Download</a>
-            </div>
-
+            <!-- Старая навигация удалена, но оставим ссылку на policy в тексте при необходимости -->
+            
             <div class="stats-grid">
                 <div class="stat-card"><div class="stat-number">4</div><div class="stat-label">Psychological Tests</div></div>
                 <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Languages</div></div>
