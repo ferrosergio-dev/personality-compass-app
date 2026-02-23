@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personality Compass - Offline Personality Test App | Self-Discovery Tool</title>
+    <title>Personality Compass (Личностный Компас) - тест личности offline | Психологические тесты MindPath, Эннеаграмма</title>
     
-    <!-- Важные SEO мета-теги -->
-    <meta name="description" content="Personality Compass - Official mobile app for personality analysis. Discover your true self with MindPath 16, 5D, Enneagram tests. 100% offline, no data collection, complete privacy.">
-    <meta name="keywords" content="personality compass app, personality test, MindPath 16, Enneagram, offline psychology app, self-discovery, personality analysis, personal growth">
+    <!-- Важные SEO мета-теги для русского языка -->
+    <meta name="description" content="Личностный Компас — официальное мобильное приложение для анализа личности. Узнайте себя с тестами MindPath 16, 5D, Эннеаграмма. 100% оффлайн, без сбора данных, полная конфиденциальность.">
+    <meta name="keywords" content="личностный компас, тест личности, психологические тесты, определить свой тип личности, MindPath 16, Эннеаграмма тест, оффлайн приложение психология, самопознание, анализ личности, личностный рост, тест на тип личности бесплатно, психология личности, узнать себя">
     
     <!-- Канонический URL -->
-    <link rel="canonical" href="https://personality-compass.app/en/">
+    <link rel="canonical" href="https://personality-compass.app/ru/">
     
     <!-- Hreflang для всех языков -->
     <link rel="alternate" hreflang="en" href="https://personality-compass.app/en/" />
@@ -18,22 +18,25 @@
     <link rel="alternate" hreflang="et" href="https://personality-compass.app/et/" />
     <link rel="alternate" hreflang="x-default" href="https://personality-compass.app/en/" />
     
-    <!-- Open Graph -->
-    <meta property="og:title" content="Personality Compass - Offline Personality Test App">
-    <meta property="og:description" content="Discover your personality type with our privacy-focused mobile app. Available on AppStore, Google Play, Huawei AppGallery, RuStore.">
-    <meta property="og:url" content="https://personality-compass.app/en/">
+    <!-- Open Graph для соцсетей (русский) -->
+    <meta property="og:title" content="Личностный Компас - тест личности оффлайн">
+    <meta property="og:description" content="Узнайте свой тип личности с приложением, которое заботится о вашей приватности. Доступно в AppStore, Google Play, Huawei AppGallery, RuStore.">
+    <meta property="og:url" content="https://personality-compass.app/ru/">
     <meta property="og:image" content="https://personality-compass.app/images/01.png">
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="en_US">
+    <meta property="og:locale" content="ru_RU">
     
-    <!-- Twitter -->
+    <!-- Twitter (можно оставить на английском или перевести) -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Personality Compass App">
-    <meta name="twitter:description" content="Your personal guide to self-discovery. Offline personality analysis with complete privacy.">
+    <meta name="twitter:title" content="Личностный Компас">
+    <meta name="twitter:description" content="Ваш личный гид в самопознании. Оффлайн анализ личности с полной конфиденциальностью.">
     <meta name="twitter:image" content="https://personality-compass.app/images/01.png">
     
-    <!-- Google Verification -->
+    <!-- Google Verification (тот же код) -->
     <meta name="google-site-verification" content="EZgWZ-VYfZw0djDXYTe9dQQemRgwp7ZYCvSMU1RIi4" />
+    
+    <!-- Yandex Verification (добавьте если есть) 
+    <meta name="yandex-verification" content="ваш_код" /> -->
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XCK6M7C5DG"></script>
@@ -44,7 +47,7 @@
         gtag('config', 'G-XCK6M7C5DG');
     </script>
     
-    <!-- Schema.org markup -->
+    <!-- Schema.org markup для мобильного приложения (билингва, но оставим на английском для Google) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -58,13 +61,12 @@
             "price": "0",
             "priceCurrency": "USD"
         },
-        "url": "https://personality-compass.app/en/"
+        "url": "https://personality-compass.app/ru/",
+        "inLanguage": "ru"
     }
     </script>
     
     <style>
-        /* ВАШ СТИЛЬ ИЗ ПРЕДЫДУЩЕГО КОДА */
-        /* Скопируйте весь стиль из вашего index.html сюда */
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -84,7 +86,7 @@
         .app-title { font-size: 36px; font-weight: bold; margin-bottom: 10px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
         .app-subtitle { font-size: 20px; opacity: 0.9; margin-bottom: 20px; }
         .tags { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-        .tag { background: rgba(255,255,255,0.2); color: white; padding: 8px 16px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .tag { background: rgba(255,255,255,0.2); color: white; padding: 8px 16px; border-radius: 20px; font-size: 14px; font-weight: bold; backdrop-filter: blur(10px); }
         .content-section { padding: 30px; }
         .section-title { font-size: 24px; font-weight: bold; color: #667eea; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
         .section-title::before { content: "•"; color: #764ba2; font-size: 30px; }
@@ -147,108 +149,110 @@
                 <a href="/et/" class="lang-link">ET</a>
             </div>
             
-            <h1 class="app-title">🧭 Personality Compass</h1>
-            <div class="app-subtitle">Your Guide to Self-Discovery</div>
+            <h1 class="app-title">🧭 Личностный Компас</h1>
+            <div class="app-subtitle">Твой гид в мире самопознания</div>
             <div class="tags">
-                <div class="tag">100% Offline</div>
-                <div class="tag">No Registration</div>
-                <div class="tag">Complete Privacy</div>
-                <div class="tag">Free</div>
+                <div class="tag">100% Оффлайн</div>
+                <div class="tag">Без регистрации</div>
+                <div class="tag">Полная приватность</div>
+                <div class="tag">Бесплатно</div>
+                <div class="tag">Психологические тесты</div>
+                <div class="tag">Эннеаграмма</div>
             </div>
         </div>
 
         <div class="content-section">
-            <div class="section-title">About the App</div>
-            <p><strong>Personality Compass</strong> is your personal guide in the world of self-discovery. The app combines several proven psychological models for deep personality analysis and personal growth. Everything works offline - your data stays completely private on your device.</p>
+            <div class="section-title">О приложении</div>
+            <p><strong>Личностный Компас</strong> — это ваш персональный гид в мире самопознания. Приложение объединяет несколько проверенных психологических моделей для глубокого анализа личности и личностного роста. <strong>Всё работает оффлайн</strong> — ваши данные остаются полностью приватными на вашем устройстве.</p>
 
             <div class="nav-links">
-                <a href="policy.html">Privacy Policy</a>
-                <a href="/blog/en/">Blog</a>
-                <a href="#download">Download</a>
+                <a href="policy.html">Политика конфиденциальности</a>
+                <a href="/blog/ru/">Блог</a>
+                <a href="#download">Скачать</a>
             </div>
 
             <div class="stats-grid">
-                <div class="stat-card"><div class="stat-number">4</div><div class="stat-label">Psychological Tests</div></div>
-                <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Languages</div></div>
-                <div class="stat-card"><div class="stat-number">100%</div><div class="stat-label">Offline</div></div>
-                <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">PDF Reports</div></div>
+                <div class="stat-card"><div class="stat-number">4</div><div class="stat-label">Психологических теста</div></div>
+                <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Языка</div></div>
+                <div class="stat-card"><div class="stat-number">100%</div><div class="stat-label">Оффлайн</div></div>
+                <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">PDF отчета</div></div>
             </div>
         </div>
 
         <!-- Video Section -->
         <div class="content-section" style="text-align: center;">
-            <div class="section-title">App Preview</div>
-            <p>Watch a quick preview of Personality Compass in action</p>
+            <div class="section-title">Видеообзор</div>
+            <p>Краткий обзор приложения Личностный Компас</p>
             <div class="video-container">
-                <iframe src="https://www.youtube-nocookie.com/embed/1m7s4MCaExk?controls=1&modestbranding=1&rel=0&showinfo=0" title="Personality Compass App Preview" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube-nocookie.com/embed/1m7s4MCaExk?controls=1&modestbranding=1&rel=0&showinfo=0" title="Личностный Компас - обзор приложения" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
 
         <!-- Screenshots -->
         <div class="content-section screenshots-section">
-            <div class="section-title">App Screenshots</div>
-            <p>Explore the beautiful and intuitive interface of Personality Compass</p>
+            <div class="section-title">Скриншоты приложения</div>
+            <p>Красивый и интуитивно понятный интерфейс</p>
             <div class="screenshots-grid">
-                <div class="screenshot-item"><img src="/images/01.png" alt="Personality Compass - Main Screen"></div>
-                <div class="screenshot-item"><img src="/images/02.png" alt="Personality Compass - Test Selection"></div>
-                <div class="screenshot-item"><img src="/images/03.png" alt="Personality Compass - MindPath 16 Test"></div>
-                <div class="screenshot-item"><img src="/images/04.png" alt="Personality Compass - Enneagram Results"></div>
-                <div class="screenshot-item"><img src="/images/05.png" alt="Personality Compass - PDF Reports"></div>
-                <div class="screenshot-item"><img src="/images/06.png" alt="Personality Compass - Personal Diary"></div>
+                <div class="screenshot-item"><img src="/images/01.png" alt="Личностный Компас - Главный экран"></div>
+                <div class="screenshot-item"><img src="/images/02.png" alt="Личностный Компас - Выбор теста"></div>
+                <div class="screenshot-item"><img src="/images/03.png" alt="Личностный Компас - Тест MindPath 16"></div>
+                <div class="screenshot-item"><img src="/images/04.png" alt="Личностный Компас - Результаты Эннеаграммы"></div>
+                <div class="screenshot-item"><img src="/images/05.png" alt="Личностный Компас - PDF отчеты"></div>
+                <div class="screenshot-item"><img src="/images/06.png" alt="Личностный Компас - Личный дневник"></div>
             </div>
         </div>
 
         <!-- Psychological Models -->
         <div class="content-section">
-            <div class="section-title">Psychological Models</div>
+            <div class="section-title">Психологические модели</div>
             <div class="psychological-models">
-                <div class="model-card"><div class="model-icon">🧠</div><div class="model-title">MindPath 16</div><div>16 personality types analysis</div></div>
-                <div class="model-card"><div class="model-icon">📊</div><div class="model-title">MindPath 5D</div><div>5-dimensional character assessment</div></div>
-                <div class="model-card"><div class="model-icon">🎯</div><div class="model-title">Enneagram</div><div>9 personality types with dynamics</div></div>
-                <div class="model-card"><div class="model-icon">📔</div><div class="model-title">Personal Diary</div><div>Track your growth journey</div></div>
+                <div class="model-card"><div class="model-icon">🧠</div><div class="model-title">MindPath 16</div><div>Анализ 16 типов личности</div></div>
+                <div class="model-card"><div class="model-icon">📊</div><div class="model-title">MindPath 5D</div><div>5-мерная оценка характера</div></div>
+                <div class="model-card"><div class="model-icon">🎯</div><div class="model-title">Эннеаграмма</div><div>9 типов личности с динамикой</div></div>
+                <div class="model-card"><div class="model-icon">📔</div><div class="model-title">Личный дневник</div><div>Отслеживайте свой рост</div></div>
             </div>
         </div>
 
         <!-- Features -->
         <div class="content-section">
-            <div class="section-title">Key Features</div>
+            <div class="section-title">Ключевые возможности</div>
             <div class="features-grid">
-                <div class="feature-card"><div class="feature-icon">🔒</div><div class="feature-title">Complete Privacy</div><div>100% offline operation. Your data never leaves your device.</div></div>
-                <div class="feature-card"><div class="feature-icon">📝</div><div class="feature-title">Deep Testing</div><div>Full versions (80+ questions) and quick versions (20 questions)</div></div>
-                <div class="feature-card"><div class="feature-icon">📄</div><div class="feature-title">Professional Reports</div><div>Generate detailed PDF reports with color diagrams</div></div>
-                <div class="feature-card"><div class="feature-icon">🌐</div><div class="feature-title">Multilingual</div><div>Available in English, Russian, and Estonian</div></div>
-                <div class="feature-card"><div class="feature-icon">📱</div><div class="feature-title">Modern Design</div><div>Beautiful, intuitive interface for all devices</div></div>
-                <div class="feature-card"><div class="feature-icon">⚡</div><div class="feature-title">Fast Performance</div><div>Smooth operation even on older devices</div></div>
+                <div class="feature-card"><div class="feature-icon">🔒</div><div class="feature-title">Полная приватность</div><div>100% оффлайн работа. Ваши данные никогда не покидают устройство.</div></div>
+                <div class="feature-card"><div class="feature-icon">📝</div><div class="feature-title">Глубокое тестирование</div><div>Полные версии (80+ вопросов) и быстрые версии (20 вопросов)</div></div>
+                <div class="feature-card"><div class="feature-icon">📄</div><div class="feature-title">Профессиональные отчеты</div><div>Детальные PDF отчеты с цветными диаграммами</div></div>
+                <div class="feature-card"><div class="feature-icon">🌐</div><div class="feature-title">Мультиязычность</div><div>Доступно на русском, английском и эстонском</div></div>
+                <div class="feature-card"><div class="feature-icon">📱</div><div class="feature-title">Современный дизайн</div><div>Красивый интерфейс для всех устройств</div></div>
+                <div class="feature-card"><div class="feature-icon">⚡</div><div class="feature-title">Быстрая работа</div><div>Плавная работа даже на старых устройствах</div></div>
             </div>
         </div>
 
         <!-- Privacy -->
         <div class="content-section">
-            <div class="section-title">Privacy & Security</div>
+            <div class="section-title">Приватность и безопасность</div>
             <div class="privacy-features">
-                <div class="privacy-item"><strong>No Internet Required</strong><br>Works completely offline</div>
-                <div class="privacy-item"><strong>No Data Collection</strong><br>We don't collect any personal information</div>
-                <div class="privacy-item"><strong>Local Storage</strong><br>All results saved only on your device</div>
-                <div class="privacy-item"><strong>No Registration</strong><br>Start using immediately after installation</div>
+                <div class="privacy-item"><strong>Интернет не требуется</strong><br>Работает полностью оффлайн</div>
+                <div class="privacy-item"><strong>Нет сбора данных</strong><br>Мы не собираем личную информацию</div>
+                <div class="privacy-item"><strong>Локальное хранение</strong><br>Все результаты только на вашем устройстве</div>
+                <div class="privacy-item"><strong>Без регистрации</strong><br>Начинайте сразу после установки</div>
             </div>
         </div>
 
         <!-- Download Section -->
         <div class="download-section" id="download">
-            <div class="download-title">Start Your Journey</div>
-            <div class="download-subtitle">Download Personality Compass today and begin your self-discovery adventure</div>
+            <div class="download-title">Начните свое путешествие</div>
+            <div class="download-subtitle">Скачайте Личностный Компас сегодня и начните путь к себе</div>
             
             <div class="stores-grid">
                 <!-- App Store -->
                 <div class="store-card">
                     <div class="store-logo">
                         <a href="https://apps.apple.com/app/personality-compass/id6756028837" target="_blank">
-                            <img src="/images/appstore-badge.svg" alt="Download on App Store">
+                            <img src="/images/appstore-badge.svg" alt="Скачать в App Store">
                         </a>
                     </div>
                     <div class="qr-code">
                         <a href="https://apps.apple.com/app/personality-compass/id6756028837" target="_blank">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fapps.apple.com%2Fee%2Fapp%2Fpersonality-compass%2Fid6756028837&size=80x80&margin=0" alt="QR App Store">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fapps.apple.com%2Fee%2Fapp%2Fpersonality-compass%2Fid6756028837&size=80x80&margin=0" alt="QR код App Store">
                         </a>
                     </div>
                 </div>
@@ -257,12 +261,12 @@
                 <div class="store-card">
                     <div class="store-logo">
                         <a href="https://play.google.com/store/apps/details?id=ee.personality.compass" target="_blank">
-                            <img src="/images/googleplay-badge.svg" alt="Get it on Google Play">
+                            <img src="/images/googleplay-badge.svg" alt="Скачать в Google Play">
                         </a>
                     </div>
                     <div class="qr-code">
                         <a href="https://play.google.com/store/apps/details?id=ee.personality.compass" target="_blank">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dee.personality.compass&size=80x80&margin=0" alt="QR Google Play">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dee.personality.compass&size=80x80&margin=0" alt="QR код Google Play">
                         </a>
                     </div>
                 </div>
@@ -271,12 +275,12 @@
                 <div class="store-card">
                     <div class="store-logo">
                         <a href="https://appgallery.huawei.com/app/C116153415" target="_blank">
-                            <img src="/images/appgallery-badge.svg" alt="Available on AppGallery">
+                            <img src="/images/appgallery-badge.svg" alt="Скачать в AppGallery">
                         </a>
                     </div>
                     <div class="qr-code">
                         <a href="https://appgallery.huawei.com/app/C116153415" target="_blank">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fappgallery.huawei.com%2Fapp%2FC116153415&size=80x80&margin=0" alt="QR AppGallery">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fappgallery.huawei.com%2Fapp%2FC116153415&size=80x80&margin=0" alt="QR код AppGallery">
                         </a>
                     </div>
                 </div>
@@ -285,30 +289,30 @@
                 <div class="store-card">
                     <div class="store-logo">
                         <a href="https://www.rustore.ru/catalog/app/ee.personality.compass.personality_compass" target="_blank">
-                            <img src="/images/rustore-badge.svg" alt="Available on RuStore">
+                            <img src="/images/rustore-badge.svg" alt="Скачать в RuStore">
                         </a>
                     </div>
                     <div class="qr-code">
                         <a href="https://www.rustore.ru/catalog/app/ee.personality.compass.personality_compass" target="_blank">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fwww.rustore.ru%2Fcatalog%2Fapp%2Fee.personality.compass.personality_compass&size=80x80&margin=0" alt="QR RuStore">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fwww.rustore.ru%2Fcatalog%2Fapp%2Fee.personality.compass.personality_compass&size=80x80&margin=0" alt="QR код RuStore">
                         </a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Important Notice -->
+        <!-- Важное предупреждение -->
         <div class="content-section">
-            <div class="section-title">Important Notice</div>
-            <p><strong>Personality Compass is for personal development and self-reflection purposes only.</strong> It is not a medical diagnostic tool and does not replace professional psychological counseling. Results should be considered as guidance for personal exploration.</p>
+            <div class="section-title">Важное предупреждение</div>
+            <p><strong>Личностный Компас предназначен только для личного развития и саморефлексии.</strong> Это не медицинский диагностический инструмент и не замена профессиональной психологической помощи. Результаты следует рассматривать как руководство для личного исследования.</p>
             
-            <div class="quote">"Know yourself - and you will know the entire universe"</div>
+            <div class="quote">«Познай себя — и ты познаешь весь мир»</div>
         </div>
 
         <!-- Footer -->
         <div class="footer">
-            <p>© 2025 Personality Compass. All rights reserved.</p>
-            <p>Contact: <a href="mailto:info@personality-compass.app">info@personality-compass.app</a></p>
+            <p>© 2025 Личностный Компас. Все права защищены.</p>
+            <p>Контакты: <a href="mailto:info@personality-compass.app">info@personality-compass.app</a></p>
         </div>
     </div>
 </body>
