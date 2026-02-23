@@ -1,32 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
     <!-- Главные страницы -->
-    <url><loc>https://personality-compass.app/en/</loc><lastmod>2025-12-13</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-    <url><loc>https://personality-compass.app/ru/</loc><lastmod>2025-12-13</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-    <url><loc>https://personality-compass.app/et/</loc><lastmod>2025-12-13</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+    <url>
+        <loc>https://personality-compass.app/en/</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://personality-compass.app/ru/</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://personality-compass.app/et/</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
     
     <!-- Политика конфиденциальности -->
-    <url><loc>https://personality-compass.app/en/policy.html</loc><lastmod>2025-12-13</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-    <url><loc>https://personality-compass.app/ru/policy.html</loc><lastmod>2025-12-13</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-    <url><loc>https://personality-compass.app/et/policy.html</loc><lastmod>2025-12-13</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+    <url>
+        <loc>https://personality-compass.app/en/policy.html</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://personality-compass.app/ru/policy.html</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://personality-compass.app/et/policy.html</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
     
     <!-- Блог (главные страницы блога) -->
-    <url><loc>https://personality-compass.app/blog/en/</loc><lastmod>2025-12-13</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://personality-compass.app/blog/ru/</loc><lastmod>2025-12-13</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://personality-compass.app/blog/et/</loc><lastmod>2025-12-13</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url>
+        <loc>https://personality-compass.app/blog/en/</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://personality-compass.app/blog/ru/</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://personality-compass.app/blog/et/</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
     
     <!-- Статьи блога на английском -->
-    <url><loc>https://personality-compass.app/blog/en/mindpath16-guide.html</loc><lastmod>2025-12-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://personality-compass.app/blog/en/enneagram-types.html</loc><lastmod>2025-12-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://personality-compass.app/blog/en/personality-test-tips.html</loc><lastmod>2025-12-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://personality-compass.app/blog/en/behind-the-build-personality-compass.html</loc><lastmod>2026-02-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url>
+        <loc>https://personality-compass.app/blog/en/mindpath16-guide.html</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://personality-compass.app/blog/en/enneagram-types.html</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://personality-compass.app/blog/en/personality-test-tips.html</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://personality-compass.app/blog/en/behind-the-build-personality-compass.html</loc>
+        <lastmod>2026-02-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
     
     <!-- Статьи блога на русском -->
-    <url><loc>https://personality-compass.app/blog/ru/mindpath16-polnoe-rukovodstvo.html</loc><lastmod>2025-12-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://personality-compass.app/blog/ru/kak-sozdavalsya-personality-compass.html</loc><lastmod>2026-02-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url>
+        <loc>https://personality-compass.app/blog/ru/mindpath16-polnoe-rukovodstvo.html</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
     
-    <!-- Эстонские статьи (когда создадите) -->
-    <url><loc>https://personality-compass.app/blog/et/mindpath16-juhend.html</loc><lastmod>2025-12-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://personality-compass.app/blog/et/kuidas-loodi-personality-compass.html</loc><lastmod>2026-02-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url>
+        <loc>https://personality-compass.app/blog/ru/kak-sozdavalsya-personality-compass.html</loc>
+        <lastmod>2026-02-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Статьи блога на эстонском -->
+    <url>
+        <loc>https://personality-compass.app/blog/et/mindpath16-juhend.html</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://personality-compass.app/blog/et/kuidas-loodi-personality-compass.html</loc>
+        <lastmod>2026-02-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Дополнительные статьи можно добавить здесь по мере публикации -->
     
 </urlset>
