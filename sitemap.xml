@@ -117,6 +117,20 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
+
+    <url>
+        <loc>https://personality-compass.app/blog/ru/tipy-enneagramy.html</loc>
+        <lastmod>2026-02-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://personality-compass.app/blog/ru/sovety-testirovanija-lichnosti.html</loc>
+        <lastmod>2025-12-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
     
     <url>
         <loc>https://personality-compass.app/blog/ru/kak-sozdavalsya-personality-compass.html</loc>
