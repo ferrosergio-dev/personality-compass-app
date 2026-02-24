@@ -48,21 +48,21 @@
     <!-- Блог (главные страницы блога) -->
     <url>
         <loc>https://personality-compass.app/blog/en/</loc>
-        <lastmod>2025-12-13</lastmod>
+        <lastmod>2026-02-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>https://personality-compass.app/blog/ru/</loc>
-        <lastmod>2025-12-13</lastmod>
+        <lastmod>2026-02-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>https://personality-compass.app/blog/et/</loc>
-        <lastmod>2025-12-13</lastmod>
+        <lastmod>2026-02-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -77,35 +77,21 @@
     
     <url>
         <loc>https://personality-compass.app/blog/en/enneagram-types.html</loc>
-        <lastmod>2025-12-13</lastmod>
+        <lastmod>2025-12-10</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
     </url>
     
     <url>
         <loc>https://personality-compass.app/blog/en/personality-test-tips.html</loc>
-        <lastmod>2025-12-13</lastmod>
+        <lastmod>2025-12-05</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
     </url>
     
     <url>
         <loc>https://personality-compass.app/blog/en/behind-the-build-personality-compass.html</loc>
-        <lastmod>2026-02-23</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://personality-compass.app/blog/en/enneagram-types.html</loc>
-        <lastmod>2026-02-24</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://personality-compass.app/blog/en/personality-test-tips.html</loc>
-        <lastmod>2026-02-24</lastmod>
+        <lastmod>2025-12-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -117,12 +103,12 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-
+    
     <url>
         <loc>https://personality-compass.app/blog/ru/tipy-enneagramy.html</loc>
         <lastmod>2026-02-24</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
     </url>
     
     <url>
@@ -144,19 +130,19 @@
         <loc>https://personality-compass.app/blog/et/mindpath16-juhend.html</loc>
         <lastmod>2025-12-13</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://personality-compass.app/blog/et/enneagramm-tuubid.html</loc>
-        <lastmod>2026-02-24</lastmod>
-        <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
+        <loc>https://personality-compass.app/blog/et/enneagramm-tuubid.html</loc>
+        <lastmod>2025-12-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>https://personality-compass.app/blog/et/isiksusetesti-nouanded.html</loc>
-        <lastmod>2026-02-24</lastmod>
+        <lastmod>2025-12-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -167,7 +153,5 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-    
-    <!-- Дополнительные статьи можно добавить здесь по мере публикации -->
     
 </urlset>
