@@ -146,6 +146,20 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+
+    <url>
+        <loc>https://personality-compass.app/blog/et/enneagramm-tuubid.html</loc>
+        <lastmod>2026-02-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://personality-compass.app/blog/et/isiksusetesti-nouanded.html</loc>
+        <lastmod>2026-02-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
     
     <url>
         <loc>https://personality-compass.app/blog/et/kuidas-loodi-personality-compass.html</loc>
