@@ -153,17 +153,197 @@
             padding: 40px 30px;
         }
         
+        /* Blogi juhtpaneel */
+        .blog-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 2px solid #f0f0f0;
+        }
+        
+        .search-container {
+            position: relative;
+            width: 100%;
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #999;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 15px 20px 15px 50px;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .search-input::placeholder {
+            color: #999;
+            font-style: italic;
+        }
+        
+        .filter-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .filter-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .filter-chip {
+            background: #f0f2ff;
+            border: none;
+            color: #667eea;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+        }
+        
+        .filter-chip:hover {
+            background: #e0e4ff;
+            transform: translateY(-2px);
+        }
+        
+        .filter-chip.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .sort-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .sort-label {
+            color: #666;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .sort-select {
+            padding: 8px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 14px;
+            color: #333;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .sort-select:hover {
+            border-color: #667eea;
+        }
+        
+        .sort-select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        /* Sildid */
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            padding-top: 10px;
+            border-top: 1px solid #f0f0f0;
+        }
+        
+        .tags-label {
+            color: #666;
+            font-size: 13px;
+            font-weight: 500;
+            margin-right: 5px;
+        }
+        
+        .tag {
+            background: #f5f5f5;
+            color: #666;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+        
+        .tag:hover {
+            background: #e0e0e0;
+            transform: translateY(-1px);
+        }
+        
+        .tag.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .tag.more-tag {
+            background: transparent;
+            color: #667eea;
+            border: 1px dashed #667eea;
+            cursor: default;
+        }
+        
+        .tag.more-tag:hover {
+            transform: none;
+            background: transparent;
+        }
+        
+        /* Blogi postitused */
         .blog-posts {
             display: grid;
             gap: 30px;
+            min-height: 300px;
         }
         
         .post-card {
             background: #f8f9ff;
             border-radius: 16px;
             padding: 30px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
             border-left: 4px solid #667eea;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .post-card.hidden {
+            display: none;
         }
         
         .post-card:hover {
@@ -178,6 +358,7 @@
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
+            align-items: center;
         }
         
         .post-category {
@@ -186,6 +367,21 @@
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .post-tags {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+        
+        .post-tag {
+            background: #e8f5e9;
+            color: #4caf50;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 10px;
             font-weight: 600;
         }
         
@@ -231,6 +427,47 @@
             transform: translateX(5px);
         }
         
+        /* Oleku teated */
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            background: #f8f9ff;
+            border-radius: 16px;
+            color: #666;
+        }
+        
+        .no-results h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .clear-search {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 30px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .clear-search:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+        
+        .posts-count {
+            font-size: 14px;
+            color: #666;
+            margin-top: 20px;
+            text-align: right;
+            font-weight: 500;
+        }
+        
         .back-link {
             display: inline-block;
             margin-top: 40px;
@@ -258,12 +495,38 @@
             border-top: 1px solid #e0e0e0;
         }
         
+        /* Animatsioonid */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .post-card:not(.hidden) {
+            animation: fadeIn 0.3s ease forwards;
+        }
+        
+        /* Mobiilivaade */
         @media (max-width: 768px) {
             h1 { font-size: 28px; }
             .header p { font-size: 16px; }
             .content { padding: 30px 20px; }
+            
+            .filter-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .filter-group {
+                justify-content: center;
+            }
+            
+            .sort-group {
+                justify-content: center;
+            }
+            
             .post-card { padding: 20px; }
             .post-title { font-size: 20px; }
+            
             .language-links {
                 position: relative;
                 top: 0;
@@ -271,13 +534,19 @@
                 justify-content: center;
                 margin-bottom: 15px;
             }
+            
             .nav-menu {
                 gap: 10px;
                 margin: 15px 0 25px;
             }
+            
             .nav-link {
                 padding: 6px 15px;
                 font-size: 13px;
+            }
+            
+            .tags-container {
+                justify-content: center;
             }
         }
         
@@ -294,6 +563,11 @@
             .post-meta {
                 flex-direction: column;
                 gap: 5px;
+                align-items: flex-start;
+            }
+            .search-input {
+                padding: 12px 15px 12px 45px;
+                font-size: 14px;
             }
         }
     </style>
@@ -319,13 +593,105 @@
         </div>
         
         <div class="content">
-            <div class="blog-posts">
-                <!-- Статья 1: MindPath 16 Guide -->
-                <article class="post-card">
+            <!-- Blogi juhtpaneel -->
+            <div class="blog-controls">
+                <!-- Otsing -->
+                <div class="search-container">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Otsi artikleid pealkirja, kategooria või märksõnade järgi...">
+                </div>
+                
+                <!-- Filtrid ja sorteerimine -->
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <button class="filter-chip active" data-filter="all">Kõik</button>
+                        <button class="filter-chip" data-filter="Isiksusetüübid">MindPath 16</button>
+                        <button class="filter-chip" data-filter="Enneagramm">Enneagramm</button>
+                        <button class="filter-chip" data-filter="Nõuanded">Nõuanded</button>
+                        <button class="filter-chip" data-filter="Arendus">Arendus</button>
+                        <button class="filter-chip" data-filter="Isiklik lugu">Isiklik</button>
+                    </div>
+                    
+                    <div class="sort-group">
+                        <span class="sort-label">Sorteeri:</span>
+                        <select class="sort-select" id="sortSelect">
+                            <option value="newest">Uuemad enne</option>
+                            <option value="oldest">Vanemad enne</option>
+                            <option value="category">Kategooria</option>
+                            <option value="title">Pealkiri A-Ö</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Populaarsed sildid -->
+                <div class="tags-container">
+                    <span class="tags-label">Populaarsed sildid:</span>
+                    <span class="tag" data-tag="ISFJ">ISFJ</span>
+                    <span class="tag" data-tag="Tüüp 3">Tüüp 3</span>
+                    <span class="tag" data-tag="Enneagramm">Enneagramm</span>
+                    <span class="tag" data-tag="MindPath 16">MindPath 16</span>
+                    <span class="tag" data-tag="privaatsus">privaatsus</span>
+                    <span class="tag" data-tag="Flutter">Flutter</span>
+                    <span class="tag" data-tag="PDF">PDF</span>
+                    <span class="tag more-tag">+ veel</span>
+                </div>
+            </div>
+            
+            <!-- Blogi postitused -->
+            <div class="blog-posts" id="blogPosts">
+                <!-- Статья 5: Asutaja lugu (UUSIM - 1. märts 2026) -->
+                <article class="post-card" data-category="Isiklik lugu" data-date="2026-03-01" data-title="Ma lõin isiksusetesti — ja see paljastas minu kohta midagi" data-tags="ISFJ Tüüp 3 Enneagramm asutaja lugu">
+                    <div class="post-meta">
+                        <span class="post-category">Isiklik lugu</span>
+                        <span>1. märts 2026</span>
+                        <span>8 min lugemist</span>
+                        <span class="post-tags">
+                            <span class="post-tag">ISFJ</span>
+                            <span class="post-tag">Tüüp 3</span>
+                            <span class="post-tag">asutaja lugu</span>
+                        </span>
+                    </div>
+                    <h2 class="post-title">
+                        <a href="asutaja-isiklik-lugu.html">Ma lõin isiksusetesti — ja see paljastas minu kohta midagi</a>
+                    </h2>
+                    <div class="post-excerpt">
+                        Personality Compassi looja jagab oma isiklikke testitulemusi: ISFJ (MindPath 16) ja Tüüp 3w4 sp (Enneagramm). Vaata, kui täpselt rakendus tema isiksust kirjeldas ja miks see tõestab testi sügavust.
+                    </div>
+                    <a href="asutaja-isiklik-lugu.html" class="read-more">Loe artiklit</a>
+                </article>
+                
+                <!-- Статья 4: Behind the Build (23. veebruar 2026) -->
+                <article class="post-card" data-category="Arendus" data-date="2026-02-23" data-title="Kuidas loodi Personality Compass: 454 küsimust, 3 mudelit, 100% offline" data-tags="Flutter PDF offline arendus tehniline">
+                    <div class="post-meta">
+                        <span class="post-category">Arendus</span>
+                        <span>23. veebruar 2026</span>
+                        <span>12 min lugemist</span>
+                        <span class="post-tags">
+                            <span class="post-tag">Flutter</span>
+                            <span class="post-tag">PDF</span>
+                            <span class="post-tag">tehniline</span>
+                        </span>
+                    </div>
+                    <h2 class="post-title">
+                        <a href="kuidas-loodi-personality-compass.html">Kuidas loodi Personality Compass: 454 küsimust, 3 mudelit, 100% offline</a>
+                    </h2>
+                    <div class="post-excerpt">
+                        Kuidas ma ehitasin offline-first enesetundmise rakenduse 454 küsimusega MindPath 16, MindPath 5D ja Enneagrammi mudelite põhjal. Tehniline süvavaade Flutterisse, PDF-i genereerimisse ja privaatsuskesksesse arhitektuuri.
+                    </div>
+                    <a href="kuidas-loodi-personality-compass.html" class="read-more">Loe artiklit</a>
+                </article>
+                
+                <!-- Статья 1: MindPath 16 Guide (13. detsember 2025) -->
+                <article class="post-card" data-category="Isiksusetüübid" data-date="2025-12-13" data-title="MindPath 16 isiksusetüüpide täielik juhend" data-tags="MindPath 16 tüübid juhend ISFJ INTJ ENFP">
                     <div class="post-meta">
                         <span class="post-category">Isiksusetüübid</span>
                         <span>13. detsember 2025</span>
                         <span>8 min lugemist</span>
+                        <span class="post-tags">
+                            <span class="post-tag">MindPath 16</span>
+                            <span class="post-tag">tüübid</span>
+                            <span class="post-tag">juhend</span>
+                        </span>
                     </div>
                     <h2 class="post-title">
                         <a href="mindpath16-juhend.html">MindPath 16 isiksusetüüpide täielik juhend</a>
@@ -336,12 +702,17 @@
                     <a href="mindpath16-juhend.html" class="read-more">Loe artiklit</a>
                 </article>
                 
-                <!-- Статья 2: Enneagram Guide -->
-                <article class="post-card">
+                <!-- Статья 2: Enneagram Guide (10. detsember 2025) -->
+                <article class="post-card" data-category="Enneagramm" data-date="2025-12-10" data-title="Enneagramm lahti seletatud: 9 isiksusetüüpi dünaamikaga" data-tags="Enneagramm tüübid tiivad nooled">
                     <div class="post-meta">
                         <span class="post-category">Enneagramm</span>
                         <span>10. detsember 2025</span>
                         <span>10 min lugemist</span>
+                        <span class="post-tags">
+                            <span class="post-tag">Enneagramm</span>
+                            <span class="post-tag">tüübid</span>
+                            <span class="post-tag">tiivad</span>
+                        </span>
                     </div>
                     <h2 class="post-title">
                         <a href="enneagramm-tuubid.html">Enneagramm lahti seletatud: 9 isiksusetüüpi dünaamikaga</a>
@@ -352,12 +723,17 @@
                     <a href="enneagramm-tuubid.html" class="read-more">Loe artiklit</a>
                 </article>
                 
-                <!-- Статья 3: Test Tips -->
-                <article class="post-card">
+                <!-- Статья 3: Test Tips (5. detsember 2025) -->
+                <article class="post-card" data-category="Nõuanded" data-date="2025-12-05" data-title="Kuidas saada täpseid tulemusi isiksusetestidest" data-tags="nõuanded privaatsus täpsus">
                     <div class="post-meta">
                         <span class="post-category">Nõuanded</span>
                         <span>5. detsember 2025</span>
                         <span>6 min lugemist</span>
+                        <span class="post-tags">
+                            <span class="post-tag">nõuanded</span>
+                            <span class="post-tag">privaatsus</span>
+                            <span class="post-tag">täpsus</span>
+                        </span>
                     </div>
                     <h2 class="post-title">
                         <a href="isiksusetesti-nouanded.html">Kuidas saada täpseid tulemusi isiksusetestidest</a>
@@ -367,23 +743,17 @@
                     </div>
                     <a href="isiksusetesti-nouanded.html" class="read-more">Loe artiklit</a>
                 </article>
-                
-                <!-- Статья 4: Behind the Build -->
-                <article class="post-card">
-                    <div class="post-meta">
-                        <span class="post-category">Arendus</span>
-                        <span>23. veebruar 2026</span>
-                        <span>12 min lugemist</span>
-                    </div>
-                    <h2 class="post-title">
-                        <a href="kuidas-loodi-personality-compass.html">Kuidas loodi Personality Compass: 454 küsimust, 3 mudelit, 100% offline</a>
-                    </h2>
-                    <div class="post-excerpt">
-                        Kuidas ma ehitasin offline-first enesetundmise rakenduse 454 küsimusega MindPath 16, MindPath 5D ja Enneagrammi mudelite põhjal. Tehniline süvavaade Flutterisse, PDF-i genereerimisse ja privaatsuskesksesse arhitektuuri.
-                    </div>
-                    <a href="kuidas-loodi-personality-compass.html" class="read-more">Loe artiklit</a>
-                </article>
             </div>
+            
+            <!-- "Tulemusi pole" mall -->
+            <div class="no-results hidden" id="noResults">
+                <h3>🔍 Artikleid ei leitud</h3>
+                <p>Proovi otsingut või filtreid muuta, et leida, mida otsid.</p>
+                <button class="clear-search" id="clearSearch">Tühista kõik filtrid</button>
+            </div>
+            
+            <!-- Artiklite loendur -->
+            <div class="posts-count" id="postsCount">Kuvatakse 5 artiklit</div>
             
             <div style="text-align: center;">
                 <a href="/et/" class="back-link">← Tagasi avalehele</a>
@@ -395,5 +765,162 @@
             <p>Kontakt: <a href="mailto:info@personality-compass.app">info@personality-compass.app</a></p>
         </div>
     </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elementid
+            const blogPosts = document.getElementById('blogPosts');
+            const posts = Array.from(document.querySelectorAll('.post-card'));
+            const filterChips = document.querySelectorAll('.filter-chip');
+            const sortSelect = document.getElementById('sortSelect');
+            const searchInput = document.getElementById('searchInput');
+            const postsCount = document.getElementById('postsCount');
+            const noResults = document.getElementById('noResults');
+            const clearSearchBtn = document.getElementById('clearSearch');
+            const tags = document.querySelectorAll('.tag[data-tag]');
+            
+            // Seisund
+            let currentFilter = 'all';
+            let currentSort = 'newest';
+            let currentSearch = '';
+            let currentTag = '';
+            
+            // Filtreerimise ja sorteerimise funktsioon
+            function filterAndSortPosts() {
+                // Filtreeri kategooria, otsingu ja sildi järgi
+                let visiblePosts = posts.filter(post => {
+                    // Kategooria filter
+                    if (currentFilter !== 'all' && post.dataset.category !== currentFilter) {
+                        return false;
+                    }
+                    
+                    // Sildi filter
+                    if (currentTag && !post.dataset.tags.includes(currentTag)) {
+                        return false;
+                    }
+                    
+                    // Otsing pealkirjas, kategoorias ja siltides
+                    if (currentSearch) {
+                        const searchLower = currentSearch.toLowerCase();
+                        const title = post.dataset.title.toLowerCase();
+                        const category = post.dataset.category.toLowerCase();
+                        const tags = post.dataset.tags.toLowerCase();
+                        const excerpt = post.querySelector('.post-excerpt').textContent.toLowerCase();
+                        
+                        return title.includes(searchLower) || 
+                               category.includes(searchLower) || 
+                               tags.includes(searchLower) ||
+                               excerpt.includes(searchLower);
+                    }
+                    
+                    return true;
+                });
+                
+                // Sorteeri
+                visiblePosts.sort((a, b) => {
+                    if (currentSort === 'newest') {
+                        return new Date(b.dataset.date) - new Date(a.dataset.date);
+                    } else if (currentSort === 'oldest') {
+                        return new Date(a.dataset.date) - new Date(b.dataset.date);
+                    } else if (currentSort === 'category') {
+                        const categoryCompare = a.dataset.category.localeCompare(b.dataset.category);
+                        if (categoryCompare !== 0) return categoryCompare;
+                        return new Date(b.dataset.date) - new Date(a.dataset.date);
+                    } else if (currentSort === 'title') {
+                        return a.dataset.title.localeCompare(b.dataset.title);
+                    }
+                });
+                
+                // Uuenda DOM-i
+                posts.forEach(post => post.classList.add('hidden'));
+                visiblePosts.forEach(post => post.classList.remove('hidden'));
+                
+                // Uuenda järjekorda
+                visiblePosts.forEach(post => blogPosts.appendChild(post));
+                
+                // Uuenda loendurit ja näita "tulemusi pole" teadet
+                const count = visiblePosts.length;
+                postsCount.textContent = `Kuvatakse ${count} artiklit`;
+                
+                if (count === 0) {
+                    noResults.classList.remove('hidden');
+                } else {
+                    noResults.classList.add('hidden');
+                }
+                
+                // Uuenda aktiivset filtrit
+                filterChips.forEach(chip => {
+                    if (chip.dataset.filter === currentFilter) {
+                        chip.classList.add('active');
+                    } else {
+                        chip.classList.remove('active');
+                    }
+                });
+                
+                // Uuenda aktiivset silti
+                tags.forEach(tag => {
+                    if (tag.dataset.tag === currentTag) {
+                        tag.classList.add('active');
+                    } else {
+                        tag.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Filtri nupud
+            filterChips.forEach(chip => {
+                chip.addEventListener('click', function() {
+                    currentFilter = this.dataset.filter;
+                    currentTag = ''; // Lähtesta silt kategooria vahetamisel
+                    filterAndSortPosts();
+                });
+            });
+            
+            // Sorteerimine
+            sortSelect.addEventListener('change', function() {
+                currentSort = this.value;
+                filterAndSortPosts();
+            });
+            
+            // Otsing (viivitusega jõudluse parandamiseks)
+            let searchTimeout;
+            searchInput.addEventListener('input', function() {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    currentSearch = this.value.trim();
+                    filterAndSortPosts();
+                }, 300);
+            });
+            
+            // Siltide klikid
+            tags.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    if (this.classList.contains('more-tag')) return;
+                    
+                    if (currentTag === this.dataset.tag) {
+                        currentTag = ''; // Eemalda silt
+                    } else {
+                        currentTag = this.dataset.tag;
+                        currentFilter = 'all'; // Lähtesta filter "kõik" peale
+                    }
+                    filterAndSortPosts();
+                });
+            });
+            
+            // Kõigi filtrite lähtestamine
+            clearSearchBtn.addEventListener('click', function() {
+                currentFilter = 'all';
+                currentSort = 'newest';
+                currentSearch = '';
+                currentTag = '';
+                searchInput.value = '';
+                sortSelect.value = 'newest';
+                filterAndSortPosts();
+            });
+            
+            // Initsialiseerimine
+            filterAndSortPosts();
+        });
+    </script>
 </body>
 </html>

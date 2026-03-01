@@ -17,14 +17,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Täielik juhend MindPath 16 isiksusetüüpide kohta | Isiksuse Kompassi blogi</title>
-    <meta name="description" content="Avasta MindPath 16 isiksusetüübid, mõista nende omadusi, tugevusi ja arenguteid. Põhjalik juhend enesetundmiseks.">
+    <meta name="description" content="Avasta MindPath 16 isiksusetüübid, mõista nende omadusi, tugevusi ja arenguteid. Põhjalik juhend enesetundmiseks Isiksuse Kompassi rakenduse põhjal.">
     
     <!-- Kanooniline URL -->
     <link rel="canonical" href="https://personality-compass.app/blog/et/mindpath16-juhend.html">
     
     <!-- Open Graph -->
     <meta property="og:title" content="Täielik juhend MindPath 16 isiksusetüüpide kohta">
-    <meta property="og:description" content="Avasta MindPath 16 isiksusetüübid ja mõista ennast paremini.">
+    <meta property="og:description" content="Avasta MindPath 16 isiksusetüübid ja mõista ennast paremini Isiksuse Kompassi kaudu.">
     <meta property="og:url" content="https://personality-compass.app/blog/et/mindpath16-juhend.html">
     <meta property="og:image" content="https://personality-compass.app/images/blog-mindpath16.jpg">
     <meta property="og:type" content="article">
@@ -34,7 +34,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 20px;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             line-height: 1.8;
             min-height: 100vh;
@@ -117,15 +117,21 @@
         h2 {
             color: #667eea;
             font-size: 28px;
-            margin: 40px 0 20px;
+            margin: 50px 0 20px;
             padding-bottom: 10px;
             border-bottom: 2px solid #f0f0f0;
         }
         
         h3 {
             color: #667eea;
-            font-size: 22px;
-            margin: 30px 0 15px;
+            font-size: 24px;
+            margin: 40px 0 20px;
+        }
+        
+        h4 {
+            color: #667eea;
+            font-size: 20px;
+            margin: 0 0 10px 0;
         }
         
         p {
@@ -133,7 +139,7 @@
             color: #333;
         }
         
-        .highlight {
+        .highlight-box {
             background: #f8f9ff;
             padding: 30px;
             border-radius: 16px;
@@ -141,9 +147,59 @@
             margin: 30px 0;
         }
         
+        .dimensions-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .dimension-card {
+            background: #f8f9ff;
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .dimension-card h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #667eea;
+            font-size: 20px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 8px;
+        }
+        
+        .preference-pair {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .preference {
+            flex: 1;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .preference strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        .preference p {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+        }
+        
         .type-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             margin: 30px 0;
         }
@@ -154,6 +210,9 @@
             border-radius: 12px;
             border: 2px solid #e0e0e0;
             transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         
         .type-card:hover {
@@ -162,36 +221,54 @@
             box-shadow: 0 10px 20px rgba(102, 126, 234, 0.1);
         }
         
-        .type-card h4 {
-            color: #667eea;
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-        
         .type-code {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
-            color: #764ba2;
-            margin-bottom: 15px;
-        }
-        
-        .type-traits {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .type-traits li {
-            margin-bottom: 8px;
-            padding-left: 20px;
-            position: relative;
-        }
-        
-        .type-traits li::before {
-            content: "•";
             color: #667eea;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
+            margin-bottom: 5px;
+        }
+        
+        .type-title {
+            font-size: 18px;
+            color: #764ba2;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .type-description {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+        
+        .type-tagline {
+            font-style: italic;
+            color: #666;
+            font-size: 13px;
+            padding-top: 10px;
+            border-top: 1px dashed #e0e0e0;
+        }
+        
+        .section-subhead {
+            font-size: 20px;
+            color: #667eea;
+            margin: 40px 0 20px;
+            padding-left: 15px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .archetype-badge {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #2196f3;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-right: 8px;
+            margin-bottom: 8px;
         }
         
         .quote-box {
@@ -207,7 +284,7 @@
         
         .cta-box {
             background: #f8f9ff;
-            padding: 30px;
+            padding: 40px;
             border-radius: 16px;
             text-align: center;
             margin: 40px 0;
@@ -232,6 +309,29 @@
             box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
         }
         
+        .store-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        .store-link {
+            color: #667eea;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .store-link:hover {
+            background: #667eea;
+            color: white;
+        }
+        
         .footer {
             text-align: center;
             padding: 20px;
@@ -243,8 +343,8 @@
         @media (max-width: 768px) {
             h1 { font-size: 28px; }
             h2 { font-size: 24px; }
-            h3 { font-size: 20px; }
             .article-content { padding: 30px 20px; }
+            .dimensions-grid { grid-template-columns: 1fr; }
             .type-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -269,171 +369,262 @@
         </div>
         
         <div class="article-content">
-            <p class="highlight">
-                <strong>MindPath 16</strong> on põhjalik isiksuse hindamise süsteem, mis on loodud selleks, et aidata teil mõista oma ainulaadset psühholoogilist ülesehitust. See põhineb kognitiivsetel funktsioonidel ja psühholoogilistel eelistustel, tuvastades 16 erinevat isiksusemustrit, mis kujundavad seda, kuidas te mõtlete, tunnete ja maailmaga suhtlete.
+            <p class="highlight-box">
+                <strong>MindPath 16</strong> on põhjalik isiksuse hindamise süsteem, mis on saadaval Isiksuse Kompassi rakenduses. See tuvastab 16 erinevat isiksusemustrit nelja põhimõõtme alusel. Igal tüübil on oma ainulaadne viis mõelda, tunda ja maailmaga suhelda.
             </p>
             
             <h2>MindPath 16 neli mõõdet</h2>
-            <p>Iga isiksus MindPath 16 süsteemis on määratletud nelja põhimõõtmega. Teie eelistused igas mõõtmes loovad teie ainulaadse isiksusetüübi.</p>
             
-            <div class="type-grid">
-                <div class="type-card">
-                    <h4>Energia suund</h4>
-                    <div class="type-code">⚡ Ekstravertsus (E) vs. Introvertsus (I)</div>
-                    <ul class="type-traits">
-                        <li><strong>Ekstravertsus:</strong> Saavad energiat sotsiaalsest suhtlusest, tegevusele orienteeritud</li>
-                        <li><strong>Introvertsus:</strong> Saavad energiat üksindusest, mõtetele orienteeritud</li>
-                    </ul>
+            <p>Iga isiksusetüüp MindPath 16-s on määratletud teie eelistustega neljas mõõtmes. Need eelistused loovad teie ainulaadse psühholoogilise profiili.</p>
+            
+            <div class="dimensions-grid">
+                <div class="dimension-card">
+                    <h3>Energia suund</h3>
+                    <div class="preference-pair">
+                        <div class="preference">
+                            <strong>⚡ Ekstravertsus (E)</strong>
+                            <p>Saavad energiat sotsiaalsest suhtlusest, tegevusele orienteeritud</p>
+                        </div>
+                        <div class="preference">
+                            <strong>🌙 Introvertsus (I)</strong>
+                            <p>Saavad energiat üksindusest, mõtetele orienteeritud</p>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="type-card">
-                    <h4>Info töötlemine</h4>
-                    <div class="type-code">🔍 Tajumine (S) vs. Intuitsioon (N)</div>
-                    <ul class="type-traits">
-                        <li><strong>Tajumine:</strong> Keskenduvad konkreetsetele faktidele, olevikule</li>
-                        <li><strong>Intuitsioon:</strong> Keskenduvad mustritele, võimalustele, tulevikule</li>
-                    </ul>
+                <div class="dimension-card">
+                    <h3>Info töötlemine</h3>
+                    <div class="preference-pair">
+                        <div class="preference">
+                            <strong>🔍 Tajumine (S)</strong>
+                            <p>Keskenduvad konkreetsetele faktidele, olevikule</p>
+                        </div>
+                        <div class="preference">
+                            <strong>🔮 Intuitsioon (N)</strong>
+                            <p>Keskenduvad mustritele, võimalustele, tulevikule</p>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="type-card">
-                    <h4>Otsuste tegemine</h4>
-                    <div class="type-code">⚖️ Mõtlemine (T) vs. Tundmine (F)</div>
-                    <ul class="type-traits">
-                        <li><strong>Mõtlemine:</strong> Otsused põhinevad loogikal, objektiivsel analüüsil</li>
-                        <li><strong>Tundmine:</strong> Otsused põhinevad väärtustel, harmoonial, empaatial</li>
-                    </ul>
+                <div class="dimension-card">
+                    <h3>Otsuste tegemine</h3>
+                    <div class="preference-pair">
+                        <div class="preference">
+                            <strong>⚖️ Mõtlemine (T)</strong>
+                            <p>Otsused põhinevad loogikal, objektiivsel analüüsil</p>
+                        </div>
+                        <div class="preference">
+                            <strong>❤️ Tundmine (F)</strong>
+                            <p>Otsused põhinevad väärtustel, harmoonial, empaatial</p>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="type-card">
-                    <h4>Elustiili orientatsioon</h4>
-                    <div class="type-code">📋 Otsustavus (J) vs. Taju (P)</div>
-                    <ul class="type-traits">
-                        <li><strong>Otsustavus:</strong> Eelistavad struktuuri, planeerimist, lõpetatust</li>
-                        <li><strong>Taju:</strong> Eelistavad paindlikkust, spontaansust, avatust</li>
-                    </ul>
+                <div class="dimension-card">
+                    <h3>Elustiili orientatsioon</h3>
+                    <div class="preference-pair">
+                        <div class="preference">
+                            <strong>📋 Otsustavus (J)</strong>
+                            <p>Eelistavad struktuuri, planeerimist, lõpetatust</p>
+                        </div>
+                        <div class="preference">
+                            <strong>🌀 Taju (P)</strong>
+                            <p>Eelistavad paindlikkust, spontaansust, avatust</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             
             <h2>16 MindPath tüüpi</h2>
             
-            <h3>Analüütikud (NT)</h3>
+            <p>Nende nelja eelistuse kombinatsiooni alusel määrab MindPath 16 16 erinevat isiksusetüüpi. Igal tüübil on ainulaadne viis maailmas avalduda.</p>
+            
+            <h3 class="section-subhead">Analüütikud (NT)</h3>
+            
             <div class="type-grid">
-                <div class="type-card">
-                    <div class="type-code">ENTP</div>
-                    <h4>Innovatsioonijuht</h4>
-                    <p>Kiired, leidlikud, stimuleerivad. ENTP-d on ideede generaatorid, kes naudivad arutelusid ja uute võimaluste avastamist. Nad on ettevõtlikud ja hindavad intellektuaalset meisterlikkust.</p>
-                </div>
-                <div class="type-card">
-                    <div class="type-code">INTJ</div>
-                    <h4>Strateeg</h4>
-                    <p>Strateegilised, analüütilised, iseseisvad. INTJ-del on originaalne mõtlemine ja suur tahe oma ideid ellu viia. Nad näevad võimalusi ja arendavad kiiresti pikaajalisi plaane.</p>
-                </div>
-                <div class="type-card">
-                    <div class="type-code">ENTJ</div>
-                    <h4>Juht</h4>
-                    <p>Selged, otsustavad, sündinud juhid. ENTJ-d naudivad pikaajalist planeerimist ja eesmärkide seadmist. Nad on enesekindlad ja suurepärased keerukate süsteemide juurutamisel.</p>
-                </div>
                 <div class="type-card">
                     <div class="type-code">INTP</div>
-                    <h4>Mõtleja</h4>
-                    <p>Loogilised, abstraktsed, analüütilised. INTP-d armastavad teoreetilisi kontseptsioone ja otsivad loogilisi seletusi kõigele. Nad on äärmiselt uudishimulikud ja hindavad teadmisi.</p>
+                    <div class="type-title">Ideede Uurija</div>
+                    <div class="type-description">Vaikne mõtleja, kes püüab mõista, kuidas maailm tegelikult töötab. Tema jaoks on loogika mõttepoesia, sügavus aarde ja vaimu vabadus kõrgeim väärtus.</div>
+                    <div class="type-tagline">Otsib seaduspärasusi, mis juhivad tegelikkust</div>
+                </div>
+                
+                <div class="type-card">
+                    <div class="type-code">INTJ</div>
+                    <div class="type-title">Nägemusega Strateeg</div>
+                    <div class="type-description">Eesmärgikindel muutuste arhitekt, kes muudab abstraktseid ideid selgeteks kavadeks. Teda juhivad pädevus, pikaajalise mõju püüdlus ja intellektuaalne ausus.</div>
+                    <div class="type-tagline">Loo tulevik, mida teised veel ei näe</div>
+                </div>
+                
+                <div class="type-card">
+                    <div class="type-code">ENTP</div>
+                    <div class="type-title">Võimaluste Katalüsaator</div>
+                    <div class="type-description">Energiline uuendaja, kes õitseb intellektuaalsetes vaidlustes ja mitterutiinsetes ideedes. Armastab vaidlust inspireerimise nimel, uudsust ja tundmatute mõistete sidumist.</div>
+                    <div class="type-tagline">Muudab „mis kui?“ küsimuseks „miks mitte?“</div>
+                </div>
+                
+                <div class="type-card">
+                    <div class="type-code">ENTJ</div>
+                    <div class="type-title">Süsteemide Ehitaja</div>
+                    <div class="type-description">Loomulik juht, kes mobiliseerib inimesi ja ressursse selge eesmärgi saavutamiseks. Hindab kõige rohkem efektiivsust, mõõdetavaid tulemusi ja strateegilist selgust.</div>
+                    <div class="type-tagline">Muudab kaose võimalusteks</div>
                 </div>
             </div>
             
-            <h3>Diplomaadid (NF)</h3>
+            <h3 class="section-subhead">Diplomaadid (NF)</h3>
+            
             <div class="type-grid">
-                <div class="type-card">
-                    <div class="type-code">ENFJ</div>
-                    <h4>Mentor</h4>
-                    <p>Karismaatilised, inspireerivad, empaatilised. ENFJ-d on sündinud juhid, kes aitavad teistel kasvada. Nad tunnetavad emotsioone ja mõistavad suurepäraselt teisi.</p>
-                </div>
-                <div class="type-card">
-                    <div class="type-code">INFJ</div>
-                    <h4>Advokaat</h4>
-                    <p>Loovad, taibukad, põhimõttekindlad. INFJ-del on sügav arusaam inimestest ja olukordadest. Nad on idealistlikud ja otsivad kõiges tähendust.</p>
-                </div>
-                <div class="type-card">
-                    <div class="type-code">ENFP</div>
-                    <h4>Meister</h4>
-                    <p>Entusiastlikud, loovad, vabadust armastavad. ENFP-d näevad elu täis võimalusi. Nad on suurepärased improviseerijad ja teistega suhtlejad.</p>
-                </div>
                 <div class="type-card">
                     <div class="type-code">INFP</div>
-                    <h4>Ravitseja</h4>
-                    <p>Idealistlikud, lojaalsed, sügavalt hoolivad. INFP-d otsivad harmooniat ja autentsust. Neid juhivad tugevad väärtused ja soov muuta maailma paremaks.</p>
+                    <div class="type-title">Väärtuste Hoidja</div>
+                    <div class="type-description">Hell ideaalist, kes otsib igas olukorras siirust ja sügavust. Teda juhib tugev sisemine moraalikompass ja soov teha maailm lahke, puhas ja valgem.</div>
+                    <div class="type-tagline">Elab vastavalt sisemisele kompassile</div>
+                </div>
+                
+                <div class="type-card">
+                    <div class="type-code">INFJ</div>
+                    <div class="type-title">Nägemuste Kuduja</div>
+                    <div class="type-description">Läbipaistev visiooniline juht, kes näeb inimeste motiivide taga peituvaid mustreid ja juhib neid vaiksel viisil kasvama. Ühendab sügavat empaatiat strateegilise tulevikuennustusega.</div>
+                    <div class="type-tagline">Seob inimesed nende kõrgeima potentsiaaliga</div>
+                </div>
+                
+                <div class="type-card">
+                    <div class="type-code">ENFP</div>
+                    <div class="type-title">Potentsiaali Säde</div>
+                    <div class="type-description">Entusiastlik siduja, kes usub piiramatutesse võimalustesse ja toob iga suhtlusesse elujõud. Teda juhivad uudishimu, siirus ja usk inimlikku potentsiaali.</div>
+                    <div class="type-tagline">Näeb varjatud valgust inimestes ja ideedes</div>
+                </div>
+                
+                <div class="type-card">
+                    <div class="type-code">ENFJ</div>
+                    <div class="type-title">Inimeste Arhitekt</div>
+                    <div class="type-description">Loomulik mentor, kes paljastab teistes parima soojuse, läbipaistvuse ja struktureeritud toetuse kaudu. Ühendab empaatiat püüdlusega kollektiivse kasvu ja harmoonia järele.</div>
+                    <div class="type-tagline">Loob kogukondi, kus igaüks tunneb: «Ma kuulan siia»</div>
                 </div>
             </div>
             
-            <h3>Valvurid (SJ)</h3>
+            <h3 class="section-subhead">Valvurid (SJ)</h3>
+            
             <div class="type-grid">
-                <div class="type-card">
-                    <div class="type-code">ESTJ</div>
-                    <h4>Ülevaataja</h4>
-                    <p>Praktilised, faktidele keskenduvad, usaldusväärsed. ESTJ-d hindavad traditsioone ja korda. Nad on sündinud korraldajad, kes saavad asjad tõhusalt tehtud.</p>
-                </div>
                 <div class="type-card">
                     <div class="type-code">ISTJ</div>
-                    <h4>Inspektor</h4>
-                    <p>Vastutustundlikud, loogilised, põhjalikud. ISTJ-d on töökad traditsionalistid, kes austavad oma kohustusi. Nad hindavad fakte ja selgeid standardeid.</p>
+                    <div class="type-title">Usaldusväärne Hoidja</div>
+                    <div class="type-description">Usaldusväärne täitja, kes hindab fakte, korda ja vastutust. Loob stabiilsuse hoolika tähelepanu kaudu detailidele ja pühendumise kaudu kohustusele.</div>
+                    <div class="type-tagline">Ehitab usaldust järjepidevuse ja kohustuse kaudu</div>
                 </div>
-                <div class="type-card">
-                    <div class="type-code">ESFJ</div>
-                    <h4>Hoolitseja</h4>
-                    <p>Soojasüdamelised, kohusetundlikud, koostööaltid. ESFJ-d on inimestele orienteeritud ja püüavad teisi aidata. Nad hindavad harmooniat ja praktilist abi.</p>
-                </div>
+                
                 <div class="type-card">
                     <div class="type-code">ISFJ</div>
-                    <h4>Kaitsja</h4>
-                    <p>Õrnad, pühendunud, täpsed. ISFJ-d hoolitsevad vaikselt teiste eest ja kaitsevad neid. Nad mäletavad detaile inimeste kohta ja on sügavalt lojaalsed.</p>
+                    <div class="type-title">Vaikne Hoidja</div>
+                    <div class="type-description">Ustav kaitseja, kes mäletab detaile, ennustab vajadusi ja loob stabiilsuse vaikse, usaldusväärse hoolivuse kaudu, mida ta harva esile tõstab.</div>
+                    <div class="type-tagline">Hoolitseb sügavalt järjepidevate, tähelepanelike tegevuste kaudu</div>
+                </div>
+                
+                <div class="type-card">
+                    <div class="type-code">ESTJ</div>
+                    <div class="type-title">Korrakavandaja</div>
+                    <div class="type-description">Praktiline juht, kes organiseerib inimesi ja protsesse mõõdetavate tulemuste saavutamiseks. Hindab kõige rohkem efektiivsust, vastutust ja selgeid, mõõdetavaid ootusi.</div>
+                    <div class="type-tagline">Ehitab tõhusaid süsteeme selgete standardite ja otsustavate tegevuste kaudu</div>
+                </div>
+                
+                <div class="type-card">
+                    <div class="type-code">ESFJ</div>
+                    <div class="type-title">Harmoonia Kasvataja</div>
+                    <div class="type-description">Sotsiaalne organiseerija, kes loob kuuluvuse tunde tähelepanelike žestide, rühma harmoonia ja tegusid kaudu avalduva hoolivuse kaudu.</div>
+                    <div class="type-tagline">Kasvatatakse sidet soojuse ja praktilise hoolivuse kaudu</div>
                 </div>
             </div>
             
-            <h3>Avastajad (SP)</h3>
+            <h3 class="section-subhead">Avastajad (SP)</h3>
+            
             <div class="type-grid">
                 <div class="type-card">
-                    <div class="type-code">ESTP</div>
-                    <h4>Dünamo</h4>
-                    <p>Tegudele orienteeritud, energilised, pragmaatilised. ESTP-d elavad hetkes ja armastavad põnevust. Nad on suurepärased probleemilahendajad ja praktilised tegutsejad.</p>
-                </div>
-                <div class="type-card">
                     <div class="type-code">ISTP</div>
-                    <h4>Meister</h4>
-                    <p>Julged, praktilised, käelised. ISTP-d valdavad tööriistu ja tehnikaid. Nad on iseseisvad ja hindavad vabadust uurida, kuidas asjad töötavad.</p>
+                    <div class="type-title">Oskuslik Navigeerija</div>
+                    <div class="type-description">Pragmaatiline probleemilahendaja, kes õitseb praktilistes väljakutsetes ja hindab iseseisvust kõige kõrgemalt. Eelistab tegusid sõnadele ja reaalset efektiivsust abstraktsele teooriale.</div>
+                    <div class="type-tagline">Mehitus hetkes täpsuse ja rahulikkusega</div>
                 </div>
-                <div class="type-card">
-                    <div class="type-code">ESFP</div>
-                    <h4>Esineja</h4>
-                    <p>Spontaansed, entusiastlikud, mängulised. ESFP-d armastavad elu ja inimesi. Nad on sündinud meelelahutajad, kes toovad rõõmu enda ümber olijatele.</p>
-                </div>
+                
                 <div class="type-card">
                     <div class="type-code">ISFP</div>
-                    <h4>Kunstnik</h4>
-                    <p>Õrnad, tundlikud, kunstilised. ISFP-d elavad hetkes ja väljendavad ennast tegevuse ja kunsti kaudu. Nad hindavad ilu ja autentsust.</p>
+                    <div class="type-title">Siiruste Looja</div>
+                    <div class="type-description">Hell kunstnik, kes kogeb elu sügavalt tunde kaudu ja hindab isiklikku vabadust kõige kõrgemalt. Avaldab oma väärtusi mitte sõnades, vaid tegudes.</div>
+                    <div class="type-tagline">Elab vaikse aususe ja meelelahutusega täidetud elu</div>
+                </div>
+                
+                <div class="type-card">
+                    <div class="type-code">ESTP</div>
+                    <div class="type-title">Tegevuse Strateeg</div>
+                    <div class="type-description">Dünaamiline probleemilahendaja, kes õitseb tegevuses, võistlustes ja reaalajas strateegias. Hindab pädevust, puudutatavaid tulemusi ja elu täielikkust.</div>
+                    <div class="type-tagline">Muudab väljakutseid võimalusteks julguse ja armulikkusega</div>
+                </div>
+                
+                <div class="type-card">
+                    <div class="type-code">ESFP</div>
+                    <div class="type-title">Rõõmsameelne Katseja</div>
+                    <div class="type-description">Särav entusiast, kes elab täielikult siin ja praegu ning ühendab inimesi soojuse, huumori ja meelelahutuse kaudu igas hetkes.</div>
+                    <div class="type-tagline">Täidab hetke soojuse, energiaga ja spontaansusega</div>
                 </div>
             </div>
             
             <div class="quote-box">
-                "Oma MindPath tüübi mõistmine ei tähenda enda kasti panemist - see tähendab ainulaadse objektiivi avastamist, mille läbi te maailma vaatate, ja selle teadmise kasutamist kasvamiseks."
+                "Oma MindPath tüübi mõistmine ei tähenda enda kasti panemist — see tähendab ainulaadse objektiivi avastamist, mille läbi te maailma vaatate, ja selle teadmise kasutamist kasvamiseks."
             </div>
+            
+            <h2>Sügavam kui lihtsalt neli tähte</h2>
+            
+            <p>Isiksuse Kompassis läheb MindPath 16 kaugemale lihtsatest tüübikirjeldustest. Iga tüübi kohta pakub rakendus:</p>
+            
+            <ul>
+                <li><strong>Supervõime:</strong> Teie ainulaadne anne — see, mis tuleb teile loomulikult</li>
+                <li><strong>Kuidas see avaldub:</strong> Reaalsed näited, kuidas teie tüüp end väljendab</li>
+                <li><strong>Karjäärid:</strong> Professionaalsed teed, kus teie loomulikud tugevused säravad</li>
+                <li><strong>Lõksud:</strong> Mustrid, millele tähelepanu pöörata, kui te pole parimas vormis</li>
+                <li><strong>Motivatsioon:</strong> Mis teid tegelikult sügaval sisimas juhib</li>
+                <li><strong>Mis inspireerib:</strong> Inimesed, ideed ja kogemused, mis teid energiat annavad</li>
+                <li><strong>Hirmud:</strong> Mille pärast te loomulikult muretsete</li>
+                <li><strong>Ühilduvus:</strong> Millised tüübid täiendavad teid ja millised esitavad väljakutseid</li>
+                <li><strong>Stressis / Kasvus:</strong> Kuidas reageerite surve all ja kui õitsete</li>
+                <li><strong>Töö ja õppimine:</strong> Teie loomulik lähenemine ülesannetele ja uuele teabele</li>
+                <li><strong>Armastus ja sõprus:</strong> Kuidas end lähedastes suhetes avaldate</li>
+                <li><strong>Arhetüübid:</strong> Kultuurilised rollid, mis peegeldavad teie tüüpi</li>
+            </ul>
             
             <h2>Kuidas kasutada MindPath 16 isiklikuks arenguks</h2>
             
-            <h3>1. Avasta oma tüüp</h3>
-            <p>Esimene samm on MindPath 16 hindamise läbimine Isiksuse Kompassi rakenduses. Vasta ausalt, lähtudes oma loomulikest eelistustest, mitte sellest, kuidas sa arvad, et peaksid olema.</p>
+            <h3>1. Avasta oma tüüp Isiksuse Kompassis</h3>
+            <p>Esimene samm on täieliku MindPath 16 hindamise läbimine rakenduses — 80 küsimust, mis uurivad teie loomulikke eelistusi. Vasta ausalt, lähtudes sellest, kes sa oled, mitte sellest, kes sa arvad, et peaksid olema.</p>
             
-            <h3>2. Mõista oma tugevusi</h3>
-            <p>Igal tüübil on ainulaadsed anded. Sinu tüüp näitab sinu loomulikke andeid ja seda, kuidas sa saad maailmale kõige paremini panustada. Keskendu nende tugevuste arendamisele.</p>
+            <h3>2. Mõista oma supervõimet</h3>
+            <p>Igal tüübil on ainulaadne anne. Sinu tüüp näitab, mis tuleb sulle loomulikult — sinu supervõime. Keskendu selle tugevuse arendamisele ja rakendamisele igapäevaelus.</p>
             
-            <h3>3. Tunne ära kasvualad</h3>
-            <p>Sinu tüüp näitab sulle ka valdkondi, kus on võimalik areneda. Mõistes oma vähem arenenud funktsioone, saad teadlikult töötada tasakaalu saavutamise nimel.</p>
+            <h3>3. Tunne ära oma lõksud</h3>
+            <p>Sinu tüüp näitab sulle ka mustreid, millele tähelepanu pöörata. Need ei ole nõrkused — need on kasvualad. Neid mõistes saad end tabada enne, kui satud ebaproduktiivsetesse harjumustesse.</p>
             
-            <h3>4. Hinda erinevusi</h3>
-            <p>Teiste tüüpide mõistmine aitab sul paremini suhelda ja mõista, miks teised näevad maailma erinevalt. See vähendab konflikte ja parandab suhteid.</p>
+            <h3>4. Hinda erinevusi teistes</h3>
+            <p>Teiste tüüpide mõistmine aitab sul paremini suhelda ja mõista, miks teised näevad maailma erinevalt. See vähendab konflikte ja süvendab suhteid.</p>
+            
+            <h2>Proovi täisversiooni</h2>
+            
+            <p>Isiksuse Kompass pakub MindPath 16 kahte versiooni:</p>
+            
+            <ul>
+                <li><strong>Kiire versioon (20 küsimust):</strong> Hetktõmmis sinu tüübist mõne minutiga</li>
+                <li><strong>Täisversioon (80 küsimust):</strong> Täielik sügavus koos detailse analüüsiga sinu supervõimest, lõksudest, motivatsioonist ja paljust muust</li>
+            </ul>
+            
+            <p>Kõige rikkalikuma arusaamise saamiseks tee täisversioon. Seal ilmnevad tõelised arusaamad.</p>
             
             <div class="cta-box">
                 <h3>Avasta oma MindPath 16 tüüp</h3>
                 <p>Valmis avastama oma ainulaadset isiksusetüüpi? Lae alla Isiksuse Kompass ja tee täielik MindPath 16 hindamine juba täna. 100% võrguühenduseta, täielikult privaatne.</p>
-                <a href="/et/#download" class="cta-button">Lae alla Isiksuse Kompass</a>
+                
+                <div class="store-links">
+                    <a href="https://apps.apple.com/app/personality-compass/id6756028837" target="_blank" class="store-link">📱 App Store</a>
+                    <a href="https://play.google.com/store/apps/details?id=ee.personality.compass" target="_blank" class="store-link">📱 Google Play</a>
+                    <a href="https://appgallery.huawei.com/app/C116153415" target="_blank" class="store-link">📱 AppGallery</a>
+                    <a href="https://www.rustore.ru/catalog/app/ee.personality.compass.personality_compass" target="_blank" class="store-link">📱 RuStore</a>
+                </div>
             </div>
         </div>
         
