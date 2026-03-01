@@ -1,19 +1,9 @@
 <!DOCTYPE html>
 <html lang="et">
 <head>
-    <!-- Yandex.Metrika counter --> 
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106973384', 'ym');
-
-    ym(106973384, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/106973384" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+    <!-- Yandex.Metrika counter (noscript) -->
+    <noscript><div><img src="https://mc.yandex.ru/watch/106973384" style="position:absolute; left:-9999px;" alt="Yandex Metrika tracking pixel" /></div></noscript>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ma lõin isiksusetestide rakenduse — ja see paljastas midagi minu kohta | Personality Compassi looja lugu</title>
@@ -28,134 +18,26 @@
     <meta property="og:url" content="https://personality-compass.app/blog/et/creator-personality-test-results.html">
     <meta property="og:image" content="https://personality-compass.app/images/creator-story.jpg">
     <meta property="og:type" content="article">
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="en" href="https://personality-compass.app/blog/en/founders-personality-story.html" />
+    <link rel="alternate" hreflang="ru" href="https://personality-compass.app/blog/ru/istorija-lichnosti-sozdatelja.html" />
+    <link rel="alternate" hreflang="et" href="https://personality-compass.app/blog/et/asutaja-isiklik-lugu.html" />
     
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Подключение CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/components/header.css">
+    <link rel="stylesheet" href="/css/components/footer.css">
+    <link rel="stylesheet" href="/css/components/cards.css">
+    <link rel="stylesheet" href="/css/article.css">
+    
+    <!-- Подключение метрик (один файл для всех скриптов) -->
+    <script src="/js/metrics.js" defer></script>
+    
+    <!-- Дополнительные стили для уникальных элементов этой страницы -->
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 20px;
-            max-width: 900px;
-            margin: 0 auto;
-            line-height: 1.8;
-            min-height: 100vh;
-        }
-        
-        .container {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            margin: 20px 0;
-        }
-        
-        .article-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px 30px;
-            position: relative;
-        }
-        
-        .article-header::before {
-            content: "👤";
-            font-size: 60px;
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            opacity: 0.3;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .nav-link {
-            color: white;
-            text-decoration: none;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 14px;
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255,255,255,0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .nav-link:hover {
-            background: rgba(255,255,255,0.3);
-            transform: translateY(-2px);
-        }
-        
-        .nav-link.back {
-            background: rgba(255,255,255,0.25);
-            border-color: rgba(255,255,255,0.5);
-        }
-        
-        h1 {
-            font-size: 36px;
-            margin: 20px 0 15px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-            line-height: 1.3;
-        }
-        
-        .article-meta {
-            display: flex;
-            gap: 20px;
-            font-size: 14px;
-            opacity: 0.9;
-            margin-bottom: 10px;
-            flex-wrap: wrap;
-        }
-        
-        .article-meta span {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .author-badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            padding: 5px 15px;
-            border-radius: 30px;
-            font-size: 14px;
-            margin-top: 10px;
-        }
-        
-        .article-content {
-            padding: 40px;
-        }
-        
-        h2 {
-            color: #667eea;
-            font-size: 28px;
-            margin: 50px 0 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #f0f0f0;
-        }
-        
-        h3 {
-            color: #667eea;
-            font-size: 22px;
-            margin: 30px 0 15px;
-        }
-        
-        p {
-            margin-bottom: 20px;
-            color: #333;
-        }
-        
-        .highlight-box {
-            background: #f8f9ff;
-            padding: 30px;
-            border-radius: 16px;
-            border-left: 4px solid #667eea;
-            margin: 30px 0;
-        }
-        
         .result-card {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -163,6 +45,10 @@
             border-radius: 16px;
             margin: 30px 0;
             text-align: center;
+        }
+        
+        .result-card:last-of-type {
+            background: linear-gradient(135deg, #764ba2 0%, #9c27b0 100%);
         }
         
         .result-type {
@@ -185,40 +71,6 @@
             opacity: 0.9;
         }
         
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-        
-        .stat-card {
-            background: #f8f9ff;
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
-            border: 2px solid #e0e0e0;
-        }
-        
-        .stat-number {
-            font-size: 36px;
-            font-weight: bold;
-            color: #667eea;
-            margin-bottom: 5px;
-        }
-        
-        .stat-label {
-            font-size: 14px;
-            color: #666;
-        }
-        
-        .profile-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin: 30px 0;
-        }
-        
         .profile-card {
             background: #f8f9ff;
             padding: 30px;
@@ -233,13 +85,6 @@
             padding-bottom: 10px;
         }
         
-        .badge-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 20px 0;
-        }
-        
         .badge {
             background: #e3f2fd;
             color: #2196f3;
@@ -249,148 +94,100 @@
             font-weight: 600;
         }
         
-        .badge.purple {
-            background: #f3e5f5;
-            color: #9c27b0;
-        }
-        
-        .quote-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 16px;
-            margin: 40px 0;
-            font-style: italic;
-            font-size: 18px;
-            text-align: center;
-        }
-        
-        .feature-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 30px 0;
-            background: #f8f9ff;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-        
-        .feature-table th {
-            background: #667eea;
-            color: white;
-            padding: 15px;
-            text-align: left;
-            font-weight: 600;
-        }
-        
-        .feature-table td {
-            padding: 15px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        
-        .feature-table tr:last-child td {
-            border-bottom: none;
-        }
-        
-        .feature-table td:first-child {
-            font-weight: 600;
-            color: #667eea;
-            width: 30%;
-        }
-        
-        .note-box {
-            background: #fff8e1;
-            border-left: 4px solid #ffc107;
-            padding: 20px;
-            border-radius: 12px;
-            margin: 30px 0;
-        }
-        
-        .cta-box {
-            background: #f8f9ff;
-            padding: 40px;
-            border-radius: 16px;
-            text-align: center;
-            margin: 40px 0;
-            border: 2px solid #667eea;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            padding: 15px 40px;
-            border-radius: 30px;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-        }
-        
-        .store-links {
+        .badge-container {
             display: flex;
-            justify-content: center;
-            gap: 20px;
             flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .trait-grid {
+            display: grid;
+            gap: 20px;
             margin: 30px 0;
         }
         
-        .store-link {
+        .trait-card {
+            background: #f8f9ff;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .trait-card h3 {
+            margin-top: 0;
             color: #667eea;
-            text-decoration: none;
-            padding: 10px 20px;
-            border: 2px solid #667eea;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            font-weight: 500;
         }
         
-        .store-link:hover {
-            background: #667eea;
-            color: white;
+        .trait-card p {
+            margin-bottom: 0;
+            font-style: italic;
         }
         
-        .feedback-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        .type-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0;
         }
         
-        .feedback-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.15);
-            border-color: #667eea !important;
-        }
-        
-        .footer {
-            text-align: center;
+        .type-item {
+            background: #f8f9ff;
             padding: 20px;
-            background: #f5f7ff;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .type-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .type-label {
+            font-weight: 600;
+        }
+        
+        .type-desc {
+            font-size: 14px;
             color: #666;
-            border-top: 1px solid #e0e0e0;
         }
         
         @media (max-width: 768px) {
-            h1 { font-size: 28px; }
-            h2 { font-size: 24px; }
-            h3 { font-size: 20px; }
-            .article-content { padding: 30px 20px; }
-            .profile-grid { grid-template-columns: 1fr; }
-            .stats-grid { grid-template-columns: 1fr; }
+            .result-type {
+                font-size: 36px;
+            }
+            
+            .result-name {
+                font-size: 20px;
+            }
+            
+            .result-description {
+                font-size: 16px;
+            }
+            
+            .type-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="article-header">
-            <div class="nav-links">
-                <a href="/et/" class="nav-link back">← Avalehele</a>
-                <a href="/blog/et/" class="nav-link">📚 Blogi</a>
-                <a href="/et/policy.html" class="nav-link">🔒 Privaatsus</a>
-                <a href="/et/#download" class="nav-link">📱 Laadi alla</a>
+
+            <div class="language-links">
+                <a href="/blog/en/mindpath16-guide.html" class="lang-link">EN</a>
+                <a href="/blog/ru/mindpath16-polnoe-rukovodstvo.html" class="lang-link">RU</a>
+                <a href="/blog/et/mindpath16-juhend.html" class="lang-link active">ET</a>
+            </div>
+            
+            <div class="nav-menu">
+                <a href="/et/" class="nav-link">Avaleht</a>
+                <a href="/blog/et/" class="nav-link active">Blogi</a>
+                <a href="/et/policy.html" class="nav-link">Privaatsus</a>
+                <a href="/et/#download" class="nav-link">Lae alla</a>
+                <a href="/et/support.html" class="nav-link">Toeta</a>
             </div>
             
             <div class="article-meta">
@@ -432,7 +229,7 @@
                 <div class="result-description">Ustav kaitseja, kes mäletab detaile, ennustab vajadusi ja loob stabiilsuse vaikse, usaldusväärse hoolivuse kaudu, mida ta harva esile tõstab.</div>
             </div>
             
-            <div class="result-card" style="background: linear-gradient(135deg, #764ba2 0%, #9c27b0 100%);">
+            <div class="result-card">
                 <div class="result-type">Tüüp 3w4 sp</div>
                 <div class="result-name">«Saavutaja sügavusega»</div>
                 <div class="result-description">Kolme tiivaga Neli on saavutaja, kes otsib mitte ainult edu, vaid ka tähendusrikkust. Tema ambitsioonid on värvitud sügava tunde ja sooviga olla mitte ainult 'edukas', vaid 'unikaalne'.</div>
@@ -448,7 +245,7 @@
                 <p><strong>Superjõud:</strong> Turvalise ja hoolitseva keskkonna loomine tähelepaneliku, nähtamatu teenimise kaudu.</p>
                 <p><strong>Kuidas see avaldub:</strong> Mäletab sõprade allergiaid, toob suppi, kui keegi on haige, märkab, kui asjad pole kohal, ja vältib tähelepanu enda peale.</p>
                 <p><strong>Stressis:</strong> Muutub ärevaks, passiivselt agressiivseks või sulgeb täielikult end.</p>
-                <p><strong>Kasvamisel:</strong> Õpib oma vajadusi väljendama ja aktsepteerima abi — süüandustunde tunda.</p>
+                <p><strong>Kasvamisel:</strong> Õpib oma vajadusi väljendama ja aktsepteerima abi — süüandustundeta.</p>
                 <div class="badge-container">
                     <span class="badge">Hooldaja</span>
                     <span class="badge">Hoidja</span>
@@ -459,35 +256,35 @@
             <p>Kui ma seda esimest korda lugesin, mõtlesin: «Jah, see olen mina — kuid see pole kogu pilt». Ma olen vaikne ja hooliv, kuid ma olen ka ambitsioonikas. Ma tahan luua asju, mis kestavad kaua. Ma tahan saavutada. Ja siin tulid appi MindPath 5D ja Enneagramm.</p>
             
             <h2>📈 MindPath 5D: Minu joonte profiil</h2>
-            
-            <p>MindPath 5D mõõdab isiksuse viit mõõdet. Siin on minu profiil otseste tsitaatidega rakendusest:</p>
-            
-            <div style="display: grid; gap: 20px; margin: 30px 0;">
-                <div style="background: #f8f9ff; padding: 25px; border-radius: 12px; border-left: 4px solid #667eea;">
-                    <h3 style="margin-top: 0; color: #667eea;">🔎 Avastaja (C) — Keskmine tase</h3>
-                    <p style="margin-bottom: 0; font-style: italic;">«Sa hindad nii uudist kui ka kindlust. Sa naudid intellektuaalseid reisi, kuid unustad alati paati kallale siduda. Sa oskad ühendada uudishimu ja mõistlikkust — just see tasakaal teeb su paindlikuks ja alusekindlaks.»</p>
-                </div>
-                
-                <div style="background: #f8f9ff; padding: 25px; border-radius: 12px; border-left: 4px solid #667eea;">
-                    <h3 style="margin-top: 0; color: #667eea;">🧭 Navigaator (O) — Kõrge tase</h3>
-                    <p style="margin-bottom: 0; font-style: italic;">«Sa oled tegu ja sõna inimene. Lubadused pole sulle lihtsalt sõnad, vaid kohustused. Sa oskad seada eesmärke, koostada plaane ja neid jälgida, ilma et kaotaksid sammu. Isegi segaduses säilitad sa sisemise korra ja annad teistele usaldusväärsuse tunde.»</p>
-                </div>
-                
-                <div style="background: #f8f9ff; padding: 25px; border-radius: 12px; border-left: 4px solid #667eea;">
-                    <h3 style="margin-top: 0; color: #667eea;">💬 Suhtleja (E) — Keskmine tase</h3>
-                    <p style="margin-bottom: 0; font-style: italic;">«Sa oskad vajadusel olla tähekeseks, kuid ei karda vaikust. Sa valid, millal rääkida ja millal lihtsalt kohal olla. Just selles peitub su paindlikkus ja austus — enda ja teiste vastu.»</p>
-                </div>
-                
-                <div style="background: #f8f9ff; padding: 25px; border-radius: 12px; border-left: 4px solid #667eea;">
-                    <h3 style="margin-top: 0; color: #667eea;">🤝 Liitlane (H) — Kõrge tase</h3>
-                    <p style="margin-bottom: 0; font-style: italic;">«Sa tunned teisi — mõnikord isegi paremini kui iseennast. Sulle on oluline, et valitseks usaldus, soojus ja vastastikune mõistmine. Sa vältid konflikte mitte hirmust, vaid teiste tunnete sügava austuse tõttu.»</p>
-                </div>
-                
-                <div style="background: #f8f9ff; padding: 25px; border-radius: 12px; border-left: 4px solid #667eea;">
-                    <h3 style="margin-top: 0; color: #667eea;">⚖️ Stabiliseerija (B) — Keskmine tase</h3>
-                    <p style="margin-bottom: 0; font-style: italic;">«Sa ei karda tundeid — sa oskad naasta oma sisemisse tasakaalu. Võid muretseda, kuid ei kaota kunagi ennast. Sul on tervislik tasakaal tundlikkuse ja vastupidavuse vahel.»</p>
-                </div>
-            </div>
+
+<p>MindPath 5D mõõdab isiksuse viit mõõdet. Siin on minu profiil otseste tsitaatidega rakendusest:</p>
+
+<div class="trait-grid">
+    <div class="trait-card">
+        <h3>🔎 Avastaja (C) — Keskmine tase</h3>
+        <p>«Sa hindad nii uudist kui ka kindlust. Sa naudid intellektuaalseid reisi, kuid unustad alati paati kallale siduda. Sa oskad ühendada uudishimu ja mõistlikkust — just see tasakaal teeb su paindlikuks ja alusekindlaks.»</p>
+    </div>
+    
+    <div class="trait-card">
+        <h3>🧭 Navigaator (O) — Kõrge tase</h3>
+        <p>«Sa oled tegu ja sõna inimene. Lubadused pole sulle lihtsalt sõnad, vaid kohustused. Sa oskad seada eesmärke, koostada plaane ja neid jälgida, ilma et kaotaksid sammu. Isegi segaduses säilitad sa sisemise korra ja annad teistele usaldusväärsuse tunde.»</p>
+    </div>
+    
+    <div class="trait-card">
+        <h3>💬 Suhtleja (E) — Keskmine tase</h3>
+        <p>«Sa oskad vajadusel olla tähekeseks, kuid ei karda vaikust. Sa valid, millal rääkida ja millal lihtsalt kohal olla. Just selles peitub su paindlikkus ja austus — enda ja teiste vastu.»</p>
+    </div>
+    
+    <div class="trait-card">
+        <h3>🤝 Liitlane (H) — Kõrge tase</h3>
+        <p>«Sa tunned teisi — mõnikord isegi paremini kui iseennast. Sulle on oluline, et valitseks usaldus, soojus ja vastastikune mõistmine. Sa vältid konflikte mitte hirmust, vaid teiste tunnete sügava austuse tõttu.»</p>
+    </div>
+    
+    <div class="trait-card">
+        <h3>⚖️ Stabiliseerija (B) — Keskmine tase</h3>
+        <p>«Sa ei karda tundeid — sa oskad naasta oma sisemisse tasakaalu. Võid muretseda, kuid ei kaota kunagi ennast. Sul on tervislik tasakaal tundlikkuse ja vastupidavuse vahel.»</p>
+    </div>
+</div>
             
             <p>See profiil selgitab palju: ma olen strateegiline (kõrge Navigaator) ja sügavalt empaatiline (kõrge Liitlane), kuid mul pole vaja pidevat suhtlemist (keskmine Suhtleja). Ma olen uudishimulik (keskmine Avastaja), kuid ainult selle vastu, mida saab rakendada. Ja ma olen emotsionaalselt tasakaalus (keskmine Stabiliseerija) — ma tunnen sügavalt, kuid ei jää emotsioonidesse kinni.</p>
             
@@ -638,7 +435,7 @@
 
             <p>Mul on väga huvitav teada saada teie avastustest. Mida Personality Compass teie kohta paljastas? Kas see langeb kokku sellega, kuidas te end näete? Siin on, kuidas minuga ühendust võtta:</p>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0;">
+            <div class="feedback-grid">
                 
                 <div class="feedback-card" style="background: #f8f9ff; padding: 25px; border-radius: 12px; text-align: center; border: 2px solid #e0e0e0;">
                     <div style="font-size: 48px; margin-bottom: 15px;">📧</div>
@@ -663,7 +460,7 @@
                 
             </div>
 
-            <div class="note-box" style="background: #fff8e1; border-left: 4px solid #ffc107; padding: 20px; border-radius: 12px; margin: 30px 0;">
+            <div class="note-box">
                 <p style="margin: 0;"><strong>💬 Küsimused teile:</strong></p>
                 <ul style="margin-top: 10px;">
                     <li>Kas on kunagi juhtunud, et isiksusetesti tulemus tundus alguses «vale» — aga hiljem omandas mõtte?</li>

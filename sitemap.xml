@@ -140,6 +140,37 @@
         </image:image>
     </url>
     
+    <!-- ==================== СТРАНИЦЫ ПОДДЕРЖКИ (ДОБАВЛЕНЫ) ==================== -->
+    <url>
+        <loc>https://personality-compass.app/en/support.html</loc>
+        <lastmod>2026-03-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/en/support.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/ru/support.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/et/support.html"/>
+    </url>
+    
+    <url>
+        <loc>https://personality-compass.app/ru/support.html</loc>
+        <lastmod>2026-03-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/en/support.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/ru/support.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/et/support.html"/>
+    </url>
+    
+    <url>
+        <loc>https://personality-compass.app/et/support.html</loc>
+        <lastmod>2026-03-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/en/support.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/ru/support.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/et/support.html"/>
+    </url>
+    
     <!-- ==================== СТРАНИЦЫ ПОЛИТИКИ КОНФИДЕНЦИАЛЬНОСТИ ==================== -->
     <url>
         <loc>https://personality-compass.app/en/policy.html</loc>
@@ -228,7 +259,7 @@
     <!-- Personality Test Tips -->
     <url>
         <loc>https://personality-compass.app/blog/en/personality-test-tips.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-02-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/blog/en/personality-test-tips.html"/>
@@ -340,7 +371,7 @@
     <!-- Isiksusetesti nõuanded -->
     <url>
         <loc>https://personality-compass.app/blog/et/isiksusetesti-nouanded.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-02-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/blog/en/personality-test-tips.html"/>
