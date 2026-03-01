@@ -1,6 +1,6 @@
 {
     "name": "Personality Compass",
-    "short_name": "PersCompass",
+    "short_name": "PersonalityCo",
     "description": "Offline personality test app and self-discovery tool",
     "start_url": "/en/",
     "scope": "/",
