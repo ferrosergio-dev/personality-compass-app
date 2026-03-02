@@ -6,13 +6,14 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personality Compass - Redirecting</title>
-    <meta http-equiv="refresh" content="0; url=/en/">
+    <title>Personality Compass - Language Redirect</title>
     
-    <!-- PWA manifest - ДОБАВЛЕНО -->
+    <!-- Meta Description (теперь более точная) -->
+    <meta name="description" content="Personality Compass - Automatic language redirection to English, Russian or Estonian version of our offline personality test.">
+    
+    <!-- PWA manifest -->
     <link rel="manifest" href="/manifest.json">
     
-    <!-- Минимальные стили для страницы (опционально) -->
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -23,27 +24,73 @@
             justify-content: center;
             min-height: 100vh;
             margin: 0;
+            padding: 20px;
             text-align: center;
+        }
+        .container {
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+            color: white;
         }
         a {
             color: white;
             text-decoration: underline;
         }
+        .language-links {
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+        .language-links a {
+            margin: 0 10px;
+        }
     </style>
     
     <script>
-        // Определяем язык браузера для редиректа
-        const userLang = navigator.language.substring(0, 2);
-        if (userLang === 'ru') {
-            window.location.href = '/ru/';
-        } else if (userLang === 'et') {
-            window.location.href = '/et/';
-        } else {
-            window.location.href = '/en/';
+        // Функция для редиректа
+        function redirectToLanguage() {
+            // Проверяем, не были ли мы уже здесь
+            if (sessionStorage.getItem('redirected')) {
+                return;
+            }
+
+            // Определяем язык браузера
+            const userLang = navigator.language.substring(0, 2);
+            let targetUrl = '/en/'; // По умолчанию английский
+            
+            if (userLang === 'ru') {
+                targetUrl = '/ru/';
+            } else if (userLang === 'et') {
+                targetUrl = '/et/';
+            }
+            
+            // Запоминаем, что редирект был выполнен
+            sessionStorage.setItem('redirected', 'true');
+            
+            // Выполняем редирект
+            window.location.replace(targetUrl);
         }
+        
+        // Запускаем редирект
+        setTimeout(redirectToLanguage, 0);
     </script>
 </head>
 <body>
-    <p>Redirecting to <a href="/en/">English version</a>...</p>
+    <div class="container">
+        <!-- *** ДОБАВЛЕНО: H1 для Bing *** -->
+        <h1>Personality Compass - Automatic Language Redirect</h1>
+        
+        <p>Please wait while we redirect you to the appropriate language version of our personality test.</p>
+        
+        <!-- Альтернативные ссылки на случай отключенного JavaScript -->
+        <div class="language-links">
+            <p>If you are not automatically redirected, please choose your language:</p>
+            <a href="/en/">English</a> | 
+            <a href="/ru/">Русский</a> | 
+            <a href="/et/">Eesti</a>
+        </div>
+    </div>
 </body>
 </html>
