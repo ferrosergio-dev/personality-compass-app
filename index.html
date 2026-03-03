@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <!-- Seznam.cz -->
     <meta name="seznam-wmt" content="d4RTpUnfyfewpBPevJV9lnIjijSdPj7K" />
@@ -8,13 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personality Compass - Language Redirect</title>
     
-    <!-- Meta Description (теперь более точная) -->
+    <!-- Meta Description -->
     <meta name="description" content="Personality Compass - Automatic language redirection to English, Russian or Estonian version of our offline personality test.">
     
     <!-- PWA manifest -->
     <link rel="manifest" href="/manifest.json">
     
     <style>
+        /* стили без изменений */
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -51,14 +52,12 @@
     <script>
         // Функция для редиректа
         function redirectToLanguage() {
-            // Проверяем, не были ли мы уже здесь
             if (sessionStorage.getItem('redirected')) {
                 return;
             }
 
-            // Определяем язык браузера
             const userLang = navigator.language.substring(0, 2);
-            let targetUrl = '/en/'; // По умолчанию английский
+            let targetUrl = '/en/';
             
             if (userLang === 'ru') {
                 targetUrl = '/ru/';
@@ -66,25 +65,19 @@
                 targetUrl = '/et/';
             }
             
-            // Запоминаем, что редирект был выполнен
             sessionStorage.setItem('redirected', 'true');
-            
-            // Выполняем редирект
             window.location.replace(targetUrl);
         }
         
-        // Запускаем редирект
         setTimeout(redirectToLanguage, 0);
     </script>
 </head>
 <body>
     <div class="container">
-        <!-- *** ДОБАВЛЕНО: H1 для Bing *** -->
         <h1>Personality Compass - Automatic Language Redirect</h1>
         
         <p>Please wait while we redirect you to the appropriate language version of our personality test.</p>
         
-        <!-- Альтернативные ссылки на случай отключенного JavaScript -->
         <div class="language-links">
             <p>If you are not automatically redirected, please choose your language:</p>
             <a href="/en/">English</a> | 
