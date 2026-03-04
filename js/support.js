@@ -1,4 +1,5 @@
 // ===== SUPPORT.JS - Общий скрипт для страниц поддержки =====
+// Версия: 2.0 (исправлена работа модального окна и переключения языков)
 
 // Google Analytics
 window.dataLayer = window.dataLayer || [];
@@ -7,6 +8,7 @@ gtag('js', new Date());
 gtag('config', 'G-XCK6M7C5DG');
 
 function trackDonationClick(type) {
+    console.log('Track donation click:', type); // Отладка
     gtag('event', 'donation_click', {
         'event_category': 'support',
         'event_label': type
@@ -176,6 +178,7 @@ const translations = {
 
 // Функции перевода
 function changeLanguage(lang) {
+    console.log('Changing language to:', lang); // Отладка
     currentLanguage = lang;
     updateContent();
     
@@ -187,18 +190,22 @@ function changeLanguage(lang) {
         }
     });
     
-    // Обновляем URL (для SEO)
-    const currentPath = window.location.pathname;
-    const newPath = currentPath.replace(/\/(en|ru|et)\//, `/${lang}/`);
-    if (currentPath !== newPath) {
-        window.history.pushState({}, '', newPath);
+    // Обновляем URL для SEO (проще и надёжнее)
+    const newPath = `/${lang}/support.html`;
+    if (window.location.pathname !== newPath) {
+        window.location.href = newPath; // Редирект на новую языковую версию
     }
     
     trackDonationClick(`language_${lang}`);
 }
 
 function updateContent() {
+    console.log('Updating content for language:', currentLanguage); // Отладка
     const t = translations[currentLanguage];
+    if (!t) {
+        console.error('Translations not found for language:', currentLanguage);
+        return;
+    }
     
     // Обновляем все элементы с data-translate
     document.querySelectorAll('[data-translate]').forEach(element => {
@@ -218,6 +225,7 @@ function updateContent() {
 
 // Clipboard functions
 async function copyToClipboard(text, messageKey) {
+    console.log('Copying to clipboard:', text, messageKey); // Отладка
     try {
         await navigator.clipboard.writeText(text);
         showToast(translations[currentLanguage][messageKey] || translations[currentLanguage].copied || 'Copied!');
@@ -249,11 +257,16 @@ function showToast(message) {
 
 // Показать инструкции по криптовалюте
 function showCryptoInstructions() {
+    console.log('showCryptoInstructions called'); // Отладка
     const t = translations[currentLanguage];
     const modalContent = document.getElementById('modal-content');
     const modalTitle = document.getElementById('modal-title');
+    const modal = document.getElementById('modal');
     
-    if (!modalContent || !modalTitle) return;
+    if (!modalContent || !modalTitle || !modal) {
+        console.error('Modal elements not found');
+        return;
+    }
     
     modalTitle.textContent = t.howToSendCrypto;
     
@@ -300,11 +313,12 @@ function showCryptoInstructions() {
         </div>
     `;
     
-    document.getElementById('modal').style.display = 'flex';
+    modal.style.display = 'flex';
     trackDonationClick('crypto_instructions');
 }
 
 function closeModal() {
+    console.log('Closing modal'); // Отладка
     const modal = document.getElementById('modal');
     if (modal) {
         modal.style.display = 'none';
@@ -313,11 +327,13 @@ function closeModal() {
 
 // Показать адреса криптовалют (альтернативная функция)
 function showCryptoAddresses() {
+    console.log('showCryptoAddresses called'); // Отладка
     const t = translations[currentLanguage];
     const modalContent = document.getElementById('modal-content');
     const modalTitle = document.getElementById('modal-title');
+    const modal = document.getElementById('modal');
     
-    if (!modalContent || !modalTitle) return;
+    if (!modalContent || !modalTitle || !modal) return;
     
     modalTitle.textContent = t.cryptoSection;
     
@@ -353,11 +369,13 @@ function showCryptoAddresses() {
         </div>
     `;
     
-    document.getElementById('modal').style.display = 'flex';
+    modal.style.display = 'flex';
 }
 
 // Инициализация
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Support.js loaded - initializing'); // Отладка
+    
     // Определяем язык из URL
     const path = window.location.pathname;
     if (path.includes('/ru/')) {
@@ -368,6 +386,9 @@ document.addEventListener('DOMContentLoaded', function() {
         currentLanguage = 'en';
     }
     
+    console.log('Detected language from URL:', currentLanguage);
+    
+    // Принудительно обновляем контент
     updateContent();
     
     // Отмечаем активную кнопку языка (по data-lang)
@@ -375,17 +396,29 @@ document.addEventListener('DOMContentLoaded', function() {
         btn.classList.remove('active');
         if (btn.dataset.lang === currentLanguage) {
             btn.classList.add('active');
+            console.log('Active language button set to:', currentLanguage);
         }
     });
     
-    // Закрытие модального окна при клике вне его
+    // Проверяем наличие модального окна
     const modal = document.getElementById('modal');
     if (modal) {
+        console.log('Modal element found');
         modal.addEventListener('click', function(e) {
             if (e.target === this) {
                 closeModal();
             }
         });
+    } else {
+        console.error('Modal element not found! Check HTML');
+    }
+    
+    // Проверяем наличие кнопок
+    const cryptoBtn = document.querySelector('.action-btn.primary');
+    if (cryptoBtn) {
+        console.log('Crypto instructions button found');
+    } else {
+        console.error('Crypto button not found! Check HTML');
     }
 });
 
@@ -396,3 +429,6 @@ window.showCryptoInstructions = showCryptoInstructions;
 window.showCryptoAddresses = showCryptoAddresses;
 window.closeModal = closeModal;
 window.trackDonationClick = trackDonationClick;
+
+// Экспортируем функции в глобальную область (для обратной совместимости)
+console.log('Support.js fully loaded with all functions');
