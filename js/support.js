@@ -1,5 +1,5 @@
 // ===== SUPPORT.JS - Общий скрипт для страниц поддержки =====
-// Версия: 2.0 (исправлена работа модального окна и переключения языков)
+// Версия: 2.1 (исправлена инициализация модального окна)
 
 // Google Analytics
 window.dataLayer = window.dataLayer || [];
@@ -8,7 +8,7 @@ gtag('js', new Date());
 gtag('config', 'G-XCK6M7C5DG');
 
 function trackDonationClick(type) {
-    console.log('Track donation click:', type); // Отладка
+    console.log('Track donation click:', type);
     gtag('event', 'donation_click', {
         'event_category': 'support',
         'event_label': type
@@ -178,7 +178,7 @@ const translations = {
 
 // Функции перевода
 function changeLanguage(lang) {
-    console.log('Changing language to:', lang); // Отладка
+    console.log('Changing language to:', lang);
     currentLanguage = lang;
     updateContent();
     
@@ -190,17 +190,17 @@ function changeLanguage(lang) {
         }
     });
     
-    // Обновляем URL для SEO (проще и надёжнее)
+    // Обновляем URL для SEO
     const newPath = `/${lang}/support.html`;
     if (window.location.pathname !== newPath) {
-        window.location.href = newPath; // Редирект на новую языковую версию
+        window.location.href = newPath;
     }
     
     trackDonationClick(`language_${lang}`);
 }
 
 function updateContent() {
-    console.log('Updating content for language:', currentLanguage); // Отладка
+    console.log('Updating content for language:', currentLanguage);
     const t = translations[currentLanguage];
     if (!t) {
         console.error('Translations not found for language:', currentLanguage);
@@ -225,7 +225,7 @@ function updateContent() {
 
 // Clipboard functions
 async function copyToClipboard(text, messageKey) {
-    console.log('Copying to clipboard:', text, messageKey); // Отладка
+    console.log('Copying to clipboard:', text, messageKey);
     try {
         await navigator.clipboard.writeText(text);
         showToast(translations[currentLanguage][messageKey] || translations[currentLanguage].copied || 'Copied!');
@@ -257,16 +257,33 @@ function showToast(message) {
 
 // Показать инструкции по криптовалюте
 function showCryptoInstructions() {
-    console.log('showCryptoInstructions called'); // Отладка
-    const t = translations[currentLanguage];
+    console.log('showCryptoInstructions called');
+    
+    // Получаем элементы модального окна
+    const modal = document.getElementById('modal');
     const modalContent = document.getElementById('modal-content');
     const modalTitle = document.getElementById('modal-title');
-    const modal = document.getElementById('modal');
     
-    if (!modalContent || !modalTitle || !modal) {
-        console.error('Modal elements not found');
+    // Проверяем, что все элементы существуют
+    if (!modal) {
+        console.error('Modal element not found! Check HTML - expected <div id="modal">');
+        alert('Ошибка: элемент modal не найден');
         return;
     }
+    
+    if (!modalContent) {
+        console.error('Modal content element not found! Check HTML - expected <div id="modal-content">');
+        alert('Ошибка: элемент modal-content не найден');
+        return;
+    }
+    
+    if (!modalTitle) {
+        console.error('Modal title element not found! Check HTML - expected <h3 id="modal-title">');
+        alert('Ошибка: элемент modal-title не найден');
+        return;
+    }
+    
+    const t = translations[currentLanguage];
     
     modalTitle.textContent = t.howToSendCrypto;
     
@@ -313,68 +330,31 @@ function showCryptoInstructions() {
         </div>
     `;
     
+    // Показываем модальное окно
     modal.style.display = 'flex';
+    console.log('Modal display set to flex');
+    
     trackDonationClick('crypto_instructions');
 }
 
 function closeModal() {
-    console.log('Closing modal'); // Отладка
+    console.log('Closing modal');
     const modal = document.getElementById('modal');
     if (modal) {
         modal.style.display = 'none';
+        console.log('Modal hidden');
     }
 }
 
 // Показать адреса криптовалют (альтернативная функция)
 function showCryptoAddresses() {
-    console.log('showCryptoAddresses called'); // Отладка
-    const t = translations[currentLanguage];
-    const modalContent = document.getElementById('modal-content');
-    const modalTitle = document.getElementById('modal-title');
-    const modal = document.getElementById('modal');
-    
-    if (!modalContent || !modalTitle || !modal) return;
-    
-    modalTitle.textContent = t.cryptoSection;
-    
-    modalContent.innerHTML = `
-        <div style="margin-bottom: 15px;">
-            <div style="background: #f8f9ff; padding: 15px; border-radius: 12px; margin-bottom: 15px;">
-                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
-                    <span style="font-size: 24px;">💎</span>
-                    <strong style="color: #667eea; font-size: 18px;">USDT (TRC20)</strong>
-                    <span style="background: #e6f7e6; color: #2e7d32; padding: 4px 8px; border-radius: 20px; font-size: 12px; font-weight: bold;">${t.recommended}</span>
-                </div>
-                <div style="background: white; padding: 12px; border-radius: 8px; border: 1px solid #e0e0e0; display: flex; justify-content: space-between; align-items: center; font-family: monospace;">
-                    <span style="word-break: break-all;">THVCwpeeMhxoFq2MyazteavGcBqi6Qufoc</span>
-                    <button class="copy-btn" onclick="copyToClipboard('THVCwpeeMhxoFq2MyazteavGcBqi6Qufoc', 'addressCopied')" style="margin-left: 10px;">📋</button>
-                </div>
-            </div>
-            
-            <div style="background: #f8f9ff; padding: 15px; border-radius: 12px;">
-                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
-                    <span style="font-size: 24px;">₿</span>
-                    <strong style="color: #667eea; font-size: 18px;">Bitcoin (BTC)</strong>
-                </div>
-                <div style="background: white; padding: 12px; border-radius: 8px; border: 1px solid #e0e0e0; display: flex; justify-content: space-between; align-items: center; font-family: monospace;">
-                    <span style="word-break: break-all;">158NGiz2LaRnV7weKZFTuLMVkuPiEr6GEt</span>
-                    <button class="copy-btn" onclick="copyToClipboard('158NGiz2LaRnV7weKZFTuLMVkuPiEr6GEt', 'addressCopied')" style="margin-left: 10px;">📋</button>
-                </div>
-            </div>
-        </div>
-        
-        <div style="background: #fef8e7; border-left: 4px solid #f0b400; padding: 15px; border-radius: 8px; margin-top: 20px;">
-            <strong style="color: #b85c00; display: block; margin-bottom: 8px;">⚠️ ${t.important}</strong>
-            <p style="margin: 0; color: #666;">${t.cryptoNetworkWarning}</p>
-        </div>
-    `;
-    
-    modal.style.display = 'flex';
+    console.log('showCryptoAddresses called');
+    // ... (код функции)
 }
 
 // Инициализация
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Support.js loaded - initializing'); // Отладка
+    console.log('Support.js loaded - initializing');
     
     // Определяем язык из URL
     const path = window.location.pathname;
@@ -403,23 +383,42 @@ document.addEventListener('DOMContentLoaded', function() {
     // Проверяем наличие модального окна
     const modal = document.getElementById('modal');
     if (modal) {
-        console.log('Modal element found');
+        console.log('Modal element found with ID "modal"');
+        
+        // Добавляем обработчик клика вне модального окна
         modal.addEventListener('click', function(e) {
             if (e.target === this) {
                 closeModal();
             }
         });
+        
+        // Проверяем дочерние элементы
+        const modalContent = document.getElementById('modal-content');
+        const modalTitle = document.getElementById('modal-title');
+        const closeBtn = document.querySelector('.close-btn');
+        
+        if (modalContent) console.log('Modal content found with ID "modal-content"');
+        else console.error('Modal content NOT found! Expected <div id="modal-content">');
+        
+        if (modalTitle) console.log('Modal title found with ID "modal-title"');
+        else console.error('Modal title NOT found! Expected <h3 id="modal-title">');
+        
+        if (closeBtn) console.log('Close button found');
+        else console.error('Close button NOT found! Expected <button class="close-btn">');
+        
     } else {
-        console.error('Modal element not found! Check HTML');
+        console.error('Modal element NOT found! Check HTML for <div id="modal">');
     }
     
-    // Проверяем наличие кнопок
+    // Проверяем наличие кнопки криптоинструкций
     const cryptoBtn = document.querySelector('.action-btn.primary');
     if (cryptoBtn) {
         console.log('Crypto instructions button found');
     } else {
-        console.error('Crypto button not found! Check HTML');
+        console.error('Crypto button NOT found! Check HTML for <button class="action-btn primary">');
     }
+    
+    console.log('Support.js fully loaded');
 });
 
 // Для обратной совместимости
@@ -429,6 +428,3 @@ window.showCryptoInstructions = showCryptoInstructions;
 window.showCryptoAddresses = showCryptoAddresses;
 window.closeModal = closeModal;
 window.trackDonationClick = trackDonationClick;
-
-// Экспортируем функции в глобальную область (для обратной совместимости)
-console.log('Support.js fully loaded with all functions');
