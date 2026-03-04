@@ -1,5 +1,5 @@
 // ===== SUPPORT.JS - Общий скрипт для страниц поддержки =====
-// Версия: 2.1 (исправлена инициализация модального окна)
+// Версия: 3.0 (полностью без onclick, только event listeners)
 
 // Google Analytics
 window.dataLayer = window.dataLayer || [];
@@ -352,6 +352,96 @@ function showCryptoAddresses() {
     // ... (код функции)
 }
 
+// Функция для обработки копирования по data-атрибутам
+function handleCopyClick(button) {
+    const text = button.getAttribute('data-copy-text');
+    const type = button.getAttribute('data-copy-type') || 'addressCopied';
+    
+    if (text) {
+        copyToClipboard(text, type);
+    } else {
+        console.error('No data-copy-text found on button');
+    }
+}
+
+// Функция для показа инструкций банка
+function showBankInstructions() {
+    const t = translations[currentLanguage];
+    if (t && t.bankAppInstructions) {
+        showToast(t.bankAppInstructions);
+        trackDonationClick('bank_instructions');
+    }
+}
+
+// Инициализация всех обработчиков событий
+function initEventListeners() {
+    console.log('Initializing event listeners');
+    
+    // Кнопки языка
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const lang = this.dataset.lang;
+            if (lang) {
+                changeLanguage(lang);
+            }
+        });
+    });
+    
+    // Кнопки копирования (в карточках криптовалют и банковских реквизитах)
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            handleCopyClick(this);
+        });
+    });
+    
+    // Кнопка "Как отправить криптовалюту"
+    document.querySelectorAll('[data-action="crypto-instructions"]').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showCryptoInstructions();
+            trackDonationClick('crypto_instructions');
+        });
+    });
+    
+    // Кнопка "Скопировать IBAN" в быстрых действиях
+    document.querySelectorAll('[data-action="copy-iban"]').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            handleCopyClick(this);
+        });
+    });
+    
+    // Кнопка "Открыть банковское приложение"
+    document.querySelectorAll('[data-action="bank-instructions"]').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showBankInstructions();
+            // Также копируем IBAN для удобства
+            handleCopyClick(this);
+        });
+    });
+    
+    // Кнопки закрытия модального окна
+    document.querySelectorAll('[data-action="close-modal"]').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            closeModal();
+        });
+    });
+    
+    // Ссылка "На главную"
+    document.querySelectorAll('[data-action="back-to-main"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            trackDonationClick('back_to_main');
+            // Не делаем preventDefault, так это ссылка
+        });
+    });
+    
+    console.log('Event listeners initialized');
+}
+
 // Инициализация
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Support.js loaded - initializing');
@@ -410,13 +500,8 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Modal element NOT found! Check HTML for <div id="modal">');
     }
     
-    // Проверяем наличие кнопки криптоинструкций
-    const cryptoBtn = document.querySelector('.action-btn.primary');
-    if (cryptoBtn) {
-        console.log('Crypto instructions button found');
-    } else {
-        console.error('Crypto button NOT found! Check HTML for <button class="action-btn primary">');
-    }
+    // Инициализируем все обработчики событий
+    initEventListeners();
     
     console.log('Support.js fully loaded');
 });

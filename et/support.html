@@ -88,9 +88,9 @@
     <div class="container">
         <div class="header">
             <div class="language-switcher">
-                <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
-                <button class="lang-btn" data-lang="ru" onclick="changeLanguage('ru')">RU</button>
-                <button class="lang-btn active" data-lang="et" onclick="changeLanguage('et')">ET</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ru">RU</button>
+                <button class="lang-btn active" data-lang="et">ET</button>
             </div>
             
             <!-- Навигационное меню -->
@@ -135,8 +135,8 @@
                     
                     <div class="address-box">
                         <strong data-translate="address">Aadress:</strong><br>
-                        THVCwpeeMhxoFq2MyazteavGcBqi6Qufoc
-                        <button class="copy-btn" onclick="copyToClipboard('THVCwpeeMhxoFq2MyazteavGcBqi6Qufoc', 'addressCopied'); trackDonationClick('copy_usdt')">
+                        <span class="crypto-address">THVCwpeeMhxoFq2MyazteavGcBqi6Qufoc</span>
+                        <button class="copy-btn" data-copy="THVCwpeeMhxoFq2MyazteavGcBqi6Qufoc" data-copy-type="addressCopied" data-track="copy_usdt">
                             📋 <span data-translate="copy">Kopeeri</span>
                         </button>
                     </div>
@@ -154,8 +154,8 @@
                     
                     <div class="address-box">
                         <strong data-translate="address">Aadress:</strong><br>
-                        158NGiz2LaRnV7weKZFTuLMVkuPiEr6GEt
-                        <button class="copy-btn" onclick="copyToClipboard('158NGiz2LaRnV7weKZFTuLMVkuPiEr6GEt', 'addressCopied'); trackDonationClick('copy_btc')">
+                        <span class="crypto-address">158NGiz2LaRnV7weKZFTuLMVkuPiEr6GEt</span>
+                        <button class="copy-btn" data-copy="158NGiz2LaRnV7weKZFTuLMVkuPiEr6GEt" data-copy-type="addressCopied" data-track="copy_btc">
                             📋 <span data-translate="copy">Kopeeri</span>
                         </button>
                     </div>
@@ -194,7 +194,7 @@
                 <div class="detail-item">
                     <div class="detail-label" data-translate="nameLabel">Saaja nimi:</div>
                     <div class="detail-value">Ilja Serõšev</div>
-                    <button class="copy-btn" style="position: static;" onclick="copyToClipboard('Ilja Serõšev', 'nameCopied'); trackDonationClick('copy_name')">
+                    <button class="copy-btn" data-copy="Ilja Serõšev" data-copy-type="nameCopied" data-track="copy_name">
                         📋
                     </button>
                 </div>
@@ -203,7 +203,7 @@
                 <div class="detail-item">
                     <div class="detail-label" data-translate="ibanLabel">IBAN:</div>
                     <div class="detail-value">EE457700771003417343</div>
-                    <button class="copy-btn" style="position: static;" onclick="copyToClipboard('EE457700771003417343', 'ibanCopied'); trackDonationClick('copy_iban')">
+                    <button class="copy-btn" data-copy="EE457700771003417343" data-copy-type="ibanCopied" data-track="copy_iban">
                         📋
                     </button>
                 </div>
@@ -212,7 +212,7 @@
                 <div class="detail-item">
                     <div class="detail-label" data-translate="referenceLabel">Makseviide:</div>
                     <div class="detail-value" data-translate="referenceText">Personality Compass app donation</div>
-                    <button class="copy-btn" style="position: static;" onclick="copyToClipboard('Personality Compass app donation', 'referenceCopied'); trackDonationClick('copy_reference')">
+                    <button class="copy-btn" data-copy="Personality Compass app donation" data-copy-type="referenceCopied" data-track="copy_reference">
                         📋
                     </button>
                 </div>
@@ -232,15 +232,15 @@
             </div>
 
             <div class="actions-grid">
-                <button class="action-btn primary" onclick="showCryptoInstructions(); trackDonationClick('crypto_instructions')">
+                <button class="action-btn primary" data-action="crypto-instructions">
                     🪙 <span data-translate="howToSendCrypto">Kuidas saata krüptoraha</span>
                 </button>
                 
-                <button class="action-btn" onclick="copyToClipboard('EE457700771003417343', 'ibanCopied'); trackDonationClick('copy_iban')">
+                <button class="action-btn" data-action="copy-iban" data-copy="EE457700771003417343" data-copy-type="ibanCopied" data-track="copy_iban">
                     📋 <span data-translate="copyIban">Kopeeri IBAN</span>
                 </button>
                 
-                <button class="action-btn" onclick="copyToClipboard('EE457700771003417343', 'ibanCopied'); showToast(translations[currentLanguage].bankAppInstructions); trackDonationClick('open_bank_app')">
+                <button class="action-btn" data-action="open-bank-app">
                     📱 <span data-translate="openBankApp">Ava pangarakendus</span>
                 </button>
             </div>
@@ -251,7 +251,7 @@
             </div>
 
             <!-- Back to Main Page -->
-            <a href="/et/" class="back-btn" onclick="trackDonationClick('back_to_main')">
+            <a href="/et/" class="back-btn" data-action="back-to-main">
                 ← <span data-translate="backToMain">Tagasi pealehele</span>
             </a>
         </div>
@@ -271,11 +271,11 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3 id="modal-title" class="modal-title"></h3>
-                <button class="close-btn" onclick="closeModal()">×</button>
+                <button class="close-btn" data-action="close-modal">×</button>
             </div>
             <div id="modal-content"></div>
             <div style="text-align: right; margin-top: 20px;">
-                <button class="action-btn" onclick="closeModal()" data-translate="close">Sulge</button>
+                <button class="action-btn" data-action="close-modal" data-translate="close">Sulge</button>
             </div>
         </div>
     </div>

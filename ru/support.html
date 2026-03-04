@@ -88,9 +88,9 @@
     <div class="container">
         <div class="header">
             <div class="language-switcher">
-                <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
-                <button class="lang-btn active" data-lang="ru" onclick="changeLanguage('ru')">RU</button>
-                <button class="lang-btn" data-lang="et" onclick="changeLanguage('et')">ET</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn active" data-lang="ru">RU</button>
+                <button class="lang-btn" data-lang="et">ET</button>
             </div>
             
             <!-- Навигационное меню -->
@@ -136,7 +136,7 @@
                     <div class="address-box">
                         <strong data-translate="address">Адрес:</strong><br>
                         THVCwpeeMhxoFq2MyazteavGcBqi6Qufoc
-                        <button class="copy-btn" onclick="copyToClipboard('THVCwpeeMhxoFq2MyazteavGcBqi6Qufoc', 'addressCopied'); trackDonationClick('copy_usdt')">
+                        <button class="copy-btn" data-copy-text="THVCwpeeMhxoFq2MyazteavGcBqi6Qufoc" data-copy-type="addressCopied">
                             📋 <span data-translate="copy">Копировать</span>
                         </button>
                     </div>
@@ -155,7 +155,7 @@
                     <div class="address-box">
                         <strong data-translate="address">Адрес:</strong><br>
                         158NGiz2LaRnV7weKZFTuLMVkuPiEr6GEt
-                        <button class="copy-btn" onclick="copyToClipboard('158NGiz2LaRnV7weKZFTuLMVkuPiEr6GEt', 'addressCopied'); trackDonationClick('copy_btc')">
+                        <button class="copy-btn" data-copy-text="158NGiz2LaRnV7weKZFTuLMVkuPiEr6GEt" data-copy-type="addressCopied">
                             📋 <span data-translate="copy">Копировать</span>
                         </button>
                     </div>
@@ -194,7 +194,7 @@
                 <div class="detail-item">
                     <div class="detail-label" data-translate="nameLabel">Имя получателя:</div>
                     <div class="detail-value">Ilja Serõšev</div>
-                    <button class="copy-btn" style="position: static;" onclick="copyToClipboard('Ilja Serõšev', 'nameCopied'); trackDonationClick('copy_name')">
+                    <button class="copy-btn" data-copy-text="Ilja Serõšev" data-copy-type="nameCopied">
                         📋
                     </button>
                 </div>
@@ -203,7 +203,7 @@
                 <div class="detail-item">
                     <div class="detail-label" data-translate="ibanLabel">IBAN:</div>
                     <div class="detail-value">EE457700771003417343</div>
-                    <button class="copy-btn" style="position: static;" onclick="copyToClipboard('EE457700771003417343', 'ibanCopied'); trackDonationClick('copy_iban')">
+                    <button class="copy-btn" data-copy-text="EE457700771003417343" data-copy-type="ibanCopied">
                         📋
                     </button>
                 </div>
@@ -212,7 +212,7 @@
                 <div class="detail-item">
                     <div class="detail-label" data-translate="referenceLabel">Назначение платежа:</div>
                     <div class="detail-value" data-translate="referenceText">Пожертвование на приложение Personality Compass</div>
-                    <button class="copy-btn" style="position: static;" onclick="copyToClipboard('Пожертвование на приложение Personality Compass', 'referenceCopied'); trackDonationClick('copy_reference')">
+                    <button class="copy-btn" data-copy-text="Пожертвование на приложение Personality Compass" data-copy-type="referenceCopied">
                         📋
                     </button>
                 </div>
@@ -232,15 +232,15 @@
             </div>
 
             <div class="actions-grid">
-                <button class="action-btn primary" onclick="showCryptoInstructions(); trackDonationClick('crypto_instructions')">
+                <button class="action-btn primary" data-action="crypto-instructions">
                     🪙 <span data-translate="howToSendCrypto">Как отправить криптовалюту</span>
                 </button>
                 
-                <button class="action-btn" onclick="copyToClipboard('EE457700771003417343', 'ibanCopied'); trackDonationClick('copy_iban')">
+                <button class="action-btn" data-action="copy-iban" data-copy-text="EE457700771003417343" data-copy-type="ibanCopied">
                     📋 <span data-translate="copyIban">Скопировать IBAN</span>
                 </button>
                 
-                <button class="action-btn" onclick="copyToClipboard('EE457700771003417343', 'ibanCopied'); showToast(translations[currentLanguage].bankAppInstructions); trackDonationClick('open_bank_app')">
+                <button class="action-btn" data-action="bank-instructions" data-copy-text="EE457700771003417343" data-copy-type="ibanCopied">
                     📱 <span data-translate="openBankApp">Открыть банковское приложение</span>
                 </button>
             </div>
@@ -251,7 +251,7 @@
             </div>
 
             <!-- Back to Main Page -->
-            <a href="/ru/" class="back-btn" onclick="trackDonationClick('back_to_main')">
+            <a href="/ru/" class="back-btn" data-action="back-to-main">
                 ← <span data-translate="backToMain">На главную страницу</span>
             </a>
         </div>
@@ -271,11 +271,11 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3 id="modal-title" class="modal-title"></h3>
-                <button class="close-btn" onclick="closeModal()">×</button>
+                <button class="close-btn" data-action="close-modal">×</button>
             </div>
             <div id="modal-content"></div>
             <div style="text-align: right; margin-top: 20px;">
-                <button class="action-btn" onclick="closeModal()" data-translate="close">Закрыть</button>
+                <button class="action-btn" data-action="close-modal" data-translate="close">Закрыть</button>
             </div>
         </div>
     </div>

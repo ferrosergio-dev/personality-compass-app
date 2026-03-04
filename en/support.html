@@ -63,10 +63,9 @@
     <!-- Основной скрипт страницы поддержки -->
     <script src="/js/support.js" defer></script>
     
-    <!-- Инициализация английского языка -->
+    <!-- Инициализация английского языка (без onclick) -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Устанавливаем английский язык по умолчанию для этой страницы
             if (typeof currentLanguage !== 'undefined') {
                 currentLanguage = 'en';
                 if (typeof updateContent === 'function') {
@@ -74,7 +73,6 @@
                 }
             }
             
-            // Отмечаем активную кнопку языка по data-lang
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('active');
                 if (btn.dataset.lang === 'en') {
@@ -88,9 +86,9 @@
     <div class="container">
         <div class="header">
             <div class="language-switcher">
-                <button class="lang-btn active" data-lang="en" onclick="changeLanguage('en')">EN</button>
-                <button class="lang-btn" data-lang="ru" onclick="changeLanguage('ru')">RU</button>
-                <button class="lang-btn" data-lang="et" onclick="changeLanguage('et')">ET</button>
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ru">RU</button>
+                <button class="lang-btn" data-lang="et">ET</button>
             </div>
             
             <!-- Навигационное меню -->
@@ -136,7 +134,7 @@
                     <div class="address-box">
                         <strong data-translate="address">Address:</strong><br>
                         THVCwpeeMhxoFq2MyazteavGcBqi6Qufoc
-                        <button class="copy-btn" onclick="copyToClipboard('THVCwpeeMhxoFq2MyazteavGcBqi6Qufoc', 'addressCopied'); trackDonationClick('copy_usdt')">
+                        <button class="copy-btn" data-copy="THVCwpeeMhxoFq2MyazteavGcBqi6Qufoc" data-copy-type="addressCopied" data-track="copy_usdt">
                             📋 <span data-translate="copy">Copy</span>
                         </button>
                     </div>
@@ -155,7 +153,7 @@
                     <div class="address-box">
                         <strong data-translate="address">Address:</strong><br>
                         158NGiz2LaRnV7weKZFTuLMVkuPiEr6GEt
-                        <button class="copy-btn" onclick="copyToClipboard('158NGiz2LaRnV7weKZFTuLMVkuPiEr6GEt', 'addressCopied'); trackDonationClick('copy_btc')">
+                        <button class="copy-btn" data-copy="158NGiz2LaRnV7weKZFTuLMVkuPiEr6GEt" data-copy-type="addressCopied" data-track="copy_btc">
                             📋 <span data-translate="copy">Copy</span>
                         </button>
                     </div>
@@ -194,7 +192,7 @@
                 <div class="detail-item">
                     <div class="detail-label" data-translate="nameLabel">Recipient name:</div>
                     <div class="detail-value">Ilja Serõšev</div>
-                    <button class="copy-btn" style="position: static;" onclick="copyToClipboard('Ilja Serõšev', 'nameCopied'); trackDonationClick('copy_name')">
+                    <button class="copy-btn" data-copy="Ilja Serõšev" data-copy-type="nameCopied" data-track="copy_name">
                         📋
                     </button>
                 </div>
@@ -203,7 +201,7 @@
                 <div class="detail-item">
                     <div class="detail-label" data-translate="ibanLabel">IBAN:</div>
                     <div class="detail-value">EE457700771003417343</div>
-                    <button class="copy-btn" style="position: static;" onclick="copyToClipboard('EE457700771003417343', 'ibanCopied'); trackDonationClick('copy_iban')">
+                    <button class="copy-btn" data-copy="EE457700771003417343" data-copy-type="ibanCopied" data-track="copy_iban">
                         📋
                     </button>
                 </div>
@@ -212,7 +210,7 @@
                 <div class="detail-item">
                     <div class="detail-label" data-translate="referenceLabel">Payment reference:</div>
                     <div class="detail-value" data-translate="referenceText">Personality Compass app donation</div>
-                    <button class="copy-btn" style="position: static;" onclick="copyToClipboard('Personality Compass app donation', 'referenceCopied'); trackDonationClick('copy_reference')">
+                    <button class="copy-btn" data-copy="Personality Compass app donation" data-copy-type="referenceCopied" data-track="copy_reference">
                         📋
                     </button>
                 </div>
@@ -232,15 +230,15 @@
             </div>
 
             <div class="actions-grid">
-                <button class="action-btn primary" onclick="showCryptoInstructions(); trackDonationClick('crypto_instructions')">
+                <button class="action-btn primary" data-action="crypto-instructions" data-track="crypto_instructions">
                     🪙 <span data-translate="howToSendCrypto">How to send cryptocurrency</span>
                 </button>
                 
-                <button class="action-btn" onclick="copyToClipboard('EE457700771003417343', 'ibanCopied'); trackDonationClick('copy_iban')">
+                <button class="action-btn" data-copy="EE457700771003417343" data-copy-type="ibanCopied" data-track="copy_iban_quick">
                     📋 <span data-translate="copyIban">Copy IBAN</span>
                 </button>
                 
-                <button class="action-btn" onclick="copyToClipboard('EE457700771003417343', 'ibanCopied'); showToast(translations[currentLanguage].bankAppInstructions); trackDonationClick('open_bank_app')">
+                <button class="action-btn" data-action="bank-instructions" data-track="open_bank_app">
                     📱 <span data-translate="openBankApp">Open banking app</span>
                 </button>
             </div>
@@ -250,8 +248,8 @@
                 All information is provided for voluntary donations. We do not store any payment data.
             </div>
 
-            <!-- Back to Main Page -->
-            <a href="/en/" class="back-btn" onclick="trackDonationClick('back_to_main')">
+            <!-- Back to Main Page (теперь без onclick) -->
+            <a href="/en/" class="back-btn" data-track="back_to_main">
                 ← <span data-translate="backToMain">Back to Main Page</span>
             </a>
         </div>
@@ -271,11 +269,11 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3 id="modal-title" class="modal-title"></h3>
-                <button class="close-btn" onclick="closeModal()">×</button>
+                <button class="close-btn" data-action="close-modal">×</button>
             </div>
             <div id="modal-content"></div>
             <div style="text-align: right; margin-top: 20px;">
-                <button class="action-btn" onclick="closeModal()" data-translate="close">Close</button>
+                <button class="action-btn" data-action="close-modal" data-translate="close">Close</button>
             </div>
         </div>
     </div>
