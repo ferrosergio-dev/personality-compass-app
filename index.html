@@ -14,6 +14,9 @@
     <!-- PWA manifest -->
     <link rel="manifest" href="/manifest.json">
     
+    <!-- Подключаем внешний скрипт редиректа -->
+    <script src="/redirect.js" defer></script>
+    
     <style>
         /* стили без изменений */
         body {
@@ -49,28 +52,8 @@
         }
     </style>
     
-    <script>
-        // Функция для редиректа
-        function redirectToLanguage() {
-            if (sessionStorage.getItem('redirected')) {
-                return;
-            }
-
-            const userLang = navigator.language.substring(0, 2);
-            let targetUrl = '/en/';
-            
-            if (userLang === 'ru') {
-                targetUrl = '/ru/';
-            } else if (userLang === 'et') {
-                targetUrl = '/et/';
-            }
-            
-            sessionStorage.setItem('redirected', 'true');
-            window.location.replace(targetUrl);
-        }
-        
-        setTimeout(redirectToLanguage, 0);
-    </script>
+    <!-- Весь старый скрипт УДАЛЁН -->
+    
 </head>
 <body>
     <div class="container">
