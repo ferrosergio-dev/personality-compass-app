@@ -57,35 +57,27 @@
     <link rel="stylesheet" href="/css/components/cards.css">
     <link rel="stylesheet" href="/css/support.css">
     
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-        (function(m,e,t,r,i,k,a){
-            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();
-            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106973384', 'ym');
-
-        ym(106973384, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/106973384" style="position:absolute; left:-9999px;" alt="Yandex Metrika tracking pixel" /></div></noscript>
+    <!-- Метрики (один общий файл) -->
+    <script src="/js/metrics.js" defer></script>
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XCK6M7C5DG"></script>
+    <!-- Основной скрипт страницы поддержки -->
     <script src="/js/support.js" defer></script>
     
-    <!-- Переопределяем переводы для русского языка -->
+    <!-- Инициализация русского языка -->
     <script>
-        // Расширяем объект translations для русского языка
-        window.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function() {
             // Устанавливаем русский язык по умолчанию для этой страницы
-            currentLanguage = 'ru';
-            updateContent();
+            if (typeof currentLanguage !== 'undefined') {
+                currentLanguage = 'ru';
+                if (typeof updateContent === 'function') {
+                    updateContent();
+                }
+            }
             
-            // Отмечаем активную кнопку
+            // Отмечаем активную кнопку языка по data-lang
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('active');
-                if (btn.getAttribute('onclick')?.includes(`'ru'`)) {
+                if (btn.dataset.lang === 'ru') {
                     btn.classList.add('active');
                 }
             });
@@ -96,9 +88,9 @@
     <div class="container">
         <div class="header">
             <div class="language-switcher">
-                <button class="lang-btn" onclick="changeLanguage('en')">EN</button>
-                <button class="lang-btn active" onclick="changeLanguage('ru')">RU</button>
-                <button class="lang-btn" onclick="changeLanguage('et')">ET</button>
+                <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+                <button class="lang-btn active" data-lang="ru" onclick="changeLanguage('ru')">RU</button>
+                <button class="lang-btn" data-lang="et" onclick="changeLanguage('et')">ET</button>
             </div>
             
             <!-- Навигационное меню -->
@@ -144,7 +136,7 @@
                     <div class="address-box">
                         <strong data-translate="address">Адрес:</strong><br>
                         THVCwpeeMhxoFq2MyazteavGcBqi6Qufoc
-                        <button class="copy-btn" onclick="copyToClipboard('THVCwpeeMhxoFq2MyazteavGcBqi6Qufoc', 'addressCopied')">
+                        <button class="copy-btn" onclick="copyToClipboard('THVCwpeeMhxoFq2MyazteavGcBqi6Qufoc', 'addressCopied'); trackDonationClick('copy_usdt')">
                             📋 <span data-translate="copy">Копировать</span>
                         </button>
                     </div>
@@ -163,7 +155,7 @@
                     <div class="address-box">
                         <strong data-translate="address">Адрес:</strong><br>
                         158NGiz2LaRnV7weKZFTuLMVkuPiEr6GEt
-                        <button class="copy-btn" onclick="copyToClipboard('158NGiz2LaRnV7weKZFTuLMVkuPiEr6GEt', 'addressCopied')">
+                        <button class="copy-btn" onclick="copyToClipboard('158NGiz2LaRnV7weKZFTuLMVkuPiEr6GEt', 'addressCopied'); trackDonationClick('copy_btc')">
                             📋 <span data-translate="copy">Копировать</span>
                         </button>
                     </div>
@@ -202,7 +194,7 @@
                 <div class="detail-item">
                     <div class="detail-label" data-translate="nameLabel">Имя получателя:</div>
                     <div class="detail-value">Ilja Serõšev</div>
-                    <button class="copy-btn" style="position: static;" onclick="copyToClipboard('Ilja Serõšev', 'nameCopied')">
+                    <button class="copy-btn" style="position: static;" onclick="copyToClipboard('Ilja Serõšev', 'nameCopied'); trackDonationClick('copy_name')">
                         📋
                     </button>
                 </div>
@@ -211,7 +203,7 @@
                 <div class="detail-item">
                     <div class="detail-label" data-translate="ibanLabel">IBAN:</div>
                     <div class="detail-value">EE457700771003417343</div>
-                    <button class="copy-btn" style="position: static;" onclick="copyToClipboard('EE457700771003417343', 'ibanCopied')">
+                    <button class="copy-btn" style="position: static;" onclick="copyToClipboard('EE457700771003417343', 'ibanCopied'); trackDonationClick('copy_iban')">
                         📋
                     </button>
                 </div>
@@ -220,7 +212,7 @@
                 <div class="detail-item">
                     <div class="detail-label" data-translate="referenceLabel">Назначение платежа:</div>
                     <div class="detail-value" data-translate="referenceText">Пожертвование на приложение Personality Compass</div>
-                    <button class="copy-btn" style="position: static;" onclick="copyToClipboard('Пожертвование на приложение Personality Compass', 'referenceCopied')">
+                    <button class="copy-btn" style="position: static;" onclick="copyToClipboard('Пожертвование на приложение Personality Compass', 'referenceCopied'); trackDonationClick('copy_reference')">
                         📋
                     </button>
                 </div>
@@ -248,7 +240,7 @@
                     📋 <span data-translate="copyIban">Скопировать IBAN</span>
                 </button>
                 
-                <button class="action-btn" onclick="copyToClipboard('EE457700771003417343', 'ibanCopied'); alert(translations[currentLanguage].bankAppInstructions); trackDonationClick('open_bank_app')">
+                <button class="action-btn" onclick="copyToClipboard('EE457700771003417343', 'ibanCopied'); showToast(translations[currentLanguage].bankAppInstructions); trackDonationClick('open_bank_app')">
                     📱 <span data-translate="openBankApp">Открыть банковское приложение</span>
                 </button>
             </div>

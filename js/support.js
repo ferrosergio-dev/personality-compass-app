@@ -11,6 +11,11 @@ function trackDonationClick(type) {
         'event_category': 'support',
         'event_label': type
     });
+    
+    // Яндекс.Метрика (если доступна)
+    if (typeof ym !== 'undefined') {
+        ym(106973384, 'reachGoal', 'donation_click', {action: type});
+    }
 }
 
 // Переводы
@@ -56,14 +61,14 @@ const translations = {
         step3Desc: "Make sure you select the correct network",
         step4Confirm: "Confirm the transfer",
         step4Desc: "Check the details and confirm sending",
-        nameLabel: "Recipient name",
+        nameLabel: "Recipient name:",
         ibanLabel: "IBAN:",
-        referenceLabel: "Payment reference",
+        referenceLabel: "Payment reference:",
         referenceText: "Personality Compass app donation",
         bankAppInstructions: "Open your banking app and use the details above for transfer. Don't forget to specify the payment reference.",
         rememberToCopy: "Don't forget to copy",
         close: "Close",
-        backToMain: "Back to Main Page",
+        backToMain: "← Back to Main Page",
         privacyNote: "All information is provided for voluntary donations. We do not store any payment data.",
         qrInstructions: "Scan QR code with your banking app"
     },
@@ -87,7 +92,7 @@ const translations = {
         copyIban: "Скопировать IBAN",
         openBankApp: "Открыть банковское приложение",
         nameCopied: "Имя скопировано в буфер",
-        referenceCopied: "Назначение скопировано в буфер",
+        referenceCopied: "Назначение скопировано",
         ibanCopied: "IBAN скопирован!",
         addressCopied: "Адрес скопирован",
         copy: "Копировать",
@@ -106,14 +111,14 @@ const translations = {
         step3Desc: "Убедитесь, что выбрали правильную сеть",
         step4Confirm: "Подтвердите перевод",
         step4Desc: "Проверьте детали и подтвердите отправку",
-        nameLabel: "Имя получателя",
+        nameLabel: "Имя получателя:",
         ibanLabel: "IBAN:",
-        referenceLabel: "Назначение",
-        referenceText: "Personality Compass app donation",
+        referenceLabel: "Назначение платежа:",
+        referenceText: "Пожертвование на приложение Personality Compass",
         bankAppInstructions: "Откройте ваше банковское приложение и используйте реквизиты выше для перевода. Не забудьте указать назначение платежа.",
         rememberToCopy: "Не забудьте скопировать",
         close: "Закрыть",
-        backToMain: "На главную страницу",
+        backToMain: "← На главную страницу",
         privacyNote: "Вся информация предоставлена для добровольных пожертвований. Мы не храним никаких платежных данных.",
         qrInstructions: "Отсканируйте QR-код банковским приложением"
     },
@@ -122,7 +127,7 @@ const translations = {
         subtitle: "Sinu annetus aitab rakendust paremaks teha",
         thankYouTitle: "Aitäh!",
         thankYouText: "Täname, et kasutad 'Isiksuse Kompassi'! Sinu toetus aitab rakendust täiustada ja uusi funktsioone lisada.",
-        cryptoSection: "Krüptoraha",
+        cryptoSection: "Krüptoraha annetused",
         cryptoSubtitle: "Kiire ja kättesaadav üle kogu maailma",
         whyCrypto: "Miks krüptoraha?",
         recommended: "Soovitatav",
@@ -156,14 +161,14 @@ const translations = {
         step3Desc: "Veendu, et valisid õige võrgu",
         step4Confirm: "Kinnita ülekanne",
         step4Desc: "Kontrolli üksikasjad ja kinnita saatmine",
-        nameLabel: "Saaja nimi",
+        nameLabel: "Saaja nimi:",
         ibanLabel: "IBAN:",
-        referenceLabel: "Makseviide",
+        referenceLabel: "Makseviide:",
         referenceText: "Personality Compass app donation",
         bankAppInstructions: "Ava oma pangarakendus ja kasuta ülaltoodud andmeid ülekande tegemiseks. Ära unusta määrata makseviidet.",
         rememberToCopy: "Ära unusta kopeerida",
         close: "Sulge",
-        backToMain: "Tagasi pealehele",
+        backToMain: "← Tagasi pealehele",
         privacyNote: "Kogu teave on esitatud vabatahtlike annetuste jaoks. Me ei säilita ühtegi makseandmeid.",
         qrInstructions: "Skänneeri QR-kood oma pangarakendusega"
     }
@@ -177,7 +182,7 @@ function changeLanguage(lang) {
     // Обновляем активную кнопку
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.remove('active');
-        if (btn.getAttribute('onclick')?.includes(`'${lang}'`)) {
+        if (btn.dataset.lang === lang) {
             btn.classList.add('active');
         }
     });
@@ -188,6 +193,8 @@ function changeLanguage(lang) {
     if (currentPath !== newPath) {
         window.history.pushState({}, '', newPath);
     }
+    
+    trackDonationClick(`language_${lang}`);
 }
 
 function updateContent() {
@@ -213,7 +220,7 @@ function updateContent() {
 async function copyToClipboard(text, messageKey) {
     try {
         await navigator.clipboard.writeText(text);
-        showToast(translations[currentLanguage][messageKey] || 'Copied!');
+        showToast(translations[currentLanguage][messageKey] || translations[currentLanguage].copied || 'Copied!');
         trackDonationClick('copy_' + messageKey);
     } catch (err) {
         // Fallback для старых браузеров
@@ -223,7 +230,7 @@ async function copyToClipboard(text, messageKey) {
         textArea.select();
         document.execCommand('copy');
         document.body.removeChild(textArea);
-        showToast(translations[currentLanguage][messageKey] || 'Copied!');
+        showToast(translations[currentLanguage][messageKey] || translations[currentLanguage].copied || 'Copied!');
         trackDonationClick('copy_' + messageKey);
     }
 }
@@ -251,52 +258,102 @@ function showCryptoInstructions() {
     modalTitle.textContent = t.howToSendCrypto;
     
     modalContent.innerHTML = `
-        <p>${t.cryptoInstructions}</p>
+        <p style="margin-bottom: 20px; color: #666;">${t.cryptoInstructions}</p>
         
-        <div class="instruction-step">
-            <div class="step-number">1</div>
-            <div>
-                <strong>${t.step1Copy}</strong>
-                <p>${t.step1Desc}</p>
+        <div style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 25px;">
+            <div style="display: flex; gap: 15px; align-items: flex-start;">
+                <div style="background: #667eea; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">1</div>
+                <div>
+                    <strong style="color: #667eea; display: block; margin-bottom: 5px;">${t.step1Copy}</strong>
+                    <p style="margin: 0; color: #666;">${t.step1Desc}</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 15px; align-items: flex-start;">
+                <div style="background: #667eea; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">2</div>
+                <div>
+                    <strong style="color: #667eea; display: block; margin-bottom: 5px;">${t.step2Open}</strong>
+                    <p style="margin: 0; color: #666;">${t.step2Desc}</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 15px; align-items: flex-start;">
+                <div style="background: #667eea; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">3</div>
+                <div>
+                    <strong style="color: #667eea; display: block; margin-bottom: 5px;">${t.step3Paste}</strong>
+                    <p style="margin: 0; color: #666;">${t.step3Desc}</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 15px; align-items: flex-start;">
+                <div style="background: #667eea; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">4</div>
+                <div>
+                    <strong style="color: #667eea; display: block; margin-bottom: 5px;">${t.step4Confirm}</strong>
+                    <p style="margin: 0; color: #666;">${t.step4Desc}</p>
+                </div>
             </div>
         </div>
         
-        <div class="instruction-step">
-            <div class="step-number">2</div>
-            <div>
-                <strong>${t.step2Open}</strong>
-                <p>${t.step2Desc}</p>
-            </div>
-        </div>
-        
-        <div class="instruction-step">
-            <div class="step-number">3</div>
-            <div>
-                <strong>${t.step3Paste}</strong>
-                <p>${t.step3Desc}</p>
-            </div>
-        </div>
-        
-        <div class="instruction-step">
-            <div class="step-number">4</div>
-            <div>
-                <strong>${t.step4Confirm}</strong>
-                <p>${t.step4Desc}</p>
-            </div>
-        </div>
-        
-        <div class="warning-box">
-            <strong>⚠️ ${t.important}</strong>
-            <p>${t.cryptoNetworkWarning}</p>
+        <div style="background: #fef8e7; border-left: 4px solid #f0b400; padding: 15px; border-radius: 8px; margin-top: 20px;">
+            <strong style="color: #b85c00; display: block; margin-bottom: 8px;">⚠️ ${t.important}</strong>
+            <p style="margin: 0; color: #666;">${t.cryptoNetworkWarning}</p>
         </div>
     `;
     
     document.getElementById('modal').style.display = 'flex';
-    trackDonctionClick('crypto_instructions');
+    trackDonationClick('crypto_instructions');
 }
 
 function closeModal() {
-    document.getElementById('modal').style.display = 'none';
+    const modal = document.getElementById('modal');
+    if (modal) {
+        modal.style.display = 'none';
+    }
+}
+
+// Показать адреса криптовалют (альтернативная функция)
+function showCryptoAddresses() {
+    const t = translations[currentLanguage];
+    const modalContent = document.getElementById('modal-content');
+    const modalTitle = document.getElementById('modal-title');
+    
+    if (!modalContent || !modalTitle) return;
+    
+    modalTitle.textContent = t.cryptoSection;
+    
+    modalContent.innerHTML = `
+        <div style="margin-bottom: 15px;">
+            <div style="background: #f8f9ff; padding: 15px; border-radius: 12px; margin-bottom: 15px;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                    <span style="font-size: 24px;">💎</span>
+                    <strong style="color: #667eea; font-size: 18px;">USDT (TRC20)</strong>
+                    <span style="background: #e6f7e6; color: #2e7d32; padding: 4px 8px; border-radius: 20px; font-size: 12px; font-weight: bold;">${t.recommended}</span>
+                </div>
+                <div style="background: white; padding: 12px; border-radius: 8px; border: 1px solid #e0e0e0; display: flex; justify-content: space-between; align-items: center; font-family: monospace;">
+                    <span style="word-break: break-all;">THVCwpeeMhxoFq2MyazteavGcBqi6Qufoc</span>
+                    <button class="copy-btn" onclick="copyToClipboard('THVCwpeeMhxoFq2MyazteavGcBqi6Qufoc', 'addressCopied')" style="margin-left: 10px;">📋</button>
+                </div>
+            </div>
+            
+            <div style="background: #f8f9ff; padding: 15px; border-radius: 12px;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                    <span style="font-size: 24px;">₿</span>
+                    <strong style="color: #667eea; font-size: 18px;">Bitcoin (BTC)</strong>
+                </div>
+                <div style="background: white; padding: 12px; border-radius: 8px; border: 1px solid #e0e0e0; display: flex; justify-content: space-between; align-items: center; font-family: monospace;">
+                    <span style="word-break: break-all;">158NGiz2LaRnV7weKZFTuLMVkuPiEr6GEt</span>
+                    <button class="copy-btn" onclick="copyToClipboard('158NGiz2LaRnV7weKZFTuLMVkuPiEr6GEt', 'addressCopied')" style="margin-left: 10px;">📋</button>
+                </div>
+            </div>
+        </div>
+        
+        <div style="background: #fef8e7; border-left: 4px solid #f0b400; padding: 15px; border-radius: 8px; margin-top: 20px;">
+            <strong style="color: #b85c00; display: block; margin-bottom: 8px;">⚠️ ${t.important}</strong>
+            <p style="margin: 0; color: #666;">${t.cryptoNetworkWarning}</p>
+        </div>
+    `;
+    
+    document.getElementById('modal').style.display = 'flex';
 }
 
 // Инициализация
@@ -313,10 +370,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     updateContent();
     
-    // Отмечаем активную кнопку языка
+    // Отмечаем активную кнопку языка (по data-lang)
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.remove('active');
-        if (btn.getAttribute('onclick')?.includes(`'${currentLanguage}'`)) {
+        if (btn.dataset.lang === currentLanguage) {
             btn.classList.add('active');
         }
     });
@@ -332,5 +389,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Исправление опечатки в названии функции
-window.copyToClipback = window.copyToClipboard;
+// Для обратной совместимости
+window.changeLanguage = changeLanguage;
+window.copyToClipboard = copyToClipboard;
+window.showCryptoInstructions = showCryptoInstructions;
+window.showCryptoAddresses = showCryptoAddresses;
+window.closeModal = closeModal;
+window.trackDonationClick = trackDonationClick;

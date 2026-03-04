@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Blog - Personality Compass</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0; url=/blog/en/">
     <link rel="manifest" href="/manifest.json">
     <style>
         body {
@@ -63,17 +62,8 @@
             color: white;
         }
     </style>
-    <script>
-        // Автоматический редирект на язык пользователя
-        const userLang = navigator.language.substring(0, 2);
-        if (userLang === 'ru') {
-            window.location.href = '/blog/ru/';
-        } else if (userLang === 'et') {
-            window.location.href = '/blog/et/';
-        } else {
-            window.location.href = '/blog/en/';
-        }
-    </script>
+    <!-- Подключаем внешний скрипт редиректа -->
+    <script src="/js/blog-redirect.js" defer></script>
 </head>
 <body>
     <div class="message">
