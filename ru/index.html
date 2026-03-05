@@ -3,6 +3,17 @@
 <head>
     <!-- Yandex.Metrika counter (noscript) -->
     <noscript><div><img src="https://mc.yandex.ru/watch/106973384" class="metrika-pixel" alt="Счетчик Яндекс.Метрики" /></div></noscript>
+
+    <!-- ПОДКЛЮЧЕНИЯ ДЛЯ УСКОРЕНИЯ - ДОБАВЛЕНО -->
+    <link rel="preconnect" href="https://www.youtube-nocookie.com">
+    <link rel="preconnect" href="https://i.ytimg.com">
+    <link rel="preconnect" href="https://s.ytimg.com">
+    <link rel="preconnect" href="https://mc.yandex.ru">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    
+    <!-- Preload для критических CSS -->
+    <link rel="preload" href="/css/main.css" as="style">
+    <link rel="preload" href="/css/components/header.css" as="style">
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -110,14 +121,106 @@
     
     <link rel="manifest" href="/manifest.json">
     
-    <!-- Подключение CSS -->
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/components/header.css">
-    <link rel="stylesheet" href="/css/components/footer.css">
-    <link rel="stylesheet" href="/css/components/cards.css">
-
-    <!-- Специфичные стили для русской главной страницы -->
-    <link rel="stylesheet" href="/css/index_ru.css">
+    <!-- Критические стили INLINE для быстрого отображения -->
+    <style>
+        /* Минимальные стили для видимой части страницы */
+        body { 
+            margin: 0; 
+            padding: 20px; 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .header { 
+            text-align: center; 
+            padding: 40px 20px; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: white; 
+            position: relative;
+        }
+        .language-links { 
+            position: absolute; 
+            top: 20px; 
+            left: 30px; 
+            display: flex; 
+            gap: 8px; 
+        }
+        .lang-link { 
+            background: rgba(255,255,255,0.2); 
+            color: white; 
+            padding: 6px 12px; 
+            border-radius: 20px; 
+            text-decoration: none; 
+            font-size: 12px;
+        }
+        .lang-link.active {
+            background: white;
+            color: #667eea;
+        }
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0 30px;
+            flex-wrap: wrap;
+        }
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 8px 20px;
+            border-radius: 30px;
+            background: rgba(255,255,255,0.15);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        .nav-link.active {
+            background: white;
+            color: #667eea;
+        }
+        .app-title { 
+            font-size: 36px; 
+            margin-bottom: 10px; 
+        }
+        .app-subtitle {
+            font-size: 20px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        .tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .tag {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+    </style>
+    
+    <!-- Основные CSS (загружаются асинхронно) -->
+    <link rel="stylesheet" href="/css/main.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/css/components/header.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/css/components/footer.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/css/components/cards.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/css/index_ru.css" media="print" onload="this.media='all'">
+    
+    <!-- Fallback для браузеров без JS -->
+    <noscript>
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/components/header.css">
+        <link rel="stylesheet" href="/css/components/footer.css">
+        <link rel="stylesheet" href="/css/components/cards.css">
+        <link rel="stylesheet" href="/css/index_ru.css">
+    </noscript>
     
     <!-- Подключение метрик (один файл для всех скриптов) -->
     <script src="/js/metrics.js" defer></script>
@@ -189,7 +292,7 @@
                          sizes="(max-width: 768px) 100vw, 616px"
                          width="616" 
                          height="1369"
-                         loading="lazy"
+                         fetchpriority="high"
                          alt="Личностный Компас - главный экран с тестами MindPath 16, MindPath 5D и Эннеаграммой, а также личным дневником">
                 </div>
                 <div class="screenshot-item">

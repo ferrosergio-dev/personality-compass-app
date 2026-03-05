@@ -6,6 +6,17 @@
     
     <!-- Seznam.cz -->
     <meta name="seznam-wmt" content="d4RTpUnfyfewpBPevJV9lnIjijSdPj7K" />
+
+    <!-- PRELOAD И PRECONNECT - ДОБАВЛЕНО -->
+    <link rel="preconnect" href="https://www.youtube-nocookie.com">
+    <link rel="preconnect" href="https://i.ytimg.com">
+    <link rel="preconnect" href="https://s.ytimg.com">
+    <link rel="preconnect" href="https://mc.yandex.ru">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    
+    <!-- Критические CSS загружаем сразу -->
+    <link rel="preload" href="/css/main.css" as="style">
+    <link rel="preload" href="/css/components/header.css" as="style">
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -135,14 +146,32 @@
     
     <link rel="manifest" href="/manifest.json">
     
-    <!-- Подключение CSS -->
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/components/header.css">
-    <link rel="stylesheet" href="/css/components/footer.css">
-    <link rel="stylesheet" href="/css/components/cards.css">
+    <!-- Критические стили INLINE для быстрого отображения -->
+    <style>
+        /* Минимальные стили для видимой части страницы */
+        body { margin: 0; padding: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 20px; }
+        .language-links { position: absolute; top: 20px; left: 30px; display: flex; gap: 8px; }
+        .lang-link { background: rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 20px; text-decoration: none; }
+        .app-title { font-size: 36px; margin-bottom: 10px; }
+    </style>
     
-    <!-- Специфичные стили для английской главной страницы -->
-    <link rel="stylesheet" href="/css/index_en.css">
+    <!-- Основные CSS (загружаются, но не блокируют рендер) -->
+    <link rel="stylesheet" href="/css/main.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/css/components/header.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/css/components/footer.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/css/components/cards.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/css/index_en.css" media="print" onload="this.media='all'">
+    
+    <!-- Fallback для браузеров без JS -->
+    <noscript>
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/components/header.css">
+        <link rel="stylesheet" href="/css/components/footer.css">
+        <link rel="stylesheet" href="/css/components/cards.css">
+        <link rel="stylesheet" href="/css/index_en.css">
+    </noscript>
     
     <!-- Подключение метрик (один файл для всех скриптов) -->
     <script src="/js/metrics.js" defer></script>
@@ -210,11 +239,11 @@
             <div class="screenshots-grid">
                 <div class="screenshot-item">
                     <img src="/images/01_en_s.webp"
+                         fetchpriority="high"
                          srcset="/images/01_en_s.webp 616w, /images/01_en_l.webp 1080w"
                          sizes="(max-width: 768px) 100vw, 616px"
                          width="616" 
                          height="1369"
-                         loading="lazy"
                          alt="Personality Compass main screen showing MindPath 16, MindPath 5D, Enneagram tests and My Diary for self-discovery">
                 </div>
                 <div class="screenshot-item">

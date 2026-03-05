@@ -3,6 +3,17 @@
 <head>
     <!-- Yandex.Metrika counter (noscript) -->
     <noscript><div><img src="https://mc.yandex.ru/watch/106973384" class="metrika-pixel" alt="Yandex Metrika" /></div></noscript>
+
+    <!-- PRECONNECT - ДОБАВЛЕНО для ускорения -->
+    <link rel="preconnect" href="https://www.youtube-nocookie.com">
+    <link rel="preconnect" href="https://i.ytimg.com">
+    <link rel="preconnect" href="https://s.ytimg.com">
+    <link rel="preconnect" href="https://mc.yandex.ru">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    
+    <!-- PRELOAD критических CSS -->
+    <link rel="preload" href="/css/main.css" as="style">
+    <link rel="preload" href="/css/components/header.css" as="style">
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -110,14 +121,34 @@
     
     <link rel="manifest" href="/manifest.json">
     
-    <!-- Подключение CSS -->
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/components/header.css">
-    <link rel="stylesheet" href="/css/components/footer.css">
-    <link rel="stylesheet" href="/css/components/cards.css">
+    <!-- КРИТИЧЕСКИЕ INLINE-СТИЛИ для быстрого первого отображения -->
+    <style>
+        /* Minimaalsed stiilid esialgseks kuvamiseks */
+        body { margin: 0; padding: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .container { max-width: 900px; margin: 0 auto; background: white; border-radius: 20px; overflow: hidden; }
+        .header { text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .language-links { position: absolute; top: 20px; left: 30px; display: flex; gap: 8px; }
+        .lang-link { background: rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 20px; text-decoration: none; }
+        .nav-menu { display: flex; justify-content: center; gap: 15px; margin: 20px 0 30px; flex-wrap: wrap; }
+        .nav-link { color: white; text-decoration: none; padding: 8px 20px; border-radius: 30px; background: rgba(255,255,255,0.15); }
+        .app-title { font-size: 36px; margin-bottom: 10px; }
+    </style>
     
-    <!-- Специфичные стили для эстонской главной страницы -->
-    <link rel="stylesheet" href="/css/index_et.css">
+    <!-- Основные CSS (загружаются асинхронно) -->
+    <link rel="stylesheet" href="/css/main.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/css/components/header.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/css/components/footer.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/css/components/cards.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/css/index_et.css" media="print" onload="this.media='all'">
+    
+    <!-- Fallback ilma JavaScriptita -->
+    <noscript>
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/components/header.css">
+        <link rel="stylesheet" href="/css/components/footer.css">
+        <link rel="stylesheet" href="/css/components/cards.css">
+        <link rel="stylesheet" href="/css/index_et.css">
+    </noscript>
     
     <!-- Подключение метрик (один файл для всех скриптов) -->
     <script src="/js/metrics.js" defer></script>
@@ -192,7 +223,7 @@
                          sizes="(max-width: 768px) 100vw, 616px"
                          width="616" 
                          height="1369"
-                         loading="lazy"
+                         fetchpriority="high"
                          alt="Isiksuse Kompass - Avaleht kolme testi ja päevikuga: MindPath 16, MindPath 5D, Enneagramm ja Minu Päevik">
                 </div>
                 <div class="screenshot-item">
