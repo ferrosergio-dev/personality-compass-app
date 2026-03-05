@@ -7,12 +7,12 @@
     
     // Определяем язык браузера
     const userLang = navigator.language.substring(0, 2);
-    let targetUrl = '/blog/en/';
+    let targetUrl = '/blog/en/index.html';
     
     if (userLang === 'ru') {
-        targetUrl = '/blog/ru/';
+        targetUrl = '/blog/ru/index.html';
     } else if (userLang === 'et') {
-        targetUrl = '/blog/et/';
+        targetUrl = '/blog/et/index.html';
     }
     
     // Запоминаем, что редирект был
