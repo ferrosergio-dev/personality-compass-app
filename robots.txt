@@ -15,6 +15,7 @@ Allow: /images/*.svg
 Disallow: /api/
 Disallow: /private/
 Disallow: /temp/
+Disallow: /cdn-cgi/
 
 # Правила для Google Image Search
 User-agent: Googlebot-Image
@@ -27,6 +28,7 @@ Allow: /*.webp
 Allow: /*.svg
 Disallow: /api/
 Disallow: /private/
+Disallow: /cdn-cgi/
 
 # Правила для Yandex Image Search
 User-agent: YandexImages
@@ -39,6 +41,7 @@ Allow: /*.webp
 Allow: /*.svg
 Disallow: /api/
 Disallow: /private/
+Disallow: /cdn-cgi/
 
 # Карта сайта
 Sitemap: https://personality-compass.app/sitemap.xml
