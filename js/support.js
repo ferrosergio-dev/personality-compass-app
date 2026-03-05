@@ -354,26 +354,73 @@ function showCryptoAddresses() {
 
 // Функция для обработки копирования по data-атрибутам
 function handleCopyClick(button) {
-    const text = button.getAttribute('data-copy-text');
+    const text = button.getAttribute('data-copy') || button.getAttribute('data-copy-text');
     const type = button.getAttribute('data-copy-type') || 'addressCopied';
     
     if (text) {
         copyToClipboard(text, type);
     } else {
-        console.error('No data-copy-text found on button');
+        console.error('No data-copy or data-copy-text found on button', button);
+        // Пробуем найти текст внутри кнопки
+        const spanText = button.querySelector('span')?.textContent;
+        if (spanText && spanText !== 'Copy' && spanText !== 'Kopeeri' && spanText !== 'Копировать') {
+            copyToClipboard(spanText, type);
+        }
     }
 }
 
 // Функция для показа инструкций банка
 function showBankInstructions() {
+    console.log('showBankInstructions called');
     const t = translations[currentLanguage];
     if (t && t.bankAppInstructions) {
+        // Показываем toast с инструкцией
         showToast(t.bankAppInstructions);
+        
+        // Дополнительно показываем модальное окно с IBAN для копирования
+        const modal = document.getElementById('modal');
+        const modalContent = document.getElementById('modal-content');
+        const modalTitle = document.getElementById('modal-title');
+        
+        if (modal && modalContent && modalTitle) {
+            modalTitle.textContent = t.quickActions || 'Quick Actions';
+            
+            modalContent.innerHTML = `
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <div style="font-size: 48px; margin-bottom: 15px;">🏦</div>
+                    <p style="margin-bottom: 20px; color: #666;">${t.bankAppInstructions}</p>
+                    
+                    <div style="background: #f8f9ff; padding: 20px; border-radius: 12px; margin: 20px 0;">
+                        <strong style="color: #667eea; display: block; margin-bottom: 10px;">IBAN:</strong>
+                        <div style="font-family: monospace; font-size: 16px; word-break: break-all; margin-bottom: 15px;">
+                            EE457700771003417343
+                        </div>
+                        <button class="copy-btn" data-copy="EE457700771003417343" data-copy-type="ibanCopied" style="position: relative; top: 0; right: 0; margin: 0 auto; display: inline-block;">
+                            📋 ${t.copyIban || 'Copy IBAN'}
+                        </button>
+                    </div>
+                    
+                    <p style="color: #999; font-size: 14px; margin-top: 20px;">${t.rememberToCopy || 'Don\'t forget to copy'}</p>
+                </div>
+            `;
+            
+            // Добавляем обработчик для новой кнопки копирования в модальном окне
+            const newCopyBtn = modalContent.querySelector('.copy-btn');
+            if (newCopyBtn) {
+                newCopyBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    handleCopyClick(this);
+                });
+            }
+            
+            modal.style.display = 'flex';
+        }
+        
         trackDonationClick('bank_instructions');
     }
 }
 
-// Инициализация всех обработчиков событий
+// Инициализация всех обработчиков событий - ИСПРАВЛЕНО
 function initEventListeners() {
     console.log('Initializing event listeners');
     
@@ -405,21 +452,19 @@ function initEventListeners() {
         });
     });
     
-    // Кнопка "Скопировать IBAN" в быстрых действиях
-    document.querySelectorAll('[data-action="copy-iban"]').forEach(btn => {
+    // Кнопка "Скопировать IBAN" в быстрых действиях - ИСПРАВЛЕНО (поддерживает оба формата)
+    document.querySelectorAll('[data-action="copy-iban"], .action-btn[data-copy]').forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
             handleCopyClick(this);
         });
     });
     
-    // Кнопка "Открыть банковское приложение"
-    document.querySelectorAll('[data-action="bank-instructions"]').forEach(btn => {
+    // Кнопка "Открыть банковское приложение" - ИСПРАВЛЕНО
+    document.querySelectorAll('[data-action="open-bank-app"], [data-action="bank-instructions"]').forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
             showBankInstructions();
-            // Также копируем IBAN для удобства
-            handleCopyClick(this);
         });
     });
     

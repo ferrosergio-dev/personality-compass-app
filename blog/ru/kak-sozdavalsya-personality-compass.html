@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <!-- Yandex.Metrika counter (noscript) -->
-    <noscript><div><img src="https://mc.yandex.ru/watch/106973384" style="position:absolute; left:-9999px;" alt="Yandex Metrika tracking pixel" /></div></noscript>
+    <noscript><div><img src="https://mc.yandex.ru/watch/106973384" class="metrika-pixel" alt="Yandex Metrika tracking pixel" /></div></noscript>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,6 +32,8 @@
     <link rel="stylesheet" href="/css/components/footer.css">
     <link rel="stylesheet" href="/css/components/cards.css">
     <link rel="stylesheet" href="/css/article.css">
+    <link rel="stylesheet" href="/css/components/badges.css">
+    <link rel="stylesheet" href="/css/components/tree-view.css">
     
     <!-- Подключение метрик (один файл для всех скриптов) -->
     <script src="/js/metrics.js" defer></script>
@@ -295,7 +297,7 @@ flutter test
                          width="250" 
                          height="54" 
                          src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1081836&amp;theme=neutral&amp;t=1771868609496"
-                         style="border-radius: 8px;">
+                         class="producthunt-badge">
                 </a>
             </div>
             
@@ -306,39 +308,39 @@ flutter test
             <div class="feedback-grid">
                 
                 <!-- Email -->
-                <div class="feedback-card" style="background: #f8f9ff; padding: 25px; border-radius: 12px; text-align: center; border: 2px solid #e0e0e0;">
-                    <div style="font-size: 48px; margin-bottom: 15px;">📧</div>
-                    <h3 style="color: #667eea; margin-bottom: 10px;">Email</h3>
-                    <p style="margin-bottom: 15px;">Для вопросов и обратной связи</p>
-                    <a href="mailto:info@personality-compass.app" style="color: #667eea; font-weight: bold; text-decoration: none; word-break: break-all;">info@personality-compass.app</a>
+                <div class="feedback-card">
+                    <div class="feedback-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>Для вопросов и обратной связи</p>
+                    <a href="mailto:info@personality-compass.app" class="feedback-link">info@personality-compass.app</a>
                 </div>
                 
                 <!-- LinkedIn -->
-                <div class="feedback-card" style="background: #f8f9ff; padding: 25px; border-radius: 12px; text-align: center; border: 2px solid #e0e0e0;">
-                    <div style="font-size: 48px; margin-bottom: 15px;">💼</div>
-                    <h3 style="color: #667eea; margin-bottom: 10px;">LinkedIn</h3>
-                    <p style="margin-bottom: 15px;">Профессиональные контакты</p>
-                    <a href="https://www.linkedin.com/in/ilja-seryshev" target="_blank" style="color: #667eea; font-weight: bold; text-decoration: none;">linkedin.com/in/ilja-seryshev</a>
+                <div class="feedback-card">
+                    <div class="feedback-icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <p>Профессиональные контакты</p>
+                    <a href="https://www.linkedin.com/in/ilja-seryshev" target="_blank" class="feedback-link">linkedin.com/in/ilja-seryshev</a>
                 </div>
                 
                 <!-- Product Hunt -->
-                <div class="feedback-card" style="background: #f8f9ff; padding: 25px; border-radius: 12px; text-align: center; border: 2px solid #e0e0e0;">
-                    <div style="font-size: 48px; margin-bottom: 15px;">🚀</div>
-                    <h3 style="color: #667eea; margin-bottom: 10px;">Product Hunt</h3>
-                    <p style="margin-bottom: 15px;">Оставьте отзыв или голос</p>
-                    <a href="https://www.producthunt.com/products/personality-compass" target="_blank" style="color: #667eea; font-weight: bold; text-decoration: none;">Personality Compass</a>
+                <div class="feedback-card">
+                    <div class="feedback-icon">🚀</div>
+                    <h3>Product Hunt</h3>
+                    <p>Оставьте отзыв или голос</p>
+                    <a href="https://www.producthunt.com/products/personality-compass" target="_blank" class="feedback-link">Personality Compass</a>
                 </div>
                 
             </div>
 
             <div class="note-box">
-                <p style="margin: 0;"><strong>💬 Вопросы к сообществу:</strong></p>
-                <ul style="margin-top: 10px;">
+                <p><strong>💬 Вопросы к сообществу:</strong></p>
+                <ul>
                     <li>Вы создавали offline-first приложения? С какими вызовами столкнулись?</li>
                     <li>Использовали бы вы такой инструмент для тимбилдинга, коучинга или личного роста?</li>
                     <li>Насколько важна для вас приватность при прохождении тестов личности?</li>
                 </ul>
-                <p style="margin-top: 15px; font-style: italic;">Делитесь мыслями по email или в LinkedIn — я читаю и отвечаю на каждое сообщение!</p>
+                <p>Делитесь мыслями по email или в LinkedIn — я читаю и отвечаю на каждое сообщение!</p>
             </div>
             
             <h2>🔗 Скачать Personality Compass</h2>

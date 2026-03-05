@@ -2,7 +2,7 @@
 <html lang="et">
 <head>
     <!-- Yandex.Metrika counter (noscript) -->
-    <noscript><div><img src="https://mc.yandex.ru/watch/106973384" style="position:absolute; left:-9999px;" alt="Yandex Metrika tracking pixel" /></div></noscript>
+    <noscript><div><img src="https://mc.yandex.ru/watch/106973384" class="metrika-pixel" alt="Yandex Metrika jälgimispiksel" /></div></noscript>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,149 +33,14 @@
     <link rel="stylesheet" href="/css/components/cards.css">
     <link rel="stylesheet" href="/css/article.css">
     
+    <!-- Стили для этой статьи (те же, что и в английской версии) -->
+    <link rel="stylesheet" href="/css/blog/tips.css">
+    
     <!-- Подключение метрик (один файл для всех скриптов) -->
     <script src="/js/metrics.js" defer></script>
     
-    <!-- Уникальные стили для этой статьи -->
-    <style>
-        /* Дополнительные стили для tip-box, dos-donts-grid, myth-box и других уникальных элементов */
-        .tip-box {
-            background: var(--background-light);
-            padding: 25px;
-            border-radius: var(--border-radius-sm);
-            margin: 20px 0;
-            border: 2px solid var(--border-color);
-        }
-        
-        .tip-title {
-            font-size: 20px;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .tip-icon {
-            font-size: 24px;
-        }
-        
-        .dos-donts-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin: 30px 0;
-        }
-        
-        .dos-card {
-            background: #e8f5e9;
-            padding: 25px;
-            border-radius: var(--border-radius-sm);
-            border-left: 4px solid #4caf50;
-        }
-        
-        .donts-card {
-            background: #ffebee;
-            padding: 25px;
-            border-radius: var(--border-radius-sm);
-            border-left: 4px solid #f44336;
-        }
-        
-        .list-title {
-            font-weight: bold;
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-        
-        .custom-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .custom-list li {
-            margin-bottom: 12px;
-            padding-left: 30px;
-            position: relative;
-        }
-        
-        .custom-list li::before {
-            position: absolute;
-            left: 0;
-        }
-        
-        .dos-card .custom-list li::before {
-            content: "✓";
-            color: #4caf50;
-            font-weight: bold;
-        }
-        
-        .donts-card .custom-list li::before {
-            content: "✗";
-            color: #f44336;
-            font-weight: bold;
-        }
-        
-        .myth-box {
-            background: #fff3e0;
-            padding: 20px;
-            border-radius: var(--border-radius-sm);
-            margin: 20px 0;
-            border-left: 4px solid #ff9800;
-        }
-        
-        .myth {
-            font-weight: bold;
-            color: #f57c00;
-        }
-        
-        .fact {
-            margin-top: 5px;
-        }
-        
-        .steps-list {
-            counter-reset: step;
-            list-style: none;
-            padding: 0;
-        }
-        
-        .steps-list li {
-            counter-increment: step;
-            margin-bottom: 30px;
-            padding-left: 50px;
-            position: relative;
-        }
-        
-        .steps-list li::before {
-            content: counter(step);
-            background: linear-gradient(135deg, var(--primary-gradient-start) 0%, var(--primary-gradient-end) 100%);
-            color: var(--white);
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-        
-        .feedback-card h3 {
-            color: var(--primary-color);
-        }
-        
-        .feedback-card a {
-            color: var(--primary-color);
-        }
-        
-        @media (max-width: 768px) {
-            .dos-donts-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <!-- Весь блок <style> УДАЛЕН - стили в tips.css -->
+    
 </head>
 <body>
     <div class="container">
@@ -336,22 +201,22 @@
             <h2>Mida teha pärast tulemuste saamist</h2>
             
             <div class="tip-box">
-                <h4 style="color: var(--primary-color);">1. Kirjuta päevikusse oma tüübist</h4>
+                <h4>1. Kirjuta päevikusse oma tüübist</h4>
                 <p>Kirja, mis resoneerub ja mis mitte. Märgi üles näiteid oma elust, mis kirjeldust kinnitavad või vaidlustavad.</p>
             </div>
             
             <div class="tip-box">
-                <h4 style="color: var(--primary-color);">2. Aruta usaldusväärsete inimestega</h4>
+                <h4>2. Aruta usaldusväärsete inimestega</h4>
                 <p>Jaga oma tulemusi inimestega, kes tunnevad sind hästi. Küsi neilt: "Kas see kõlab minuna?" Võid olla üllatunud nende arusaamadest.</p>
             </div>
             
             <div class="tip-box">
-                <h4 style="color: var(--primary-color);">3. Loo kasvuplaan</h4>
+                <h4>3. Loo kasvuplaan</h4>
                 <p>Lähtuvalt oma tüübi kasvusuundadest, sea 1-2 konkreetset eesmärki. Näiteks, kui oled 1. tüüp, harjuta sel nädalal ühes valdkonnas perfektsionismist loobumist.</p>
             </div>
             
             <div class="tip-box">
-                <h4 style="color: var(--primary-color);">4. Vaata uuesti 6 kuu pärast</h4>
+                <h4>4. Vaata uuesti 6 kuu pärast</h4>
                 <p>Tee test uuesti pärast kasvuga tegelemist. Võid märgata kergeid nihkeid, eriti integratsiooni suundades.</p>
             </div>
             
@@ -372,19 +237,19 @@
             <div class="feedback-grid">
                 
                 <!-- Email -->
-                <div class="feedback-card" style="background: #f8f9ff; padding: 25px; border-radius: 12px; text-align: center; border: 2px solid #e0e0e0;">
-                    <div style="font-size: 48px; margin-bottom: 15px;">📧</div>
-                    <h3 style="color: var(--primary-color); margin-bottom: 10px;">Email</h3>
-                    <p style="margin-bottom: 15px;">Jaga oma testimisnäpunäiteid</p>
-                    <a href="mailto:info@personality-compass.app" style="color: var(--primary-color); font-weight: bold; text-decoration: none;">info@personality-compass.app</a>
+                <div class="feedback-card">
+                    <div class="feedback-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>Jaga oma testimisnäpunäiteid</p>
+                    <a href="mailto:info@personality-compass.app">info@personality-compass.app</a>
                 </div>
                 
                 <!-- LinkedIn -->
-                <div class="feedback-card" style="background: #f8f9ff; padding: 25px; border-radius: 12px; text-align: center; border: 2px solid #e0e0e0;">
-                    <div style="font-size: 48px; margin-bottom: 15px;">💼</div>
-                    <h3 style="color: var(--primary-color); margin-bottom: 10px;">LinkedIn</h3>
-                    <p style="margin-bottom: 15px;">Ühenda ja arutle</p>
-                    <a href="https://www.linkedin.com/in/ilja-seryshev" target="_blank" style="color: var(--primary-color); font-weight: bold; text-decoration: none;">linkedin.com/in/ilja-seryshev</a>
+                <div class="feedback-card">
+                    <div class="feedback-icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <p>Ühenda ja arutle</p>
+                    <a href="https://www.linkedin.com/in/ilja-seryshev" target="_blank">linkedin.com/in/ilja-seryshev</a>
                 </div>
             </div>
             

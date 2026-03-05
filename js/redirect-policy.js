@@ -1,6 +1,11 @@
 // ==================== АВТОМАТИЧЕСКИЙ РЕДИРЕКТ НА ПОЛИТИКИ ====================
-document.addEventListener('DOMContentLoaded', function() {
-    // Определяем язык пользователя
+(function() {
+    // Проверяем, не было ли уже редиректа в этой сессии
+    if (sessionStorage.getItem('policy-redirected')) {
+        return;
+    }
+    
+    // Определяем язык браузера
     const userLang = navigator.language.substring(0, 2);
     let targetUrl = '/en/policy.html';
     
@@ -10,6 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
         targetUrl = '/et/policy.html';
     }
     
-    // Делаем редирект
-    window.location.href = targetUrl;
-});
+    // Запоминаем, что редирект был
+    sessionStorage.setItem('policy-redirected', 'true');
+    
+    // Выполняем редирект
+    window.location.replace(targetUrl);
+})();

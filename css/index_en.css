@@ -1,0 +1,12 @@
+/* ===== INDEX_EN.CSS - Специфичные стили для английской главной страницы ===== */
+
+/* Центрирование секции с видео */
+.content-section--centered {
+    text-align: center;
+}
+
+/* Дополнительное центрирование для видео-контейнера */
+.content-section--centered .video-container {
+    margin-left: auto;
+    margin-right: auto;
+}

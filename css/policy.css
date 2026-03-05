@@ -124,3 +124,9 @@ hr {
         padding: 20px;
     }
 }
+
+/* Контейнер для кнопки "Назад" */
+.back-link-container {
+    text-align: center;
+    margin-top: 30px;
+}

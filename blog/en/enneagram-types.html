@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <!-- Yandex.Metrika counter (noscript) -->
-    <noscript><div><img src="https://mc.yandex.ru/watch/106973384" style="position:absolute; left:-9999px;" alt="Yandex Metrika tracking pixel" /></div></noscript>
+    <noscript><div><img src="https://mc.yandex.ru/watch/106973384" class="metrika-pixel" alt="Yandex Metrika tracking pixel" /></div></noscript>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,6 +32,9 @@
     <link rel="stylesheet" href="/css/components/footer.css">
     <link rel="stylesheet" href="/css/components/cards.css">
     <link rel="stylesheet" href="/css/article.css">
+
+    <!-- Стили для Enneagram статьи -->
+    <link rel="stylesheet" href="/css/blog/enneagram.css">
     
     <!-- Подключение метрик (один файл для всех скриптов) -->
     <script src="/js/metrics.js" defer></script>
@@ -90,7 +93,7 @@
             <p><em>All descriptions below are quoted directly from Personality Compass core descriptions.</em></p>
             
             <!-- Type 1 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">Type 1</div>
                 <div class="type-name">The Reformer</div>
                 <div class="type-quote">"Ones are soulful idealists with unshakable inner ethics. They don't just see the world as it is—they see it as it *should* be—and carry a quiet, persistent ache from that gap."</div>
@@ -142,7 +145,7 @@
             </div>
             
             <!-- Type 2 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">Type 2</div>
                 <div class="type-name">The Helper</div>
                 <div class="type-quote">"Twos are hearts open to the world. Their soul sings through care; their joy lies in easing someone's pain, offering support, inspiration, or simply *being there*."</div>
@@ -194,7 +197,7 @@
             </div>
             
             <!-- Type 3 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">Type 3</div>
                 <div class="type-name">The Achiever</div>
                 <div class="type-quote">"Threes embody energy, purpose, and brilliance. They know how to inspire, win, and shine. For them, success isn't just an achievement—it's the mirror reflecting their worth."</div>
@@ -246,7 +249,7 @@
             </div>
             
             <!-- Type 4 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">Type 4</div>
                 <div class="type-name">The Individualist</div>
                 <div class="type-quote">"Fours are the poets of existence. Their soul lives in nuance—in depth of feeling, in longing for the lost, in hunger for beauty and meaning."</div>
@@ -298,7 +301,7 @@
             </div>
             
             <!-- Type 5 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">Type 5</div>
                 <div class="type-name">The Investigator</div>
                 <div class="type-quote">"Fives are guardians of the mind and keen observers of life. For them, knowledge is a sanctuary, understanding a way to stay grounded amid chaos."</div>
@@ -350,7 +353,7 @@
             </div>
             
             <!-- Type 6 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">Type 6</div>
                 <div class="type-name">The Loyalist</div>
                 <div class="type-quote">"Sixes are loyal guardians and devoted allies. Their soul seeks stability in a world that feels unpredictable. They're masters of 'what if?'—anticipating risks, testing reliability, seeking support."</div>
@@ -402,7 +405,7 @@
             </div>
             
             <!-- Type 7 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">Type 7</div>
                 <div class="type-name">The Enthusiast</div>
                 <div class="type-quote">"Sevens are sparks of joy in the world. Their soul reaches for light, novelty, and possibility. They find magic in everyday life and inspire others with their energy."</div>
@@ -454,7 +457,7 @@
             </div>
             
             <!-- Type 8 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">Type 8</div>
                 <div class="type-name">The Challenger</div>
                 <div class="type-quote">"Eights are people of iron will and tender hearts. They cannot tolerate injustice, protect the vulnerable, and never shy from responsibility. Their motto: 'If not me, then who?'"</div>
@@ -506,7 +509,7 @@
             </div>
             
             <!-- Type 9 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">Type 9</div>
                 <div class="type-name">The Peacemaker</div>
                 <div class="type-quote">"Nines are peace and calm. Their soul seeks harmony, avoiding conflict, tension, or abrupt moves. They listen deeply, sense subtle shifts, smooth rough edges, and create an atmosphere of comfort around them."</div>
@@ -666,19 +669,19 @@
             <div class="feedback-grid">
                 
                 <!-- Email -->
-                <div class="feedback-card" style="background: #f8f9ff; padding: 25px; border-radius: 12px; text-align: center; border: 2px solid #e0e0e0;">
-                    <div style="font-size: 48px; margin-bottom: 15px;">📧</div>
-                    <h3 style="color: #667eea; margin-bottom: 10px;">Email</h3>
-                    <p style="margin-bottom: 15px;">Share your Enneagram journey</p>
-                    <a href="mailto:info@personality-compass.app" style="color: #667eea; font-weight: bold; text-decoration: none;">info@personality-compass.app</a>
+                <div class="feedback-card">
+                    <div class="feedback-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>Share your Enneagram journey</p>
+                    <a href="mailto:info@personality-compass.app" class="feedback-link">info@personality-compass.app</a>
                 </div>
                 
                 <!-- LinkedIn -->
-                <div class="feedback-card" style="background: #f8f9ff; padding: 25px; border-radius: 12px; text-align: center; border: 2px solid #e0e0e0;">
-                    <div style="font-size: 48px; margin-bottom: 15px;">💼</div>
-                    <h3 style="color: #667eea; margin-bottom: 10px;">LinkedIn</h3>
-                    <p style="margin-bottom: 15px;">Connect and discuss</p>
-                    <a href="https://www.linkedin.com/in/ilja-seryshev" target="_blank" style="color: #667eea; font-weight: bold; text-decoration: none;">linkedin.com/in/ilja-seryshev</a>
+                <div class="feedback-card">
+                    <div class="feedback-icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <p>Connect and discuss</p>
+                    <a href="https://www.linkedin.com/in/ilja-seryshev" target="_blank" class="feedback-link">linkedin.com/in/ilja-seryshev</a>
                 </div>
             </div>
             

@@ -2,7 +2,7 @@
 <html lang="et">
 <head>
     <!-- Yandex.Metrika counter (noscript) -->
-    <noscript><div><img src="https://mc.yandex.ru/watch/106973384" style="position:absolute; left:-9999px;" alt="Yandex Metrika tracking pixel" /></div></noscript>
+    <noscript><div><img src="https://mc.yandex.ru/watch/106973384" class="metrika-pixel" alt="Yandex Metrika tracking pixel" /></div></noscript>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,46 +32,13 @@
     <link rel="stylesheet" href="/css/components/footer.css">
     <link rel="stylesheet" href="/css/components/cards.css">
     <link rel="stylesheet" href="/css/article.css">
+    <link rel="stylesheet" href="/css/components/badges.css">
+    <link rel="stylesheet" href="/css/blog/enneagram.css">
     
     <!-- Подключение метрик (один файл для всех скриптов) -->
     <script src="/js/metrics.js" defer></script>
     
-    <!-- Уникальные стили для этой страницы (только если нужно что-то специфическое) -->
-    <style>
-        /* Дополнительные стили для Enneagrammi artiklit */
-        .type-quote {
-            font-style: italic;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-size: 16px;
-            padding: 10px;
-            background: rgba(102, 126, 234, 0.05);
-            border-radius: var(--border-radius-xs);
-        }
-        
-        .wing-card {
-            background: var(--background-light);
-            padding: 20px;
-            border-radius: var(--border-radius-sm);
-            margin: 20px 0;
-            border-left: 4px solid #ff9800;
-        }
-        
-        .wing-title {
-            font-weight: bold;
-            color: #ff9800;
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-        
-        .subtype-card {
-            background: var(--background-light);
-            padding: 20px;
-            border-radius: var(--border-radius-sm);
-            margin: 20px 0;
-            border-left: 4px solid #9c27b0;
-        }
-    </style>
+    <!-- KÕIK stiilid on nüüd enneagram.css failis -->
 </head>
 <body>
     <div class="container">
@@ -127,7 +94,7 @@
             <p><em>Kõik allolevad kirjeldused on otsesed tsitaadid Personality Compassi põhikirjeldustest.</em></p>
             
             <!-- Type 1 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">1. tüüp</div>
                 <div class="type-name">Reformija</div>
                 <div class="type-quote">"Ühed on hingepoolelt ideaalistid, kellel on lõhkematu sisemine eetika. Nad ei näe maailma lihtsalt sellisena, nagu see on, vaid just sellisena, nagu see *peaks* olema – ja kannatavad vaikselt, kuid püsivalt selle vahe tõttu."</div>
@@ -179,7 +146,7 @@
             </div>
             
             <!-- Type 2 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">2. tüüp</div>
                 <div class="type-name">Abistaja</div>
                 <div class="type-quote">"Kaksed on südamed, kes on avatud maailmale. Nende hing laulab hoolimises; nende rõõm on kellegi valu leevendamises, toetamises, inspireerimises või lihtsalt *kohal olemises*."</div>
@@ -231,7 +198,7 @@
             </div>
             
             <!-- Type 3 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">3. tüüp</div>
                 <div class="type-name">Saavutaja</div>
                 <div class="type-quote">"Kolmed on energia, eesmärgi ja hiilguse kehastus. Nad oskavad inspireerida, võita ja särada. Nende jaoks pole edu lihtsalt saavutus – see on peegel, mis peegeldab nende väärtust."</div>
@@ -283,7 +250,7 @@
             </div>
             
             <!-- Type 4 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">4. tüüp</div>
                 <div class="type-name">Individualist</div>
                 <div class="type-quote">"Neljased on olemasolu luuletajad. Nende hing elab nüanssides – tunde sügavuses, igatsuses kadunud järele, himus ilu ja tähenduse järele."</div>
@@ -335,7 +302,7 @@
             </div>
             
             <!-- Type 5 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">5. tüüp</div>
                 <div class="type-name">Uurija</div>
                 <div class="type-quote">"Viied on mõistuse valvurid ja elu terased vaatlejad. Neile on teadmine varjupaik, mõistmine viis püsida kaoses kindlalt."</div>
@@ -387,7 +354,7 @@
             </div>
             
             <!-- Type 6 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">6. tüüp</div>
                 <div class="type-name">Lojaalne</div>
                 <div class="type-quote">"Kuued on lojaalsed valvurid ja pühendunud liitlased. Nende hing otsib stabiilsust maailmas, mis tundub ettearvamatu. Nad on 'mis siis, kui?' meistrid – ennetavad riske, testivad usaldusväärsust, otsivad tuge."</div>
@@ -439,7 +406,7 @@
             </div>
             
             <!-- Type 7 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">7. tüüp</div>
                 <div class="type-name">Entusiast</div>
                 <div class="type-quote">"Seitsmed on rõõmu sädemed maailmas. Nende hing ulatub valguse, uudsuse ja võimaluste poole. Nad leiavad maagiat igapäevaelus ja inspireerivad teisi oma energiaga."</div>
@@ -491,7 +458,7 @@
             </div>
             
             <!-- Type 8 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">8. tüüp</div>
                 <div class="type-name">Väljakutsuja</div>
                 <div class="type-quote">"Kaheksased on raudse tahte ja õrna südamega inimesed. Nad ei talu ebaõiglust, kaitsevad haavatavaid ega karda vastutust. Nende moto: 'Kui mitte mina, siis kes?'"</div>
@@ -543,7 +510,7 @@
             </div>
             
             <!-- Type 9 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">9. tüüp</div>
                 <div class="type-name">Rahutegija</div>
                 <div class="type-quote">"Üheksased on rahu ja vaikus. Nende hing otsib harmooniat, vältides konflikte, pinget või järske liigutusi. Nad kuulavad sügavalt, tajuvad peeneid nihkeid, siluvad teravaid servi ja loovad enda ümber mugavuse õhkkonna."</div>
@@ -664,7 +631,7 @@
 
 <div class="subtype-card">
     <div class="subtype-title">Sotsiaalne (so)</div>
-    <p>Keskendumine ühendusele, kuuluvusele ja kogukonnale. Need inimesed on häälestatud grup dünaamikale, sotsiaalsetele rollidele ja oma kohale suuremas tervikus. Nad otsivad võimalust olla hinnatud liikmed oma kogukondades.</p>
+    <p>Keskendumine ühendusele, kuuluvusele ja kogukonnale. Need inimesed on häälestatud grupi dünaamikale, sotsiaalsetele rollidele ja oma kohale suuremas tervikus. Nad otsivad võimalust olla hinnatud liikmed oma kogukondades.</p>
     <p><em>Näide rakendusest: "Sotsiaalne Kuus otsib varjupaika usaldusväärsetes gruppides ja autoriteetides. Nad on lojaalsed oma kogukonnale ja püüavad olla selle usaldusväärne sammas."</em></p>
 </div>
 
@@ -702,19 +669,19 @@
             <div class="feedback-grid">
                 
                 <!-- Email -->
-                <div class="feedback-card" style="background: #f8f9ff; padding: 25px; border-radius: 12px; text-align: center; border: 2px solid #e0e0e0;">
-                    <div style="font-size: 48px; margin-bottom: 15px;">📧</div>
-                    <h3 style="color: #667eea; margin-bottom: 10px;">Email</h3>
-                    <p style="margin-bottom: 15px;">Jaga oma Enneagrammi teekonda</p>
-                    <a href="mailto:info@personality-compass.app" style="color: #667eea; font-weight: bold; text-decoration: none;">info@personality-compass.app</a>
+                <div class="feedback-card">
+                    <div class="feedback-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>Jaga oma Enneagrammi teekonda</p>
+                    <a href="mailto:info@personality-compass.app" class="feedback-link">info@personality-compass.app</a>
                 </div>
                 
                 <!-- LinkedIn -->
-                <div class="feedback-card" style="background: #f8f9ff; padding: 25px; border-radius: 12px; text-align: center; border: 2px solid #e0e0e0;">
-                    <div style="font-size: 48px; margin-bottom: 15px;">💼</div>
-                    <h3 style="color: #667eea; margin-bottom: 10px;">LinkedIn</h3>
-                    <p style="margin-bottom: 15px;">Ühenda ja arutle</p>
-                    <a href="https://www.linkedin.com/in/ilja-seryshev" target="_blank" style="color: #667eea; font-weight: bold; text-decoration: none;">linkedin.com/in/ilja-seryshev</a>
+                <div class="feedback-card">
+                    <div class="feedback-icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <p>Ühenda ja arutle</p>
+                    <a href="https://www.linkedin.com/in/ilja-seryshev" target="_blank" class="feedback-link">linkedin.com/in/ilja-seryshev</a>
                 </div>
             </div>
             

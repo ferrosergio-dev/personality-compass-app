@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <!-- Yandex.Metrika counter (noscript) -->
-    <noscript><div><img src="https://mc.yandex.ru/watch/106973384" style="position:absolute; left:-9999px;" alt="Yandex Metrika tracking pixel" /></div></noscript>
+    <noscript><div><img src="https://mc.yandex.ru/watch/106973384" class="metrika-pixel" alt="Yandex Metrika tracking pixel" /></div></noscript>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,6 +32,8 @@
     <link rel="stylesheet" href="/css/components/footer.css">
     <link rel="stylesheet" href="/css/components/cards.css">
     <link rel="stylesheet" href="/css/article.css">
+    <link rel="stylesheet" href="/css/components/badges.css">
+    <link rel="stylesheet" href="/css/blog/enneagram.css">
     
     <!-- Подключение метрик (один файл для всех скриптов) -->
     <script src="/js/metrics.js" defer></script>
@@ -90,7 +92,7 @@
             <p><em>Все описания ниже — прямые цитаты из приложения Personality Compass.</em></p>
             
             <!-- Тип 1 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">Тип 1</div>
                 <div class="type-name">Реформатор</div>
                 <div class="type-quote">"Единицы — это душевные идеалисты с несгибаемой внутренней этикой. Они видят мир не просто таким, какой он есть, а таким, каким он *должен* быть — и несут в себе тихую, но упорную боль от этой разницы."</div>
@@ -142,7 +144,7 @@
             </div>
             
             <!-- Тип 2 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">Тип 2</div>
                 <div class="type-name">Помощник</div>
                 <div class="type-quote">"Двойки — это сердца, открытые миру. Их душа поёт в заботе, их радость — в том, чтобы облегчить чью-то боль, поддержать, вдохновить, просто *быть рядом*."</div>
@@ -194,7 +196,7 @@
             </div>
             
             <!-- Тип 3 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">Тип 3</div>
                 <div class="type-name">Достигатель</div>
                 <div class="type-quote">"Тройки — это воплощение энергии, цели и блеска. Они умеют вдохновлять, побеждать, быть на высоте. Для них успех — не просто достижение, а зеркало, в котором отражается их ценность."</div>
@@ -246,7 +248,7 @@
             </div>
             
             <!-- Тип 4 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">Тип 4</div>
                 <div class="type-name">Индивидуалист</div>
                 <div class="type-quote">"Четвёрки — это поэты бытия. Их душа живёт в оттенках: в глубине чувств, в тоске по утраченному, в жажде красоты и смысла."</div>
@@ -298,7 +300,7 @@
             </div>
             
             <!-- Тип 5 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">Тип 5</div>
                 <div class="type-name">Наблюдатель</div>
                 <div class="type-quote">"Пятёрки — это хранители разума и наблюдатели мира. Для них знание — это убежище, а понимание — способ не потеряться в хаосе."</div>
@@ -350,7 +352,7 @@
             </div>
             
             <!-- Тип 6 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">Тип 6</div>
                 <div class="type-name">Лоялист</div>
                 <div class="type-quote">"Шестёрки — это верные стражи и преданные союзники. Их душа ищет опору в мире, где всё может рухнуть. Они — мастера «что, если?»: заранее продумывают риски, проверяют надёжность, ищут поддержку."</div>
@@ -402,7 +404,7 @@
             </div>
             
             <!-- Тип 7 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">Тип 7</div>
                 <div class="type-name">Энтузиаст</div>
                 <div class="type-quote">"Семёрки — это искры радости в мире. Их душа стремится к свету, новизне, возможностям. Они видят магию в буднях, умеют вдохновлять и заряжать других своей энергией."</div>
@@ -454,7 +456,7 @@
             </div>
             
             <!-- Тип 8 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">Тип 8</div>
                 <div class="type-name">Защитник</div>
                 <div class="type-quote">"Восьмёрки — это люди с железной волей и мягким сердцем. Они не терпят несправедливости, защищают слабых и не боятся брать на себя ответственность. Их девиз: «Если не я, то кто?»"</div>
@@ -506,7 +508,7 @@
             </div>
             
             <!-- Тип 9 -->
-            <div class="type-card" style="margin-bottom: 30px;">
+            <div class="type-card">
                 <div class="type-number">Тип 9</div>
                 <div class="type-name">Миротворец</div>
                 <div class="type-quote">"Девятки — это мир и покой. Их душа стремится к гармонии, избегая конфликтов, напряжения, резких движений. Они умеют слушать, чувствовать, сглаживать острые углы и создавать вокруг себя атмосферу уюта."</div>
@@ -665,19 +667,19 @@
             <div class="feedback-grid">
                 
                 <!-- Email -->
-                <div class="feedback-card" style="background: #f8f9ff; padding: 25px; border-radius: 12px; text-align: center; border: 2px solid #e0e0e0;">
-                    <div style="font-size: 48px; margin-bottom: 15px;">📧</div>
-                    <h3 style="color: #667eea; margin-bottom: 10px;">Email</h3>
-                    <p style="margin-bottom: 15px;">Поделитесь своим путём Эннеаграммы</p>
-                    <a href="mailto:info@personality-compass.app" style="color: #667eea; font-weight: bold; text-decoration: none;">info@personality-compass.app</a>
+                <div class="feedback-card">
+                    <div class="feedback-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>Поделитесь своим путём Эннеаграммы</p>
+                    <a href="mailto:info@personality-compass.app" class="feedback-link">info@personality-compass.app</a>
                 </div>
                 
                 <!-- LinkedIn -->
-                <div class="feedback-card" style="background: #f8f9ff; padding: 25px; border-radius: 12px; text-align: center; border: 2px solid #e0e0e0;">
-                    <div style="font-size: 48px; margin-bottom: 15px;">💼</div>
-                    <h3 style="color: #667eea; margin-bottom: 10px;">LinkedIn</h3>
-                    <p style="margin-bottom: 15px;">Общайтесь и обсуждайте</p>
-                    <a href="https://www.linkedin.com/in/ilja-seryshev" target="_blank" style="color: #667eea; font-weight: bold; text-decoration: none;">linkedin.com/in/ilja-seryshev</a>
+                <div class="feedback-card">
+                    <div class="feedback-icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <p>Общайтесь и обсуждайте</p>
+                    <a href="https://www.linkedin.com/in/ilja-seryshev" target="_blank" class="feedback-link">linkedin.com/in/ilja-seryshev</a>
                 </div>
             </div>
             

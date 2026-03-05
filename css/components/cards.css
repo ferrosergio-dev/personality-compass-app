@@ -88,21 +88,6 @@
     display: block;
 }
 
-/* Карточки обратной связи */
-.feedback-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.feedback-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.15);
-    border-color: var(--primary-color) !important;
-}
-
-.feedback-card a:hover {
-    text-decoration: underline;
-}
-
 /* Карточки для блога */
 .post-card {
     background: var(--background-light);
@@ -250,6 +235,57 @@
     transform: translateY(-3px);
 }
 
+/* ===== FEEDBACK CARDS ===== */
+.feedback-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.feedback-card {
+    background: var(--background-light);
+    padding: 25px;
+    border-radius: var(--border-radius-sm);
+    text-align: center;
+    border: 2px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.feedback-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary-color);
+}
+
+.feedback-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.feedback-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.feedback-card p {
+    margin-bottom: 15px;
+    color: var(--light-text);
+}
+
+.feedback-card a {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.feedback-card a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
 /* Медиа-запросы для карточек */
 @media (max-width: 768px) {
     .post-card {
@@ -273,6 +309,10 @@
     }
     
     .psychological-models {
+        grid-template-columns: 1fr;
+    }
+    
+    .feedback-grid {
         grid-template-columns: 1fr;
     }
 }

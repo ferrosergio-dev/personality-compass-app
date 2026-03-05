@@ -14,45 +14,13 @@
     <!-- PWA manifest -->
     <link rel="manifest" href="/manifest.json">
     
+    <!-- Подключаем CSS для страницы редиректа -->
+    <link rel="stylesheet" href="/css/main-redirect.css">
+    
     <!-- Подключаем внешний скрипт редиректа -->
     <script src="/redirect.js" defer></script>
     
-    <style>
-        /* стили без изменений */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
-        }
-        .container {
-            max-width: 600px;
-        }
-        h1 {
-            font-size: 2em;
-            margin-bottom: 0.5em;
-            color: white;
-        }
-        a {
-            color: white;
-            text-decoration: underline;
-        }
-        .language-links {
-            margin-top: 20px;
-            font-size: 0.9em;
-        }
-        .language-links a {
-            margin: 0 10px;
-        }
-    </style>
-    
-    <!-- Весь старый скрипт УДАЛЁН -->
+    <!-- Весь блок <style> УДАЛЕН - стили перенесены в main-redirect.css -->
     
 </head>
 <body>
