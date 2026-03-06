@@ -289,13 +289,7 @@ body {
         height: 70px;
         width: 70px;
     }
-    
-    .header::before {
-        font-size: 40px;
-        top: 10px;
-        right: 20px;
-    }
-    
+       
     .video-container iframe {
         height: 250px;
     }

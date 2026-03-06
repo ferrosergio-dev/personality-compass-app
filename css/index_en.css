@@ -13,14 +13,6 @@
 
 /* Критические стили для быстрого отображения */
 
-.header {
-    text-align: center;
-    padding: 40px 20px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border-radius: 20px;
-}
-
 .language-links {
     position: absolute;
     top: 20px;

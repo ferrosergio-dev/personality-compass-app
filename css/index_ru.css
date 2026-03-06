@@ -12,14 +12,6 @@
 }
 
 /* ===== КРИТИЧЕСКИЕ СТИЛИ ДЛЯ БЫСТРОГО ОТОБРАЖЕНИЯ ===== */
-.header { 
-    text-align: center; 
-    padding: 40px 20px; 
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-    color: white; 
-    position: relative;
-}
-
 .language-links { 
     position: absolute; 
     top: 20px; 
