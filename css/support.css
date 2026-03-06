@@ -380,6 +380,13 @@
     margin-bottom: 15px;
 }
 
+/* Контейнер для кнопки закрытия модального окна */
+.modal-footer {
+    text-align: right;
+    margin-top: 20px;
+    width: 100%;
+}
+
 /* Instruction steps (для модального окна) */
 .instruction-step {
     display: flex;

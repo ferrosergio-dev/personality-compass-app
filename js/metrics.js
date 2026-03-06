@@ -28,9 +28,9 @@ gtag('config', 'G-XCK6M7C5DG');
         console.log('Google Analytics loaded');
     };
     
-    ga.onerror = function() {
-        console.warn('Google Analytics failed to load');
-    };
+    // ga.onerror = function() {
+    //    console.warn('Google Analytics failed to load');
+    //};
     
     document.head.appendChild(ga);
 })();
