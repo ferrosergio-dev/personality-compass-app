@@ -17,34 +17,34 @@
         
         <!-- Изображения для английской версии -->
         <image:image>
-            <image:loc>https://personality-compass.app/images/01.png</image:loc>
+            <image:loc>https://personality-compass.app/images/01_en_l.webp</image:loc>
             <image:caption>Personality Compass - Home screen with three tests and diary: MindPath 16, MindPath 5D, Enneagram and My Diary</image:caption>
             <image:title>Personality Compass app home screen</image:title>
             <image:geo_location>Estonia</image:geo_location>
             <image:license>https://personality-compass.app/en/policy.html</image:license>
         </image:image>
         <image:image>
-            <image:loc>https://personality-compass.app/images/02.png</image:loc>
+            <image:loc>https://personality-compass.app/images/02_en_l.webp</image:loc>
             <image:caption>Personality Compass - Test selection screen where you can choose between MindPath 16, 5D or Enneagram test</image:caption>
             <image:title>Personality Compass test selection</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://personality-compass.app/images/03.png</image:loc>
+            <image:loc>https://personality-compass.app/images/03_en_l.webp</image:loc>
             <image:caption>Personality Compass - MindPath 16 test questions example, 16 personality types analysis</image:caption>
             <image:title>Personality Compass MindPath 16 test</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://personality-compass.app/images/04.png</image:loc>
+            <image:loc>https://personality-compass.app/images/04_en_l.webp</image:loc>
             <image:caption>Personality Compass - Enneagram results screen showing 9 types with development levels</image:caption>
             <image:title>Personality Compass Enneagram results</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://personality-compass.app/images/05.png</image:loc>
+            <image:loc>https://personality-compass.app/images/05_en_l.webp</image:loc>
             <image:caption>Personality Compass - Professional PDF reports example with colorful charts and personality analysis</image:caption>
             <image:title>Personality Compass PDF reports</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://personality-compass.app/images/06.png</image:loc>
+            <image:loc>https://personality-compass.app/images/06_en_l.webp</image:loc>
             <image:caption>Personality Compass - Personal diary for self-development and self-reflection tracking</image:caption>
             <image:title>Personality Compass personal diary</image:title>
         </image:image>
@@ -62,34 +62,34 @@
         
         <!-- Изображения для русской версии -->
         <image:image>
-            <image:loc>https://personality-compass.app/images/01.png</image:loc>
+            <image:loc>https://personality-compass.app/images/01_ru_l.webp</image:loc>
             <image:caption>Personality Compass - Главный экран с тремя тестами и дневником: MindPath 16, MindPath 5D, Эннеаграмма и Мой Дневник</image:caption>
             <image:title>Personality Compass главный экран</image:title>
             <image:geo_location>Estonia</image:geo_location>
             <image:license>https://personality-compass.app/ru/policy.html</image:license>
         </image:image>
         <image:image>
-            <image:loc>https://personality-compass.app/images/02.png</image:loc>
+            <image:loc>https://personality-compass.app/images/02_ru_l.webp</image:loc>
             <image:caption>Personality Compass - Экран выбора тестов, где можно выбрать между MindPath 16, 5D или Эннеаграммой</image:caption>
             <image:title>Personality Compass выбор теста</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://personality-compass.app/images/03.png</image:loc>
+            <image:loc>https://personality-compass.app/images/03_ru_l.webp</image:loc>
             <image:caption>Personality Compass - Пример вопросов теста MindPath 16, анализ 16 типов личности</image:caption>
             <image:title>Personality Compass тест MindPath 16</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://personality-compass.app/images/04.png</image:loc>
+            <image:loc>https://personality-compass.app/images/04_ru_l.webp</image:loc>
             <image:caption>Personality Compass - Экран результатов Эннеаграммы с 9 типами и уровнями развития</image:caption>
             <image:title>Personality Compass результаты Эннеаграммы</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://personality-compass.app/images/05.png</image:loc>
+            <image:loc>https://personality-compass.app/images/05_ru_l.webp</image:loc>
             <image:caption>Personality Compass - Пример профессиональных PDF-отчетов с цветными диаграммами и анализом личности</image:caption>
             <image:title>Personality Compass PDF отчеты</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://personality-compass.app/images/06.png</image:loc>
+            <image:loc>https://personality-compass.app/images/06_ru_l.webp</image:loc>
             <image:caption>Personality Compass - Личный дневник для отслеживания саморазвития и саморефлексии</image:caption>
             <image:title>Personality Compass личный дневник</image:title>
         </image:image>
@@ -107,34 +107,34 @@
         
         <!-- Изображения для эстонской версии -->
         <image:image>
-            <image:loc>https://personality-compass.app/images/01.png</image:loc>
+            <image:loc>https://personality-compass.app/images/01_et_l.webp</image:loc>
             <image:caption>Isiksuse Kompass - Avaleht kolme testi ja päevikuga: MindPath 16, MindPath 5D, Enneagramm ja Minu Päevik</image:caption>
             <image:title>Isiksuse Kompass avakuva</image:title>
             <image:geo_location>Estonia</image:geo_location>
             <image:license>https://personality-compass.app/et/policy.html</image:license>
         </image:image>
         <image:image>
-            <image:loc>https://personality-compass.app/images/02.png</image:loc>
+            <image:loc>https://personality-compass.app/images/02_et_l.webp</image:loc>
             <image:caption>Isiksuse Kompass - Testide valiku ekraan, kus saab valida MindPath 16, 5D või Enneagrammi testi vahel</image:caption>
             <image:title>Isiksuse Kompass testide valik</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://personality-compass.app/images/03.png</image:loc>
+            <image:loc>https://personality-compass.app/images/03_et_l.webp</image:loc>
             <image:caption>Isiksuse Kompass - MindPath 16 testi küsimuste näide, 16 isiksusetüübi analüüs</image:caption>
             <image:title>Isiksuse Kompass MindPath 16 test</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://personality-compass.app/images/04.png</image:loc>
+            <image:loc>https://personality-compass.app/images/04_et_l.webp</image:loc>
             <image:caption>Isiksuse Kompass - Enneagrammi tulemuste ekraan, mis näitab 9 tüüpi koos arengutasemetega</image:caption>
             <image:title>Isiksuse Kompass Enneagrammi tulemused</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://personality-compass.app/images/05.png</image:loc>
+            <image:loc>https://personality-compass.app/images/05_et_l.webp</image:loc>
             <image:caption>Isiksuse Kompass - Professionaalsete PDF aruannete näide värviliste diagrammide ja isiksuseanalüüsiga</image:caption>
             <image:title>Isiksuse Kompass PDF aruanded</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://personality-compass.app/images/06.png</image:loc>
+            <image:loc>https://personality-compass.app/images/06_et_l.webp</image:loc>
             <image:caption>Isiksuse Kompass - Isiklik päevik enesearengu ja eneserefleksiooni jälgimiseks</image:caption>
             <image:title>Isiksuse Kompass isiklik päevik</image:title>
         </image:image>
