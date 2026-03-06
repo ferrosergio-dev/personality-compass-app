@@ -16,7 +16,7 @@ function trackDonationClick(type) {
     
     // Яндекс.Метрика (если доступна)
     if (typeof ym !== 'undefined') {
-        ym(106973384, 'reachGoal', 'donation_click', {action: type});
+        ym(107164704, 'reachGoal', 'donation_click', {action: type});
     }
 }
 
