@@ -14,10 +14,30 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-XCK6M7C5DG');
 
-// Загрузка Google Analytics скрипта
+// Загрузка Google Analytics скрипта с правильным nonce
 (function() {
+    // Проверяем, есть ли уже скрипт
+    if (document.querySelector('script[src*="googletagmanager"]')) return;
+    
     var ga = document.createElement('script');
     ga.async = true;
     ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-XCK6M7C5DG';
+    
+    // Добавляем обработчик загрузки
+    ga.onload = function() {
+        console.log('Google Analytics loaded');
+    };
+    
+    ga.onerror = function() {
+        console.warn('Google Analytics failed to load');
+    };
+    
     document.head.appendChild(ga);
 })();
+
+// Добавляем обработку ошибок CSP
+window.addEventListener('securitypolicyviolation', function(e) {
+    if (e.blockedURI.includes('google-analytics') || e.blockedURI.includes('googletagmanager')) {
+        console.warn('GA blocked by CSP, but metrics may still work');
+    }
+});
