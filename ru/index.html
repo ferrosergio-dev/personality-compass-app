@@ -26,6 +26,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personality Compass: тесты MindPath 16, 5D, Эннеаграмма</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     
     <!-- Важные SEO мета-теги для русского языка -->
     <meta name="description" content="Личностный Компас — приложение для анализа личности. Узнайте себя с тестами MindPath 16, 5D, Эннеаграмма. 100% оффлайн, без сбора данных">
@@ -196,69 +197,100 @@
                             allowfullscreen>
                     </iframe>
                 </div>
+                <!-- ДОБАВИТЬ fallback для старых устройств -->
+                <p class="video-fallback">
+                    Если видео не загружается,
+                    <a href="https://www.youtube.com/watch?v=1m7s4MCaExk" target="_blank">
+                        посмотрите его на YouTube
+                    </a>
+                </p>
             </div>
 
             <!-- Screenshots с подробными ALT-тегами и адаптивными изображениями -->
-            <div class="content-section screenshots-section">
-                <div class="section-title">Скриншоты приложения</div>
-                <p>Красивый и интуитивно понятный интерфейс</p>
-                <div class="screenshots-grid">
-                    <div class="screenshot-item">
-                        <img src="/images/01_ru_s.webp"
-                             srcset="/images/01_ru_s.webp 616w, /images/01_ru_l.webp 1080w"
-                             sizes="(max-width: 768px) 100vw, 616px"
-                             width="616" 
-                             height="1369"
-                             fetchpriority="high"
-                             alt="Личностный Компас - главный экран с тестами MindPath 16, MindPath 5D и Эннеаграммой, а также личным дневником">
-                    </div>
-                    <div class="screenshot-item">
-                        <img src="/images/02_ru_s.webp"
-                             srcset="/images/02_ru_s.webp 616w, /images/02_ru_l.webp 1080w"
-                             sizes="(max-width: 768px) 100vw, 616px"
-                             width="616" 
-                             height="1369"
-                             loading="lazy"
-                             alt="Личностный Компас - экран выбора теста: MindPath 16 (16 типов личности), MindPath 5D (5-мерная оценка) и Эннеаграмма (9 типов)">
-                    </div>
-                    <div class="screenshot-item">
-                        <img src="/images/03_ru_s.webp"
-                             srcset="/images/03_ru_s.webp 616w, /images/03_ru_l.webp 1080w"
-                             sizes="(max-width: 768px) 100vw, 616px"
-                             width="616" 
-                             height="1369"
-                             loading="lazy"
-                             alt="Личностный Компас - прохождение теста MindPath 16 с вопросами для определения типа личности">
-                    </div>
-                    <div class="screenshot-item">
-                        <img src="/images/04_ru_s.webp"
-                             srcset="/images/04_ru_s.webp 616w, /images/04_ru_l.webp 1080w"
-                             sizes="(max-width: 768px) 100vw, 616px"
-                             width="616" 
-                             height="1369"
-                             loading="lazy"
-                             alt="Личностный Компас - результаты Эннеаграммы с отображением 9 типов личности и уровней развития">
-                    </div>
-                    <div class="screenshot-item">
-                        <img src="/images/05_ru_s.webp"
-                             srcset="/images/05_ru_s.webp 616w, /images/05_ru_l.webp 1080w"
-                             sizes="(max-width: 768px) 100vw, 616px"
-                             width="616" 
-                             height="1369"
-                             loading="lazy"
-                             alt="Личностный Компас - профессиональный PDF отчет с результатами теста, цветными диаграммами и описанием типа личности">
-                    </div>
-                    <div class="screenshot-item">
-                        <img src="/images/06_ru_s.webp"
-                             srcset="/images/06_ru_s.webp 616w, /images/06_ru_l.webp 1080w"
-                             sizes="(max-width: 768px) 100vw, 616px"
-                             width="616" 
-                             height="1369"
-                             loading="lazy"
-                             alt="Личностный Компас - личный дневник для отслеживания прогресса и записей о самопознании">
-                    </div>
-                </div>
-            </div>
+<div class="content-section screenshots-section">
+    <div class="section-title">Скриншоты приложения</div>
+    <p>Красивый и интуитивно понятный интерфейс</p>
+    <div class="screenshots-grid">
+        <div class="screenshot-item">
+            <picture>
+                <source srcset="/images/01_ru_s.webp" type="image/webp">
+                <source srcset="/images/01_ru_s.png" type="image/png">
+                <img src="/images/01_ru_s.png"
+                     srcset="/images/01_ru_s.png 616w, /images/01_ru_l.png 1080w"
+                     sizes="(max-width: 768px) 100vw, 616px"
+                     width="616" 
+                     height="1369"
+                     fetchpriority="high"
+                     alt="Личностный Компас - главный экран с тестами MindPath 16, MindPath 5D и Эннеаграммой, а также личным дневником">
+            </picture>
+        </div>
+        <div class="screenshot-item">
+            <picture>
+                <source srcset="/images/02_ru_s.webp" type="image/webp">
+                <source srcset="/images/02_ru_s.png" type="image/png">
+                <img src="/images/02_ru_s.png"
+                     srcset="/images/02_ru_s.png 616w, /images/02_ru_l.png 1080w"
+                     sizes="(max-width: 768px) 100vw, 616px"
+                     width="616" 
+                     height="1369"
+                     loading="lazy"
+                     alt="Личностный Компас - экран выбора теста: MindPath 16 (16 типов личности), MindPath 5D (5-мерная оценка) и Эннеаграмма (9 типов)">
+            </picture>
+        </div>
+        <div class="screenshot-item">
+            <picture>
+                <source srcset="/images/03_ru_s.webp" type="image/webp">
+                <source srcset="/images/03_ru_s.png" type="image/png">
+                <img src="/images/03_ru_s.png"
+                     srcset="/images/03_ru_s.png 616w, /images/03_ru_l.png 1080w"
+                     sizes="(max-width: 768px) 100vw, 616px"
+                     width="616" 
+                     height="1369"
+                     loading="lazy"
+                     alt="Личностный Компас - прохождение теста MindPath 16 с вопросами для определения типа личности">
+            </picture>
+        </div>
+        <div class="screenshot-item">
+            <picture>
+                <source srcset="/images/04_ru_s.webp" type="image/webp">
+                <source srcset="/images/04_ru_s.png" type="image/png">
+                <img src="/images/04_ru_s.png"
+                     srcset="/images/04_ru_s.png 616w, /images/04_ru_l.png 1080w"
+                     sizes="(max-width: 768px) 100vw, 616px"
+                     width="616" 
+                     height="1369"
+                     loading="lazy"
+                     alt="Личностный Компас - результаты Эннеаграммы с отображением 9 типов личности и уровней развития">
+            </picture>
+        </div>
+        <div class="screenshot-item">
+            <picture>
+                <source srcset="/images/05_ru_s.webp" type="image/webp">
+                <source srcset="/images/05_ru_s.png" type="image/png">
+                <img src="/images/05_ru_s.png"
+                     srcset="/images/05_ru_s.png 616w, /images/05_ru_l.png 1080w"
+                     sizes="(max-width: 768px) 100vw, 616px"
+                     width="616" 
+                     height="1369"
+                     loading="lazy"
+                     alt="Личностный Компас - профессиональный PDF отчет с результатами теста, цветными диаграммами и описанием типа личности">
+            </picture>
+        </div>
+        <div class="screenshot-item">
+            <picture>
+                <source srcset="/images/06_ru_s.webp" type="image/webp">
+                <source srcset="/images/06_ru_s.png" type="image/png">
+                <img src="/images/06_ru_s.png"
+                     srcset="/images/06_ru_s.png 616w, /images/06_ru_l.png 1080w"
+                     sizes="(max-width: 768px) 100vw, 616px"
+                     width="616" 
+                     height="1369"
+                     loading="lazy"
+                     alt="Личностный Компас - личный дневник для отслеживания прогресса и записей о самопознании">
+            </picture>
+        </div>
+    </div>
+</div>
 
             <!-- Psychological Models с aria-hidden для иконок -->
             <div class="content-section">

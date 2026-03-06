@@ -135,6 +135,13 @@ body {
     border-radius: var(--border-radius-md);
 }
 
+.video-fallback {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+    text-align: center;
+}
+
 /* Секция загрузки */
 .download-section {
     background: linear-gradient(135deg, var(--primary-gradient-start) 0%, var(--primary-gradient-end) 100%);

@@ -26,6 +26,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Isiksuse Kompass - Isiksusetest offline äpp | Enesetundmine</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     
     <!-- SEO мета-теги эстонский -->
     <meta name="description" content="Isiksuse Kompass - isiksuse testid. Avasta ennast MindPath 16, 5D ja Enneagrammi testidega. 100% võrguühenduseta, andmeid ei koguta, privaatsus">
@@ -196,69 +197,100 @@
                             allowfullscreen>
                     </iframe>
                 </div>
+                <!-- ДОБАВИТЬ fallback для старых устройств -->
+                <p class="video-fallback">
+                    Kui video ei laadi,
+                    <a href="https://www.youtube.com/watch?v=1m7s4MCaExk" target="_blank">
+                        vaata seda YouTube'is
+                    </a>
+                </p>
             </div>
 
             <!-- Screenshots с ALT-тегами и адаптивными изображениями -->
-            <div class="content-section screenshots-section">
-                <div class="section-title">Rakenduse Ekraanipildid</div>
-                <p>Avasta Isiksuse Kompassi ilus ja intuitiivne liides</p>
-                <div class="screenshots-grid">
-                    <div class="screenshot-item">
-                        <img src="/images/01_et_s.webp"
-                             srcset="/images/01_et_s.webp 616w, /images/01_et_l.webp 1080w"
-                             sizes="(max-width: 768px) 100vw, 616px"
-                             width="616" 
-                             height="1369"
-                             fetchpriority="high"
-                             alt="Isiksuse Kompass - Avaleht kolme testi ja päevikuga: MindPath 16, MindPath 5D, Enneagramm ja Minu Päevik">
-                    </div>
-                    <div class="screenshot-item">
-                        <img src="/images/02_et_s.webp"
-                             srcset="/images/02_et_s.webp 616w, /images/02_et_l.webp 1080w"
-                             sizes="(max-width: 768px) 100vw, 616px"
-                             width="616" 
-                             height="1369"
-                             loading="lazy"
-                             alt="Isiksuse Kompass - Testide valik ekraan, kus saab valida MindPath 16, 5D või Enneagrammi testi vahel">
-                    </div>
-                    <div class="screenshot-item">
-                        <img src="/images/03_et_s.webp"
-                             srcset="/images/03_et_s.webp 616w, /images/03_et_l.webp 1080w"
-                             sizes="(max-width: 768px) 100vw, 616px"
-                             width="616" 
-                             height="1369"
-                             loading="lazy"
-                             alt="Isiksuse Kompass - MindPath 16 testi küsimuste näide, 16 isiksusetüübi analüüs">
-                    </div>
-                    <div class="screenshot-item">
-                        <img src="/images/04_et_s.webp"
-                             srcset="/images/04_et_s.webp 616w, /images/04_et_l.webp 1080w"
-                             sizes="(max-width: 768px) 100vw, 616px"
-                             width="616" 
-                             height="1369"
-                             loading="lazy"
-                             alt="Isiksuse Kompass - Enneagrammi tulemuste ekraan, mis näitab 9 tüüpi koos arengutasemetega">
-                    </div>
-                    <div class="screenshot-item">
-                        <img src="/images/05_et_s.webp"
-                             srcset="/images/05_et_s.webp 616w, /images/05_et_l.webp 1080w"
-                             sizes="(max-width: 768px) 100vw, 616px"
-                             width="616" 
-                             height="1369"
-                             loading="lazy"
-                             alt="Isiksuse Kompass - Professionaalsete PDF aruannete näide värviliste diagrammide ja isiksuseanalüüsiga">
-                    </div>
-                    <div class="screenshot-item">
-                        <img src="/images/06_et_s.webp"
-                             srcset="/images/06_et_s.webp 616w, /images/06_et_l.webp 1080w"
-                             sizes="(max-width: 768px) 100vw, 616px"
-                             width="616" 
-                             height="1369"
-                             loading="lazy"
-                             alt="Isiksuse Kompass - Isiklik päevik enesearengu ja eneserefleksiooni jälgimiseks">
-                    </div>
-                </div>
-            </div>
+<div class="content-section screenshots-section">
+    <div class="section-title">Rakenduse Ekraanipildid</div>
+    <p>Avasta Isiksuse Kompassi ilus ja intuitiivne liides</p>
+    <div class="screenshots-grid">
+        <div class="screenshot-item">
+            <picture>
+                <source srcset="/images/01_et_s.webp" type="image/webp">
+                <source srcset="/images/01_et_s.png" type="image/png">
+                <img src="/images/01_et_s.png"
+                     srcset="/images/01_et_s.png 616w, /images/01_et_l.png 1080w"
+                     sizes="(max-width: 768px) 100vw, 616px"
+                     width="616" 
+                     height="1369"
+                     fetchpriority="high"
+                     alt="Isiksuse Kompass - Avaleht kolme testi ja päevikuga: MindPath 16, MindPath 5D, Enneagramm ja Minu Päevik">
+            </picture>
+        </div>
+        <div class="screenshot-item">
+            <picture>
+                <source srcset="/images/02_et_s.webp" type="image/webp">
+                <source srcset="/images/02_et_s.png" type="image/png">
+                <img src="/images/02_et_s.png"
+                     srcset="/images/02_et_s.png 616w, /images/02_et_l.png 1080w"
+                     sizes="(max-width: 768px) 100vw, 616px"
+                     width="616" 
+                     height="1369"
+                     loading="lazy"
+                     alt="Isiksuse Kompass - Testide valik ekraan, kus saab valida MindPath 16, 5D või Enneagrammi testi vahel">
+            </picture>
+        </div>
+        <div class="screenshot-item">
+            <picture>
+                <source srcset="/images/03_et_s.webp" type="image/webp">
+                <source srcset="/images/03_et_s.png" type="image/png">
+                <img src="/images/03_et_s.png"
+                     srcset="/images/03_et_s.png 616w, /images/03_et_l.png 1080w"
+                     sizes="(max-width: 768px) 100vw, 616px"
+                     width="616" 
+                     height="1369"
+                     loading="lazy"
+                     alt="Isiksuse Kompass - MindPath 16 testi küsimuste näide, 16 isiksusetüübi analüüs">
+            </picture>
+        </div>
+        <div class="screenshot-item">
+            <picture>
+                <source srcset="/images/04_et_s.webp" type="image/webp">
+                <source srcset="/images/04_et_s.png" type="image/png">
+                <img src="/images/04_et_s.png"
+                     srcset="/images/04_et_s.png 616w, /images/04_et_l.png 1080w"
+                     sizes="(max-width: 768px) 100vw, 616px"
+                     width="616" 
+                     height="1369"
+                     loading="lazy"
+                     alt="Isiksuse Kompass - Enneagrammi tulemuste ekraan, mis näitab 9 tüüpi koos arengutasemetega">
+            </picture>
+        </div>
+        <div class="screenshot-item">
+            <picture>
+                <source srcset="/images/05_et_s.webp" type="image/webp">
+                <source srcset="/images/05_et_s.png" type="image/png">
+                <img src="/images/05_et_s.png"
+                     srcset="/images/05_et_s.png 616w, /images/05_et_l.png 1080w"
+                     sizes="(max-width: 768px) 100vw, 616px"
+                     width="616" 
+                     height="1369"
+                     loading="lazy"
+                     alt="Isiksuse Kompass - Professionaalsete PDF aruannete näide värviliste diagrammide ja isiksuseanalüüsiga">
+            </picture>
+        </div>
+        <div class="screenshot-item">
+            <picture>
+                <source srcset="/images/06_et_s.webp" type="image/webp">
+                <source srcset="/images/06_et_s.png" type="image/png">
+                <img src="/images/06_et_s.png"
+                     srcset="/images/06_et_s.png 616w, /images/06_et_l.png 1080w"
+                     sizes="(max-width: 768px) 100vw, 616px"
+                     width="616" 
+                     height="1369"
+                     loading="lazy"
+                     alt="Isiksuse Kompass - Isiklik päevik enesearengu ja eneserefleksiooni jälgimiseks">
+            </picture>
+        </div>
+    </div>
+</div>
 
             <!-- Psychological Models -->
             <div class="content-section">
