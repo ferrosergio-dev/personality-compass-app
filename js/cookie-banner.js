@@ -67,15 +67,15 @@
             banner.id = BANNER_ID;
             banner.className = 'cookie-banner';
             banner.innerHTML = `
-                <div class="cookie-banner__content">
-                    <span>We use Google Analytics and Yandex Metrica for traffic analysis. </span>
-                    <a href="/en/policy.html" class="cookie-banner__link">Privacy Policy</a>
-                </div>
-                <div>
-                    <button id="${ACCEPT_BTN_ID}" class="cookie-banner__button">Accept</button>
-                    <button id="${REJECT_BTN_ID}" class="cookie-banner__button cookie-banner__button--reject">Reject</button>
-                </div>
-            `;
+    <div class="cookie-banner__content">
+        <span>We use Google Analytics and Yandex Metrica for traffic analysis. </span>
+        <a href="/en/cookie-policy.html" class="cookie-banner__link">Cookie Policy</a>
+    </div>
+    <div class="cookie-banner__buttons">
+        <button id="${ACCEPT_BTN_ID}" class="cookie-banner__button cookie-banner__button--accept">Accept</button>
+        <button id="${REJECT_BTN_ID}" class="cookie-banner__button cookie-banner__button--reject">Reject</button>
+    </div>
+`;
             document.body.appendChild(banner);
             
             showBanner();
