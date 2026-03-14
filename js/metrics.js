@@ -32,67 +32,101 @@ function loadScriptViaProxy(scriptUrl) {
     });
 }
 
-// ===== Yandex Metrica =====
+// ===== Yandex Metrica (ИСПРАВЛЕНО) =====
 window.loadYandexMetrica = async function() {
-    try {
-        if (window.ym && typeof window.ym === 'function') {
-            console.log('Yandex Metrica already loaded');
-            return;
-        }
+    return new Promise(async (resolve, reject) => {
+        try {
+            // Проверяем, не загружена ли уже
+            if (window.ym && typeof window.ym === 'function' && window.ym.a) {
+                console.log('Yandex Metrica already loaded');
+                resolve();
+                return;
+            }
 
-        console.log('Loading Yandex Metrica...');
-        
-        // Загружаем скрипт через прокси
-        await loadScriptViaProxy('https://mc.yandex.ru/metrika/tag.js');
-        
-        // Инициализируем
-        setTimeout(() => {
-            window.ym = window.ym || function() {
-                (window.ym.a = window.ym.a || []).push(arguments);
-            };
-            window.ym.l = Date.now();
+            console.log('Loading Yandex Metrica...');
             
-            window.ym(107164704, 'init', {
-                clickmap: true,
-                trackLinks: true,
-                accurateTrackBounce: true,
-                webvisor: true
-            });
+            // Загружаем скрипт через прокси
+            await loadScriptViaProxy('https://mc.yandex.ru/metrika/tag.js');
             
-            console.log('✅ Yandex Metrica ready');
-        }, 500);
-        
-    } catch (error) {
-        console.error('Yandex Metrica error:', error);
-    }
+            // Даём время на инициализацию
+            setTimeout(() => {
+                try {
+                    // Инициализируем правильным способом
+                    (function(m,e,t,r,i,k,a){
+                        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                        m[i].l=1*new Date();
+                    })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
+                    
+                    // Теперь инициализируем счётчик
+                    window.ym(107164704, 'init', {
+                        clickmap: true,
+                        trackLinks: true,
+                        accurateTrackBounce: true,
+                        webvisor: true,
+                        defer: true
+                    });
+                    
+                    console.log('✅ Yandex Metrica initialized');
+                    
+                    // Проверяем через секунду
+                    setTimeout(() => {
+                        console.log('Yandex status:', {
+                            ymExists: !!window.ym,
+                            ymIsFunction: typeof window.ym === 'function',
+                            ymAExists: !!window.ym?.a,
+                            ymA: window.ym?.a
+                        });
+                        
+                        // Отправляем тестовое событие
+                        if (window.ym) {
+                            window.ym(107164704, 'reachGoal', 'test_after_init');
+                            console.log('Test event sent to Yandex');
+                        }
+                    }, 1000);
+                    
+                    resolve();
+                } catch (e) {
+                    console.error('Yandex init error:', e);
+                    reject(e);
+                }
+            }, 500);
+            
+        } catch (error) {
+            console.error('Yandex Metrica error:', error);
+            reject(error);
+        }
+    });
 };
 
-// ===== Google Analytics =====
+// ===== Google Analytics (работает) =====
 window.loadGoogleAnalytics = async function() {
-    try {
-        if (window.gtag && typeof window.gtag === 'function') {
-            console.log('Google Analytics already loaded');
-            return;
-        }
+    return new Promise(async (resolve, reject) => {
+        try {
+            if (window.gtag && typeof window.gtag === 'function') {
+                console.log('Google Analytics already loaded');
+                resolve();
+                return;
+            }
 
-        console.log('Loading Google Analytics...');
-        
-        // Создаём dataLayer
-        window.dataLayer = window.dataLayer || [];
-        window.gtag = function() { dataLayer.push(arguments); };
-        
-        // Загружаем скрипт через прокси
-        await loadScriptViaProxy('https://www.googletagmanager.com/gtag/js?id=G-XCK6M7C5DG');
-        
-        // Инициализируем
-        window.gtag('js', new Date());
-        window.gtag('config', 'G-XCK6M7C5DG');
-        
-        console.log('✅ Google Analytics ready');
-        
-    } catch (error) {
-        console.error('Google Analytics error:', error);
-    }
+            console.log('Loading Google Analytics...');
+            
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function() { dataLayer.push(arguments); };
+            
+            await loadScriptViaProxy('https://www.googletagmanager.com/gtag/js?id=G-XCK6M7C5DG');
+            
+            setTimeout(() => {
+                window.gtag('js', new Date());
+                window.gtag('config', 'G-XCK6M7C5DG');
+                console.log('✅ Google Analytics ready');
+                resolve();
+            }, 500);
+            
+        } catch (error) {
+            console.error('Google Analytics error:', error);
+            reject(error);
+        }
+    });
 };
 
 // ===== Проверка согласия =====
@@ -106,11 +140,24 @@ window.loadGoogleAnalytics = async function() {
     
     async function loadAllMetrics() {
         console.log('Loading metrics...');
-        await window.loadYandexMetrica();
-        await window.loadGoogleAnalytics();
+        
+        // Загружаем Яндекс
+        try {
+            await window.loadYandexMetrica();
+        } catch (e) {
+            console.error('Yandex failed:', e);
+        }
+        
+        // Загружаем Google
+        try {
+            await window.loadGoogleAnalytics();
+        } catch (e) {
+            console.error('Google failed:', e);
+        }
+        
+        console.log('All metrics loaded');
     }
     
-    // Проверяем согласие
     const consent = getCookie('user_consent') || localStorage.getItem('user_consent');
     console.log('Consent status:', consent);
     
@@ -122,6 +169,5 @@ window.loadGoogleAnalytics = async function() {
         }
     }
     
-    // Слушаем событие
     document.addEventListener('consentGiven', loadAllMetrics);
 })();
