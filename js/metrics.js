@@ -11,7 +11,7 @@
 
 const WORKER_URL = 'https://consent-logger.compass-of-personality.workers.dev';
 
-// ===== ПРОСТАЯ ЗАГРУЗКА ЯНДЕКСА =====
+// ===== ЯНДЕКС МЕТРИКА - ИСПРАВЛЕННАЯ ВЕРСИЯ =====
 window.loadYandexMetrica = function() {
     console.log('Яндекс: начинаем загрузку...');
     
@@ -21,39 +21,40 @@ window.loadYandexMetrica = function() {
         return;
     }
     
-    // Создаем скрипт
+    // СОЗДАЁМ ФУНКЦИЮ ym ВРУЧНУЮ ДО ЗАГРУЗКИ СКРИПТА
+    window.ym = function() {
+        (window.ym.a = window.ym.a || []).push(arguments);
+    };
+    window.ym.l = Date.now();
+    
+    // Загружаем скрипт
     var script = document.createElement('script');
     script.src = WORKER_URL + '/proxy-script?url=' + encodeURIComponent('https://mc.yandex.ru/metrika/tag.js');
     script.async = true;
     
-    // Когда скрипт загрузится
     script.onload = function() {
-        console.log('✅ Скрипт Яндекса загружен, ждем инициализацию...');
+        console.log('✅ Скрипт Яндекса загружен');
         
-        // Даем время на инициализацию
+        // Теперь инициализируем счетчик
         setTimeout(function() {
-            // Проверяем, создалась ли функция ym
-            if (window.ym) {
-                console.log('✅ Функция ym существует, инициализируем счетчик');
+            try {
+                window.ym(107164704, 'init', {
+                    clickmap: true,
+                    trackLinks: true,
+                    accurateTrackBounce: true,
+                    webvisor: true,
+                    defer: true
+                });
+                console.log('✅ Яндекс Метрика инициализирована!');
                 
-                // Инициализируем счетчик
-                try {
-                    window.ym(107164704, 'init', {
-                        clickmap: true,
-                        trackLinks: true,
-                        accurateTrackBounce: true,
-                        webvisor: true
-                    });
-                    console.log('✅ Яндекс Метрика полностью готова!');
-                    
-                    // Отправляем тест
-                    window.ym(107164704, 'reachGoal', 'test');
-                    console.log('📊 Тестовое событие отправлено');
-                } catch (e) {
-                    console.error('❌ Ошибка инициализации:', e);
-                }
-            } else {
-                console.error('❌ Функция ym не создалась');
+                // Отправляем тест
+                window.ym(107164704, 'reachGoal', 'test');
+                console.log('📊 Тестовое событие отправлено');
+                
+                // Проверяем очередь
+                console.log('Очередь событий:', window.ym.a);
+            } catch (e) {
+                console.error('❌ Ошибка инициализации:', e);
             }
         }, 1000);
     };
@@ -65,7 +66,7 @@ window.loadYandexMetrica = function() {
     document.head.appendChild(script);
 };
 
-// ===== ПРОСТАЯ ЗАГРУЗКА GOOGLE =====
+// ===== GOOGLE ANALYTICS =====
 window.loadGoogleAnalytics = function() {
     console.log('Google: начинаем загрузку...');
     
@@ -74,11 +75,9 @@ window.loadGoogleAnalytics = function() {
         return;
     }
     
-    // Создаем dataLayer
     window.dataLayer = window.dataLayer || [];
     window.gtag = function() { dataLayer.push(arguments); };
     
-    // Загружаем скрипт
     var script = document.createElement('script');
     script.src = WORKER_URL + '/proxy-script?url=' + encodeURIComponent('https://www.googletagmanager.com/gtag/js?id=G-XCK6M7C5DG');
     script.async = true;
@@ -102,36 +101,29 @@ window.loadGoogleAnalytics = function() {
 
 // ===== ПРОВЕРКА СОГЛАСИЯ =====
 (function() {
-    // Простая функция получения cookie
     function getCookie(name) {
         var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
         return match ? match[2] : null;
     }
     
-    // Получаем согласие
     var consent = getCookie('user_consent') || localStorage.getItem('user_consent');
     console.log('Статус согласия:', consent);
     
-    // Если согласие есть - грузим
     if (consent === 'accepted') {
-        console.log('Есть согласие, грузим метрики через 2 секунды...');
+        console.log('✅ Есть согласие, грузим метрики...');
         setTimeout(function() {
             window.loadYandexMetrica();
             window.loadGoogleAnalytics();
-        }, 2000);
+        }, 1000);
     }
     
-    // Слушаем событие
     document.addEventListener('consentGiven', function() {
-        console.log('Получено событие consentGiven');
+        console.log('📢 Получено событие consentGiven');
         window.loadYandexMetrica();
         window.loadGoogleAnalytics();
     });
 })();
 
-// Выводим справку в консоль
-console.log('📊 Метрики готовы к загрузке. Команды:');
-console.log('  loadYandexMetrica() - загрузить Яндекс');
-console.log('  loadGoogleAnalytics() - загрузить Google');
-console.log('  ym - проверить Яндекс');
-console.log('  gtag - проверить Google');
+console.log('📊 Команды для ручной загрузки:');
+console.log('  loadYandexMetrica()');
+console.log('  loadGoogleAnalytics()');
