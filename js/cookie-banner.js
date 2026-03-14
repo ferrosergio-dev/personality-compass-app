@@ -4,6 +4,7 @@
     const ACCEPT_BTN_ID = 'cookie-accept';
     const REJECT_BTN_ID = 'cookie-reject';
     const CONSENT_COOKIE_NAME = 'user_consent';
+    const LOGGER_URL = 'https://consent-logger.compass-of-personality.workers.dev';
 
     // Подключаем CSS (внешний, не инлайн!)
     const link = document.createElement('link');
@@ -42,10 +43,40 @@
         if (banner) banner.style.display = 'none';
     }
 
+    // НОВАЯ ФУНКЦИЯ ДЛЯ ОТПРАВКИ ЛОГОВ
+    function sendLog(consentType) {
+        const logData = {
+            consent: consentType,
+            page: window.location.pathname,
+            language: document.documentElement.lang,
+            url: window.location.href,
+            timestamp: new Date().toISOString()
+        };
+
+        // Отправляем в Cloudflare Worker
+        fetch(LOGGER_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(logData),
+            // Важно: keepalive позволяет отправить запрос даже если страница закрывается
+            keepalive: true
+        }).then(response => {
+            if (response.ok) {
+                console.log('Consent logged successfully');
+            }
+        }).catch(error => {
+            // Тихо падаем, не ломаем пользовательский опыт
+            console.log('Logging failed (non-critical)');
+        });
+    }
+
     function handleAccept() {
         setCookie(CONSENT_COOKIE_NAME, 'accepted', 365);
         localStorage.setItem(CONSENT_COOKIE_NAME, 'accepted');
         hideBanner();
+        
+        // Отправляем лог о принятии
+        sendLog('accepted');
         
         if (window.loadYandexMetrica) window.loadYandexMetrica();
         if (window.loadGoogleAnalytics) window.loadGoogleAnalytics();
@@ -56,6 +87,9 @@
         setCookie(CONSENT_COOKIE_NAME, 'rejected', 365);
         localStorage.setItem(CONSENT_COOKIE_NAME, 'rejected');
         hideBanner();
+        
+        // Отправляем лог об отказе
+        sendLog('rejected');
     }
 
     function init() {
