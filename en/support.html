@@ -22,32 +22,8 @@
     <meta property="og:image" content="https://personality-compass.app/images/01.png">
     <meta property="og:type" content="website">
     
-    <!-- Schema.org markup for DonateAction -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "DonateAction",
-        "name": "Support Personality Compass Development",
-        "description": "Help improve the app and support future updates",
-        "url": "https://personality-compass.app/en/support.html",
-        "potentialAction": {
-            "@type": "DonateAction",
-            "name": "Make a Donation",
-            "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "https://personality-compass.app/en/support.html",
-                "actionPlatform": [
-                    "http://schema.org/DesktopWebPlatform",
-                    "http://schema.org/MobileWebPlatform"
-                ]
-            }
-        },
-        "provider": {
-            "@type": "Person",
-            "name": "Ilja Serõšev"
-        }
-    }
-    </script>
+    <!-- Schema.org markup -->
+    <script src="/js/schema/support-en.js" defer></script>
     
     <link rel="manifest" href="/manifest.json">
     
@@ -64,24 +40,8 @@
     <!-- Основной скрипт страницы поддержки -->
     <script src="/js/support.js" defer></script>
     
-    <!-- Инициализация английского языка (без onclick) -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof currentLanguage !== 'undefined') {
-                currentLanguage = 'en';
-                if (typeof updateContent === 'function') {
-                    updateContent();
-                }
-            }
-            
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.dataset.lang === 'en') {
-                    btn.classList.add('active');
-                }
-            });
-        });
-    </script>
+    <!-- Инициализация английского языка -->
+    <script src="/js/schema/support-en-init.js" defer></script>
 </head>
 <body>
     <div class="container">

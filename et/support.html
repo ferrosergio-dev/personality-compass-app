@@ -22,32 +22,8 @@
     <meta property="og:image" content="https://personality-compass.app/images/01.png">
     <meta property="og:type" content="website">
     
-    <!-- Schema.org markup for DonateAction -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "DonateAction",
-        "name": "Toeta Isiksuse Kompassi arendamist",
-        "description": "Aita rakendust paremaks teha ja toeta tulevasi uuendusi",
-        "url": "https://personality-compass.app/et/support.html",
-        "potentialAction": {
-            "@type": "DonateAction",
-            "name": "Tee annetus",
-            "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "https://personality-compass.app/et/support.html",
-                "actionPlatform": [
-                    "http://schema.org/DesktopWebPlatform",
-                    "http://schema.org/MobileWebPlatform"
-                ]
-            }
-        },
-        "provider": {
-            "@type": "Person",
-            "name": "Ilja Serõšev"
-        }
-    }
-    </script>
+    <!-- Schema.org markup -->
+    <script src="/js/schema/support-et.js" defer></script>
     
     <link rel="manifest" href="/manifest.json">
     
@@ -65,25 +41,7 @@
     <script src="/js/support.js" defer></script>
     
     <!-- Инициализация эстонского языка -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Устанавливаем эстонский язык по умолчанию для этой страницы
-            if (typeof currentLanguage !== 'undefined') {
-                currentLanguage = 'et';
-                if (typeof updateContent === 'function') {
-                    updateContent();
-                }
-            }
-            
-            // Отмечаем активную кнопку языка по data-lang
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.dataset.lang === 'et') {
-                    btn.classList.add('active');
-                }
-            });
-        });
-    </script>
+    <script src="/js/schema/support-et-init.js" defer></script>
 </head>
 <body>
     <div class="container">
