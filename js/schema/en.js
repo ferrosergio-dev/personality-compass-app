@@ -1,5 +1,7 @@
-(function () {
-    const schemaData = {
+(function() {
+    var script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify({
         "@context": "https://schema.org",
         "@type": "MobileApplication",
         "name": "Personality Compass",
@@ -79,13 +81,6 @@
                 "height": 2400
             }
         ]
-    };
-
-    const script = document.createElement("script");
-    script.setAttribute("type", "application/ld+json");
-
-    const jsonText = document.createTextNode(JSON.stringify(schemaData));
-    script.appendChild(jsonText);
-
+    });
     document.head.appendChild(script);
 })();

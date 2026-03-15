@@ -50,7 +50,8 @@
             page: window.location.pathname,
             language: document.documentElement.lang,
             url: window.location.href,
-            timestamp: new Date().toISOString()
+            timestamp: new Date().toISOString(),
+            userAgent: navigator.userAgent
         };
 
         // Отправляем в Cloudflare Worker
