@@ -1,4 +1,4 @@
-// ===== Cloudflare Web Analytics =====
+// ===== Cloudflare Web Analytics с nonce =====
 (function() {
     if (document.querySelector('script[src*="beacon.min.js"]')) return;
     
@@ -6,36 +6,52 @@
     cf.defer = true;
     cf.src = 'https://static.cloudflareinsights.com/beacon.min.js';
     cf.setAttribute('data-cf-beacon', '{"token": "bb34209412864a28b3b0bfd3b91ede16"}');
+    
+    // Добавляем nonce если есть
+    var meta = document.querySelector('meta[name="csp-nonce"]');
+    if (meta) {
+        cf.setAttribute('nonce', meta.content);
+    }
+    
     document.head.appendChild(cf);
 })();
 
 const WORKER_URL = 'https://consent-logger.compass-of-personality.workers.dev';
 
-// ===== ЯНДЕКС МЕТРИКА - ИСПРАВЛЕННАЯ ВЕРСИЯ =====
+// ===== Функция для создания скрипта с nonce =====
+function createScriptWithNonce(src, async = true) {
+    var script = document.createElement('script');
+    script.src = src;
+    script.async = async;
+    
+    // Добавляем nonce если есть
+    var meta = document.querySelector('meta[name="csp-nonce"]');
+    if (meta) {
+        script.setAttribute('nonce', meta.content);
+    }
+    
+    return script;
+}
+
+// ===== ЯНДЕКС МЕТРИКА =====
 window.loadYandexMetrica = function() {
     console.log('Яндекс: начинаем загрузку...');
     
-    // Проверяем, не загружен ли уже
     if (window.ym) {
         console.log('Яндекс уже загружен');
         return;
     }
     
-    // СОЗДАЁМ ФУНКЦИЮ ym ВРУЧНУЮ ДО ЗАГРУЗКИ СКРИПТА
     window.ym = function() {
         (window.ym.a = window.ym.a || []).push(arguments);
     };
     window.ym.l = Date.now();
     
-    // Загружаем скрипт
-    var script = document.createElement('script');
-    script.src = WORKER_URL + '/proxy-script?url=' + encodeURIComponent('https://mc.yandex.ru/metrika/tag.js');
-    script.async = true;
+    var script = createScriptWithNonce(WORKER_URL + '/proxy-script?url=' + encodeURIComponent('https://mc.yandex.ru/metrika/tag.js'));
     
     script.onload = function() {
         console.log('✅ Скрипт Яндекса загружен');
         
-        // Теперь инициализируем счетчик
         setTimeout(function() {
             try {
                 window.ym(107164704, 'init', {
@@ -46,21 +62,11 @@ window.loadYandexMetrica = function() {
                     defer: true
                 });
                 console.log('✅ Яндекс Метрика инициализирована!');
-                
-                // Отправляем тест
                 window.ym(107164704, 'reachGoal', 'test');
-                console.log('📊 Тестовое событие отправлено');
-                
-                // Проверяем очередь
-                console.log('Очередь событий:', window.ym.a);
             } catch (e) {
                 console.error('❌ Ошибка инициализации:', e);
             }
         }, 1000);
-    };
-    
-    script.onerror = function() {
-        console.error('❌ Ошибка загрузки скрипта Яндекса');
     };
     
     document.head.appendChild(script);
@@ -78,9 +84,7 @@ window.loadGoogleAnalytics = function() {
     window.dataLayer = window.dataLayer || [];
     window.gtag = function() { dataLayer.push(arguments); };
     
-    var script = document.createElement('script');
-    script.src = WORKER_URL + '/proxy-script?url=' + encodeURIComponent('https://www.googletagmanager.com/gtag/js?id=G-XCK6M7C5DG');
-    script.async = true;
+    var script = createScriptWithNonce(WORKER_URL + '/proxy-script?url=' + encodeURIComponent('https://www.googletagmanager.com/gtag/js?id=G-XCK6M7C5DG'));
     
     script.onload = function() {
         console.log('✅ Скрипт Google загружен');
@@ -90,10 +94,6 @@ window.loadGoogleAnalytics = function() {
             window.gtag('config', 'G-XCK6M7C5DG');
             console.log('✅ Google Analytics готов!');
         }, 500);
-    };
-    
-    script.onerror = function() {
-        console.error('❌ Ошибка загрузки Google');
     };
     
     document.head.appendChild(script);
@@ -123,7 +123,3 @@ window.loadGoogleAnalytics = function() {
         window.loadGoogleAnalytics();
     });
 })();
-
-console.log('📊 Команды для ручной загрузки:');
-console.log('  loadYandexMetrica()');
-console.log('  loadGoogleAnalytics()');
