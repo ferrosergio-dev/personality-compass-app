@@ -1,4 +1,4 @@
-// ===== Cloudflare Web Analytics с nonce =====
+// ===== Cloudflare Web Analytics =====
 (function() {
     if (document.querySelector('script[src*="beacon.min.js"]')) return;
     
@@ -6,32 +6,10 @@
     cf.defer = true;
     cf.src = 'https://static.cloudflareinsights.com/beacon.min.js';
     cf.setAttribute('data-cf-beacon', '{"token": "bb34209412864a28b3b0bfd3b91ede16"}');
-    
-    // Добавляем nonce если есть
-    var meta = document.querySelector('meta[name="csp-nonce"]');
-    if (meta) {
-        cf.setAttribute('nonce', meta.content);
-    }
-    
     document.head.appendChild(cf);
 })();
 
 const WORKER_URL = 'https://consent-logger.compass-of-personality.workers.dev';
-
-// ===== Функция для создания скрипта с nonce =====
-function createScriptWithNonce(src, async = true) {
-    var script = document.createElement('script');
-    script.src = src;
-    script.async = async;
-    
-    // Добавляем nonce если есть
-    var meta = document.querySelector('meta[name="csp-nonce"]');
-    if (meta) {
-        script.setAttribute('nonce', meta.content);
-    }
-    
-    return script;
-}
 
 // ===== ЯНДЕКС МЕТРИКА =====
 window.loadYandexMetrica = function() {
@@ -47,7 +25,9 @@ window.loadYandexMetrica = function() {
     };
     window.ym.l = Date.now();
     
-    var script = createScriptWithNonce(WORKER_URL + '/proxy-script?url=' + encodeURIComponent('https://mc.yandex.ru/metrika/tag.js'));
+    var script = document.createElement('script');
+    script.src = WORKER_URL + '/proxy-script?url=' + encodeURIComponent('https://mc.yandex.ru/metrika/tag.js');
+    script.async = true;
     
     script.onload = function() {
         console.log('✅ Скрипт Яндекса загружен');
@@ -84,7 +64,9 @@ window.loadGoogleAnalytics = function() {
     window.dataLayer = window.dataLayer || [];
     window.gtag = function() { dataLayer.push(arguments); };
     
-    var script = createScriptWithNonce(WORKER_URL + '/proxy-script?url=' + encodeURIComponent('https://www.googletagmanager.com/gtag/js?id=G-XCK6M7C5DG'));
+    var script = document.createElement('script');
+    script.src = WORKER_URL + '/proxy-script?url=' + encodeURIComponent('https://www.googletagmanager.com/gtag/js?id=G-XCK6M7C5DG');
+    script.async = true;
     
     script.onload = function() {
         console.log('✅ Скрипт Google загружен');
