@@ -34,8 +34,8 @@
     <!-- PWA manifest -->
     <link rel="manifest" href="/manifest.json">
     
-    <!-- Подключаем CSS для страницы редиректа -->
-    <link rel="stylesheet" href="/css/main-redirect.css">
+    <!-- Стили редиректа -->
+    <link rel="stylesheet" href="/css/redirect.css?v=2">
     
     <!-- Подключаем внешний скрипт редиректа -->
     <script src="/redirect.js" defer></script>
@@ -46,28 +46,19 @@
     <link rel="alternate" hreflang="et" href="https://personality-compass.app/et/" />
     <link rel="alternate" hreflang="x-default" href="https://personality-compass.app/en/" />
     
-    <!-- Schema.org разметка -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Personality Compass - Language Redirect",
-        "description": "Automatic language redirection to English, Russian or Estonian version of our offline personality test app.",
-        "url": "https://personality-compass.app/",
-        "isPartOf": {
-            "@type": "WebSite",
-            "name": "Personality Compass",
-            "url": "https://personality-compass.app/"
-        },
-        "about": {
-            "@type": "MobileApplication",
-            "name": "Personality Compass",
-            "description": "Offline personality test app with MindPath 16, MindPath 5D and Enneagram",
-            "applicationCategory": "LifestyleApplication"
-        }
-    }
-    </script>
+    <!-- Schema.org markup -->
+    <script src="/js/schema/en.js" defer></script>
+
+    <!-- Preconnect для метрик -->
+    <link rel="preconnect" href="https://mc.yandex.ru">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://static.cloudflareinsights.com">
+
+    <!-- Yandex.Metrika counter (noscript) -->
+    <noscript><div><img src="https://mc.yandex.ru/watch/107164704" class="metrika-pixel" alt="Yandex Metrika tracking pixel" /></div></noscript>
     
+    <!-- Подключение метрик -->
+    <script src="/js/metrics.js" defer></script>
 </head>
 <body>
     <div class="container">

@@ -16,12 +16,11 @@
     
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 
-    <!-- Все CSS через stylesheet -->
-    <link rel="stylesheet" href="/css/main.css?v=2">
-    <link rel="stylesheet" href="/css/components/header.css?v=2">
-    <link rel="stylesheet" href="/css/components/footer.css?v=2">
-    <link rel="stylesheet" href="/css/components/cards.css?v=2">
-    <link rel="stylesheet" href="/css/index_ru.css?v=2">
+    <!-- Сначала БАЗОВЫЕ стили (нужны на всех страницах) -->
+    <link rel="stylesheet" href="/css/base.css?v=2">
+
+    <!-- Потом УНИКАЛЬНЫЕ для главной -->
+    <link rel="stylesheet" href="/css/home.css?v=2">
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -72,11 +71,8 @@
         
     <!-- Fallback для браузеров без JS -->
     <noscript>
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/components/header.css">
-    <link rel="stylesheet" href="/css/components/footer.css">
-    <link rel="stylesheet" href="/css/components/cards.css">
-    <link rel="stylesheet" href="/css/index_ru.css">
+        <link rel="stylesheet" href="/css/base.css">
+        <link rel="stylesheet" href="/css/home.css">
     </noscript>
     
     <!-- Подключение метрик (один файл для всех скриптов) -->
@@ -374,11 +370,11 @@
 
         <!-- FOOTER - outside main -->
 <div class="footer">
-    <p>© Personality Compass. All rights reserved.</p>
+    <p>© Personality Compass. Все права защищены.</p>
     <p>
-        <a href="/ru/policy.html">Privacy Policy (app)</a> | 
-        <a href="/ru/cookie-policy.html">Cookie Policy (website)</a> | 
-        <a href="mailto:info@personality-compass.app">Contact</a>
+        <a href="/ru/policy.html">Политика конфиденциальности (приложение)</a> | 
+        <a href="/ru/cookie-policy.html">Политика использования cookie (сайт)</a> | 
+        <a href="mailto:info@personality-compass.app">Контакты</a>
     </p>
 </div>
     </div>

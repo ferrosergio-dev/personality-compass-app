@@ -12,6 +12,38 @@
     link.href = '/css/cookie-banner.css';
     document.head.appendChild(link);
 
+    // Мультиязычные тексты
+    const translations = {
+        en: {
+            message: 'We use Google Analytics and Yandex Metrica for traffic analysis.',
+            policyLink: 'Cookie Policy',
+            accept: 'Accept',
+            reject: 'Reject',
+            policyPath: '/en/cookie-policy.html'
+        },
+        ru: {
+            message: 'Мы используем Google Analytics и Яндекс.Метрику для анализа трафика.',
+            policyLink: 'Политика Cookie',
+            accept: 'Принять',
+            reject: 'Отказаться',
+            policyPath: '/ru/cookie-policy.html'
+        },
+        et: {
+            message: 'Kasutame Google Analyticsit ja Yandex Metricat liikluse analüüsiks.',
+            policyLink: 'Küpsiste poliitika',
+            accept: 'Nõustun',
+            reject: 'Keeldu',
+            policyPath: '/et/cookie-policy.html'
+        }
+    };
+
+    // Получаем текущий язык из HTML lang атрибута
+    function getCurrentLanguage() {
+        const htmlLang = document.documentElement.lang || 'en';
+        // Поддерживаем только en, ru, et, остальным даём en
+        return ['en', 'ru', 'et'].includes(htmlLang) ? htmlLang : 'en';
+    }
+
     function setCookie(name, value, days) {
         let expires = "";
         if (days) {
@@ -43,7 +75,6 @@
         if (banner) banner.style.display = 'none';
     }
 
-    // НОВАЯ ФУНКЦИЯ ДЛЯ ОТПРАВКИ ЛОГОВ
     function sendLog(consentType) {
         const logData = {
             consent: consentType,
@@ -54,19 +85,16 @@
             userAgent: navigator.userAgent
         };
 
-        // Отправляем в Cloudflare Worker
         fetch(LOGGER_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(logData),
-            // Важно: keepalive позволяет отправить запрос даже если страница закрывается
             keepalive: true
         }).then(response => {
             if (response.ok) {
                 console.log('Consent logged successfully');
             }
         }).catch(error => {
-            // Тихо падаем, не ломаем пользовательский опыт
             console.log('Logging failed (non-critical)');
         });
     }
@@ -76,7 +104,6 @@
         localStorage.setItem(CONSENT_COOKIE_NAME, 'accepted');
         hideBanner();
         
-        // Отправляем лог о принятии
         sendLog('accepted');
         
         if (window.loadYandexMetrica) window.loadYandexMetrica();
@@ -89,7 +116,6 @@
         localStorage.setItem(CONSENT_COOKIE_NAME, 'rejected');
         hideBanner();
         
-        // Отправляем лог об отказе
         sendLog('rejected');
     }
 
@@ -97,18 +123,20 @@
         const consent = getCookie(CONSENT_COOKIE_NAME) || localStorage.getItem(CONSENT_COOKIE_NAME);
         
         if (!consent) {
-            // Создаем баннер через JS, а не в HTML
+            const currentLang = getCurrentLanguage();
+            const t = translations[currentLang];
+            
             const banner = document.createElement('div');
             banner.id = BANNER_ID;
             banner.className = 'cookie-banner';
             banner.innerHTML = `
     <div class="cookie-banner__content">
-        <span>We use Google Analytics and Yandex Metrica for traffic analysis. </span>
-        <a href="/en/cookie-policy.html" class="cookie-banner__link">Cookie Policy</a>
+        <span>${t.message} </span>
+        <a href="${t.policyPath}" class="cookie-banner__link">${t.policyLink}</a>
     </div>
     <div class="cookie-banner__buttons">
-        <button id="${ACCEPT_BTN_ID}" class="cookie-banner__button cookie-banner__button--accept">Accept</button>
-        <button id="${REJECT_BTN_ID}" class="cookie-banner__button cookie-banner__button--reject">Reject</button>
+        <button id="${ACCEPT_BTN_ID}" class="cookie-banner__button cookie-banner__button--accept">${t.accept}</button>
+        <button id="${REJECT_BTN_ID}" class="cookie-banner__button cookie-banner__button--reject">${t.reject}</button>
     </div>
 `;
             document.body.appendChild(banner);
